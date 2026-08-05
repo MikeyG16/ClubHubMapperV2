@@ -1,0 +1,811 @@
+/* ==========================================================
+   ClubHub Insight
+   ========================================================== */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+
+    --bg:#eef2f7;
+
+    --panel:#ffffff;
+
+    --panelAlt:#f8fafc;
+
+    --border:#dde5ef;
+
+    --primary:#0057A8;
+
+    --primaryLight:#EAF4FF;
+
+    --text:#222;
+
+    --muted:#666;
+
+    --shadow:0 8px 22px rgba(0,0,0,.08);
+
+}
+
+html,
+body{
+
+    height:100%;
+
+}
+
+body{
+
+    font-family:Segoe UI,Arial,sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    display:grid;
+
+    grid-template-rows:
+        58px
+        auto
+        1fr
+        30px;
+
+}
+
+/* ==========================================================
+   Header
+   ========================================================== */
+
+header{
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 18px;
+
+    box-shadow:0 4px 18px rgba(0,0,0,.18);
+
+    z-index:10;
+
+}
+
+#branding h1{
+
+    font-size:20px;
+
+    line-height: 1;
+
+    font-weight:700;
+
+}
+
+#branding span{
+
+    display:inline;
+
+    font-size:13px;
+
+    opacity:.8;
+
+    margin-left:10px;
+
+}
+
+#search{
+
+    width:300px;
+
+    padding:8px 11px;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:13px;
+
+}
+
+/* ==========================================================
+   Dashboard
+   ========================================================== */
+
+#dashboard{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:12px;
+
+    padding:8px 12px;
+
+}
+
+.card{
+
+    background:var(--panel);
+
+    border-radius:14px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    padding:10px 12px;
+
+    transition:.18s;
+
+    cursor:pointer;
+
+    min-height:92px;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.activeCard{
+
+    background:var(--primaryLight);
+
+    border:2px solid var(--primary);
+
+}
+
+.card h3{
+
+    font-size:13px;
+
+    margin-bottom:4px;
+
+    line-height:1.15;
+
+}
+
+.card .value{
+
+    font-size:21px;
+
+    font-weight:700;
+
+    line-height:1;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+/* ==========================================================
+   Workspace
+   ========================================================== */
+
+#workspace{
+
+    display:grid;
+
+    grid-template-columns:320px 1fr;
+
+    overflow:hidden;
+
+}
+
+#sidebar{
+
+    background:var(--panelAlt);
+
+    border-right:1px solid var(--border);
+
+    overflow:auto;
+
+}
+
+#navigation{
+
+    padding:18px;
+
+}
+
+#content{
+
+    overflow:auto;
+
+    padding:28px;
+
+}
+
+/* ==========================================================
+   Content Panel
+   ========================================================== */
+
+#contentPanel{
+
+    background:white;
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    padding:28px;
+
+    min-height:220px;
+
+}
+
+#contentPanel h2{
+
+    margin-bottom:12px;
+
+}
+
+#contentPanel p{
+
+    color:var(--muted);
+
+    line-height:1.6;
+
+}
+
+/* ==========================================================
+   Footer
+   ========================================================== */
+
+footer{
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 18px;
+
+    background:white;
+
+    border-top:1px solid var(--border);
+
+    color:var(--muted);
+
+    font-size:13px;
+
+}
+
+/* ==========================================================
+   Utility
+   ========================================================== */
+
+.hidden{
+
+    display:none;
+
+}
+
+.fade{
+
+    animation:fade .18s ease;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(6px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   Navigation
+   ========================================================== */
+
+.navButton{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 16px;
+
+    margin-bottom:8px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.18s;
+
+}
+
+.navButton:hover{
+
+    background:var(--primaryLight);
+
+    transform:translateX(2px);
+
+}
+
+.activeNav{
+
+    background:var(--primary);
+
+    color:white;
+
+    border-color:var(--primary);
+
+    box-shadow:var(--shadow);
+
+}
+
+.activeNav:hover{
+
+    background:var(--primary);
+
+    transform:none;
+
+}
+
+/* ==========================================================
+   Inventory Table
+   ========================================================== */
+
+.inventoryTable{
+
+    width:100%;
+
+    table-layout:fixed;
+
+}
+
+.inventoryTable th{
+
+    background:var(--primary);
+
+    color:white;
+
+    text-align:left;
+
+    padding:14px;
+
+    white-space:nowrap;
+
+}
+
+.inventoryTable td{
+
+    padding:12px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.inventoryTable td:first-child{
+
+    max-width:350px;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+.inventoryTable tbody tr{
+
+    cursor:pointer;
+
+    transition:.15s;
+
+}
+
+.inventoryTable tbody tr:hover{
+
+    background:var(--primaryLight);
+
+    cursor:pointer;
+
+}
+
+/* ==========================================================
+   Inventory Toolbar
+   ========================================================== */
+
+.inventoryToolbar{
+
+    margin:20px 0;
+
+}
+
+.inventoryToolbar input{
+
+    width:320px;
+
+    padding:10px 14px;
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    font-size:14px;
+
+}
+
+.backButton{
+
+    padding:8px 16px;
+
+    border:none;
+
+    border-radius:6px;
+
+    background:var(--primary);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+}
+
+.backButton:hover{
+
+    opacity:0.9;
+
+}
+
+/* ==========================================================
+   Site Tree
+========================================================== */
+
+.tree{
+
+    margin-top:20px;
+
+}
+
+.treeNode{
+
+    padding:6px 0;
+
+    font-size:15px;
+
+}
+
+.treeChildren{
+
+    display:none;
+
+    margin-left:28px;
+
+    border-left:2px solid #dddddd;
+
+    padding-left:12px;
+
+}
+
+.treeLabel{
+
+    cursor:pointer;
+
+    display:inline-block;
+
+    padding:3px 6px;
+
+    border-radius:4px;
+
+}
+
+.treeToggle{
+
+    display:inline-block;
+
+    width:18px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    font-weight:bold;
+
+}
+
+.treeLabel:hover{
+
+    background:#eef5ff;
+
+}
+
+/* ==========================================================
+   Page Inspector
+   ========================================================== */
+
+.infoList{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    max-width:500px;
+}
+
+.infoRow{
+    display:grid;
+    grid-template-columns:180px 1fr;
+    align-items:center;
+    padding:10px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.infoLabel{
+    font-weight:600;
+    color:#444;
+    font-size:14px;
+}
+
+.infoValue{
+    color:#111;
+    font-size:14px;
+    font-weight:500;
+}
+
+.inspector{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(350px, 1fr));
+    gap:20px;
+}
+
+.card{
+    height:100%;
+}
+
+.infoValue a{
+    text-decoration:none;
+    color:var(--primary);
+}
+
+.infoValue a:hover{
+    text-decoration:underline;
+}
+
+.infoValue div{
+    margin-bottom:3px;
+}
+
+.infoValue em{
+
+    color:var(--muted);
+
+    font-style:italic;
+
+    display:block;
+
+    margin-top:4px;
+
+}
+
+.card h3{
+
+    font-size:16px;
+    margin-bottom:18px;
+    color:var(--primary);
+
+}
+
+.infoRow{
+
+    padding:8px 0;
+
+}
+
+.infoLabel{
+
+    color:#666;
+    font-weight:600;
+
+}
+
+/* ==========================================================
+   Page Header
+   ========================================================== */
+
+.pageHeader{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+    margin-bottom:20px;
+
+}
+
+.pageUrl{
+
+    margin-top:8px;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    word-break:break-all;
+
+}
+
+.pageActions{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.actionButton{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:10px 16px;
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    background:white;
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.15s;
+
+}
+
+.actionButton:hover{
+
+    background:var(--primaryLight);
+
+}
+
+.summaryGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:20px;
+
+    margin-top:25px;
+
+}
+
+.summaryCard{
+
+    background:#ffffff;
+
+    border:1px solid #d8dee9;
+
+    border-left:5px solid #2f6fed;
+
+    border-radius:10px;
+
+    padding:20px;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
+
+    transition:.2s ease;
+
+}
+
+.summaryCard:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 6px 18px rgba(0,0,0,.10);
+
+}
+
+.summaryCard h3{
+
+    margin:0 0 18px;
+
+    font-size:18px;
+
+    color:#1b3b6f;
+
+}
+
+.summaryCard p{
+
+    margin:12px 0;
+
+    line-height:1.6;
+
+    color:#444;
+
+}
+
+.summaryCard strong{
+
+    display:block;
+
+    color:#222;
+
+    font-size:13px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.5px;
+
+    margin-bottom:3px;
+
+}
+
+.reportCard{
+
+    border-left-color:#2563eb;
+
+}
+
+.overviewCard{
+
+    border-left-color:#0f766e;
+
+}
+
+.healthCard{
+
+    border-left-color:#dc2626;
+
+}
+
+.performanceCard{
+
+    border-left-color:#ca8a04;
+
+}

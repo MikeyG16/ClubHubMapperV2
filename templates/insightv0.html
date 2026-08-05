@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ClubHub Insight</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+
+    --bg:#eef2f7;
+    --panel:#ffffff;
+    --panel2:#f8fafc;
+    --border:#dde5ef;
+
+    --primary:#0057A8;
+    --primaryLight:#EAF4FF;
+
+    --text:#222;
+    --muted:#666;
+
+    --shadow:0 8px 22px rgba(0,0,0,.08);
+
+}
+
+html,body{
+
+    height:100%;
+
+}
+
+body{
+
+    font-family:Segoe UI,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+
+}
+
+header{
+
+    height:70px;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 24px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    box-shadow:0 4px 18px rgba(0,0,0,.18);
+
+}
+
+header h1{
+
+    font-size:25px;
+    font-weight:700;
+
+}
+
+header input{
+
+    width:340px;
+
+    padding:11px 14px;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+}
+
+#dashboard{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+    padding:22px;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:14px;
+
+    padding:22px;
+
+    cursor:pointer;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:.18s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.activeCard{
+
+    background:var(--primaryLight);
+
+    border:2px solid var(--primary);
+
+}
+
+.card h3{
+
+    font-size:14px;
+
+    color:#666;
+
+    margin-bottom:12px;
+
+}
+
+.card .value{
+
+    font-size:44px;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+#workspace{
+
+    display:grid;
+
+    grid-template-columns:390px 1fr;
+
+    height:calc(100vh - 208px);
+
+}
+
+#navigation{
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#F9FBFD;
+
+    border-right:1px solid var(--border);
+
+    overflow:hidden;
+
+}
+
+.sectionTitle{
+
+    padding:16px;
+
+    font-size:13px;
+
+    text-transform:uppercase;
+
+    font-weight:700;
+
+    color:#666;
+
+    letter-spacing:.6px;
+
+}
+
+#filters{
+
+    padding:8px;
+
+    border-bottom:1px solid var(--border);
+
+    max-height:250px;
+
+    overflow:auto;
+
+}
+
+#pageList{
+
+    flex:1;
+
+    overflow:auto;
+
+    padding:8px;
+
+}
+
+.filterButton{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:10px 14px;
+
+    margin-bottom:4px;
+
+    background:none;
+
+    border:none;
+
+    border-left:4px solid transparent;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.18s;
+
+}
+
+.filterButton:hover{
+
+    background:#EEF5FF;
+
+}
+
+.activeFilter{
+
+    background:#EAF4FF;
+
+    border-left-color:var(--primary);
+
+    color:var(--primary);
+
+}
+
+.treeNode{
+
+    margin-left:0;
+
+}
+
+.treeChildren{
+
+    margin-left:22px;
+
+    border-left:1px solid #dbe5ef;
+
+    padding-left:12px;
+
+    overflow:hidden;
+
+}
+
+.treeItem{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    padding:10px;
+
+    margin:6px 0;
+
+    cursor:pointer;
+
+    transition:.18s;
+
+}
+
+.treeItem:hover{
+
+    background:#F8FBFF;
+
+    transform:translateX(2px);
+
+}
+
+.treeItem.active{
+
+    background:#EAF4FF;
+
+    border:2px solid var(--primary);
+
+}
+
+.expand{
+
+    width:18px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    color:#777;
+
+    font-size:13px;
+
+    user-select:none;
+
+}
+
+.folder{
+
+    font-size:16px;
+
+}
+
+.pageInfo{
+
+    flex:1;
+
+    overflow:hidden;
+
+}
+
+.pageTitle{
+
+    font-size:14px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+.pageMeta{
+
+    margin-top:3px;
+
+    font-size:11px;
+
+    color:#777;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+.childCount{
+
+    background:#EEF5FF;
+
+    color:var(--primary);
+
+    padding:3px 8px;
+
+    border-radius:20px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:4px 10px;
+
+    border-radius:30px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
+
+#content{
+
+    overflow:auto;
+
+    padding:26px;
+
+}
+
+.detailCard{
+
+    background:white;
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    padding:34px;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+
+}
+
+td{
+
+    padding:12px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+td:first-child{
+
+    width:170px;
+
+    font-weight:700;
+
+}
+
+button{
+
+    padding:10px 18px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-weight:600;
+
+}
+
+button:hover{
+
+    opacity:.9;
+
+}
+
+.footer{
+
+    height:36px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 18px;
+
+    background:white;
+
+    border-top:1px solid var(--border);
+
+    color:#666;
+
+    font-size:13px;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.fade{
+
+    animation:fade .18s ease;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(6px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>ClubHub Insight</h1>
+
+<input
+id="search"
+placeholder="Search title or URL...">
+
+</header>
+
+<div id="dashboard">
+
+</div>
+
+<div id="workspace">
+
+<div id="navigation">
+
+<div class="sectionTitle">
+
+Filter
+
+</div>
+
+<div id="filters">
+
+</div>
+
+<div class="sectionTitle">
+
+Pages
+
+</div>
+
+<div id="pageList"></div>
+
+</div>
+
+<div id="content">
+
+<h2>
+
+Select a page
+
+</h2>
+
+<p>
+
+Choose a page from the left.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+<span id="status">
+
+Ready.
+
+</span>
+
+</div>
+
+<script>
+
+const pages = __PAGE_DATA__;
+
+let filteredPages = [...pages];
+
+let activeFilter = "All";
+
+let selectedPage = null;
+
+let filteredSet = new Set(pages);
+
+const expandedNodes = new Set();
+
+function hasChildren(page){
+
+    return Array.isArray(page.children)
+        && page.children.length>0;
+
+}
+
+function expandParents(page){
+
+    let current = page;
+
+    while(current && current.parent){
+
+        expandedNodes.add(current.parent);
+
+        current = pages.find(p => p.url === current.parent);
+
+    }
+
+}
+
+function countDescendants(page){
+
+    if(!hasChildren(page)){
+        return 0;
+    }
+
+    let total = page.children.length;
+
+    page.children.forEach(child=>{
+
+        total += countDescendants(child);
+
+    });
+
+    return total;
+
+}
+
+function updateDashboard(){
+
+    const counts={
+
+        Total:pages.length
+
+    };
+
+    pages.forEach(page=>{
+
+        const type=page.type||"Unknown";
+
+        counts[type]=(counts[type]||0)+1;
+
+    });
+
+    const dashboard=document.getElementById("dashboard");
+
+    dashboard.innerHTML="";
+
+    Object.entries(counts).forEach(([title,value])=>{
+
+        const card=document.createElement("div");
+
+        card.className="card";
+
+        if(
+    (title==="Total" && activeFilter==="All")
+    ||
+    title===activeFilter
+){
+    card.classList.add("activeCard");
+}
+
+        card.innerHTML=`
+
+            <h3>${title}</h3>
+
+            <div class="value">${value}</div>
+
+        `;
+
+        card.onclick=()=>{
+
+            activeFilter=title;
+
+            if(title==="Total"){
+
+                filteredPages=[...pages];
+filteredSet=new Set(filteredPages);
+
+            }else{
+
+                filteredPages=pages.filter(page=>
+
+                    (page.type||"Unknown")===title
+
+                );
+                filteredSet=new Set(filteredPages);
+
+            }
+
+            renderList();
+
+            if(filteredPages.length){
+
+          showPage(filteredPages[0]);
+
+}
+
+renderFilters();
+
+updateDashboard();
+
+        };
+
+        dashboard.appendChild(card);
+
+    });
+
+}
+
+function getBadgeStyle(type){
+
+    switch(type){
+
+        case "Course":
+
+            return "background:#E8F0FE;color:#1A73E8;";
+
+        case "PDF":
+
+            return "background:#FDECEC;color:#C5221F;";
+
+        case "Category":
+
+            return "background:#E6F4EA;color:#188038;";
+
+        case "Page":
+
+            return "background:#F1F3F4;color:#5F6368;";
+
+        case "Tag":
+
+            return "background:#F3E8FD;color:#9334E6;";
+
+        default:
+
+            return "background:#FFF4E5;color:#B06000;";
+
+    }
+
+}
+
+function renderList(){
+
+    const list=document.getElementById("pageList");
+
+    list.innerHTML="";
+
+    const roots=filteredPages.filter(p=>!p.parent);
+
+    if(!roots.length){
+
+        list.innerHTML=
+            "<div style='padding:14px;color:#666;'>No pages found.</div>";
+
+        return;
+
+    }
+
+    roots.forEach(root=>{
+
+        list.appendChild(
+            createTreeNode(root,0)
+        );
+
+    });
+
+    document.getElementById("status").textContent=
+
+        `${filteredPages.length} pages shown`;
+
+}
+
+function createTreeNode(page,level){
+
+    const wrapper=document.createElement("div");
+
+    wrapper.className="treeNode";
+
+    const row=document.createElement("div");
+
+    row.className="treeItem fade";
+
+    if(
+        selectedPage &&
+        selectedPage.url===page.url
+    ){
+
+        row.classList.add("active");
+
+    }
+
+    const children=page.children||[];
+
+    const expanded=expandedNodes.has(page.url);
+
+    row.innerHTML=`
+
+<div class="expand">
+
+${children.length
+    ? (expanded?"▼":"▶")
+    : ""}
+
+</div>
+
+<div class="folder">
+
+${children.length?"📁":"📄"}
+
+</div>
+
+<div class="pageInfo">
+
+<div class="pageTitle">
+
+${page.title || "(Untitled)"}
+
+</div>
+
+<div class="pageMeta">
+
+Depth ${page.depth}
+
+</div>
+
+</div>
+
+${children.length
+?`<div class="childCount">
+
+${countDescendants(page)}
+
+</div>`
+:""}
+
+`;
+
+    row.onclick=(e)=>{
+
+        if(
+            e.target.classList.contains("expand")
+        ){
+
+            if(expanded){
+
+                expandedNodes.delete(page.url);
+
+            }else{
+
+                expandedNodes.add(page.url);
+
+            }
+
+            renderList();
+
+            return;
+
+        }
+
+        showPage(page);
+
+    };
+
+    row.ondblclick = ()=>{
+
+    if(!children.length){
+        return;
+    }
+
+    if(expandedNodes.has(page.url)){
+
+        expandedNodes.delete(page.url);
+
+    }else{
+
+        expandedNodes.add(page.url);
+
+    }
+
+    renderList();
+
+};
+
+    wrapper.appendChild(row);
+
+    if(children.length && expanded){
+
+        const childContainer=
+            document.createElement("div");
+
+        childContainer.className="treeChildren";
+
+        children.forEach(child=>{
+
+            if(
+    filteredSet.has(child)
+){
+
+                childContainer.appendChild(
+
+                    createTreeNode(
+
+                        child,
+
+                        level+1
+
+                    )
+
+                );
+
+            }
+
+        });
+
+        wrapper.appendChild(childContainer);
+
+    }
+
+    return wrapper;
+
+}
+
+function showPage(page){
+
+    selectedPage = page;
+
+expandParents(page);
+
+renderList();
+
+    const children=(page.children||[])
+        .map(c=>c.title)
+        .join("<br>") || "None";
+
+    document.getElementById("content").innerHTML=`
+
+<div class="detailCard">
+
+<div
+class="badge"
+style="${getBadgeStyle(page.type)}">
+
+${page.type||"Unknown"}
+
+</div>
+
+<h1>
+
+${page.title||"(Untitled)"}
+
+</h1>
+
+<p style="color:#666;margin:8px 0 20px;">
+
+${page.url}
+
+</p>
+
+<table>
+
+<tr>
+
+<td>Parent</td>
+
+<td>${page.parent||"—"}</td>
+
+</tr>
+
+<tr>
+
+<td>Children</td>
+
+<td>${children}</td>
+
+</tr>
+
+<tr>
+
+<td>Depth</td>
+
+<td>${page.depth}</td>
+
+</tr>
+
+<tr>
+
+<td>Type</td>
+
+<td>${page.type}</td>
+
+</tr>
+
+<tr>
+
+<td>Crawl Time</td>
+
+<td>${page.crawlTime} ms</td>
+
+</tr>
+
+</table>
+
+<br>
+
+<button onclick="window.open('${page.url}','_blank')">
+
+Open Page
+
+</button>
+
+<button
+id="copyUrl"
+style="margin-left:10px;">
+
+Copy URL
+
+</button>
+
+</div>
+
+`;
+
+    document
+        .getElementById("copyUrl")
+        .onclick=()=>{
+
+            navigator.clipboard
+                .writeText(page.url);
+
+        };
+
+}
+
+function pageMatches(page, search){
+
+    if(!search){
+        return true;
+    }
+
+    search = search.toLowerCase();
+
+    return (
+
+        (page.title || "")
+            .toLowerCase()
+            .includes(search)
+
+        ||
+
+        (page.url || "")
+            .toLowerCase()
+            .includes(search)
+
+    );
+
+}
+
+document.getElementById("search").addEventListener("input", e=>{
+
+    const search = e.target.value.trim();
+
+    if(search===""){
+
+        filteredPages=[...pages];
+filteredSet=new Set(filteredPages);
+
+        expandedNodes.clear();
+
+        renderList();
+
+        return;
+
+    }
+
+    filteredPages = pages.filter(page=>{
+
+    return pageMatches(page, search)
+
+        ||
+
+        hasMatchingChild(page, search);
+
+});
+
+filteredSet = new Set(filteredPages);
+
+    filteredPages.forEach(page=>{
+
+        if(hasMatchingChild(page, search)){
+
+            expandedNodes.add(page.url);
+
+        }
+
+    });
+
+    renderList();
+
+});
+
+function hasMatchingChild(page, search){
+
+    if(!hasChildren(page)){
+        return false;
+    }
+
+    return page.children.some(child=>{
+
+        return pageMatches(child, search)
+
+            ||
+
+            hasMatchingChild(child, search);
+
+    });
+
+}
+
+function renderFilters(){
+
+    const filters=document.getElementById("filters");
+
+    const counts={};
+
+    pages.forEach(page=>{
+
+        const type=page.type||"Unknown";
+
+        counts[type]=(counts[type]||0)+1;
+
+    });
+
+    filters.innerHTML="";
+
+    const all=document.createElement("button");
+
+all.classList.add("filterButton");
+
+    if(activeFilter==="All"){
+
+    all.classList.add("activeFilter");
+
+}
+
+    all.innerHTML=`
+
+<span>All</span>
+
+<span>${pages.length}</span>
+
+`;
+
+    all.style.margin="3px";
+
+    all.onclick=()=>{
+
+    activeFilter="All";
+
+    filteredPages=[...pages];
+filteredSet=new Set(filteredPages);
+
+    renderList();
+
+    if(filteredPages.length){
+
+        showPage(filteredPages[0]);
+
+    }
+
+    updateDashboard();
+
+};
+
+    filters.appendChild(all);
+
+    Object.keys(counts).sort().forEach(type=>{
+
+        const button=document.createElement("button");
+
+button.classList.add("filterButton");
+
+        if(activeFilter===type){
+
+    button.classList.add("activeFilter");
+
+}
+
+        button.style.margin="3px";
+
+        button.innerHTML=`
+
+<span>${type}</span>
+
+<span>${counts[type]}</span>
+
+`;
+
+        button.onclick=()=>{
+
+    activeFilter=type;
+
+    filteredPages=pages.filter(page=>
+
+        (page.type||"Unknown")==type
+
+    );
+    filteredSet=new Set(filteredPages);
+
+    renderList();
+
+    if(filteredPages.length){
+
+        showPage(filteredPages[0]);
+
+    }
+
+    updateDashboard();
+
+};
+
+        filters.appendChild(button);
+
+    });
+
+}
+
+updateDashboard();
+
+renderFilters();
+
+renderList();
+
+if(filteredPages.length){
+
+    showPage(filteredPages[0]);
+
+}
+
+</script>
+
+</body>
+</html>

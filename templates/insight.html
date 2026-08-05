@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ClubHub Insight</title>
+
+    <link rel="stylesheet" href="css/insight.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div id="branding">
+
+            <h1>ClubHub Insight</h1>
+
+            <span>Website Explorer & Audit</span>
+
+        </div>
+
+        <div id="headerTools">
+
+            <input
+                id="search"
+                type="search"
+                placeholder="Search pages...">
+
+        </div>
+
+    </header>
+
+    <section id="dashboard">
+
+        <!-- Dashboard cards inserted by JavaScript -->
+
+    </section>
+
+    <main id="workspace">
+
+        <aside id="sidebar">
+
+            <nav id="navigation">
+
+                <!-- Navigation inserted by JavaScript -->
+
+            </nav>
+
+        </aside>
+
+        <section id="content">
+
+            <div id="contentPanel"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <span id="status">
+
+            Ready
+
+        </span>
+
+    </footer>
+
+    <script>
+
+        const pages = __PAGE_DATA__;
+
+        const crawlSummary = __CRAWL_SUMMARY__;
+
+    </script>
+
+    <script src="js/utils.js"></script>
+
+    <script src="js/dashboard.js"></script>
+
+    <script src="js/inventory.js"></script>
+
+    <script src="js/page.js"></script>
+
+    <script src="js/tree.js"></script>
+
+    <script src="js/reports.js"></script>
+
+    <script src="js/insight.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "clubhub-mapper",
+  "version": "2.0.0",
+  "description": "Authenticated sitemap crawler for British Gymnastics Club Hub",
+  "author": "Michael Glossop",
+  "private": true,
+  "main": "run.js",
+  "scripts": {
+    "start": "node run.js",
+    "login": "node login.js"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "exceljs": "^4.4.0",
+    "playwright": "^1.54.2"
+  }
+}
