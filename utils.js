@@ -100,56 +100,84 @@ function pageType(url, bodyClass = "") {
     const u = url.toLowerCase();
     const body = bodyClass.toLowerCase();
 
-    // Home
-    if (body.includes("home"))
-        return "Home";
+    // ---------- FILES ----------
 
-    // Pagination
-    if (u.match(/\/page\/\d+\/?$/))
-        return "Pagination";
+    if (u.endsWith(".pdf"))
+        return "PDF";
 
-    // Category pages
-    if (body.includes("tax-ld_lesson_category"))
-        return "Category";
+    if (u.match(/\.(jpg|jpeg|png|gif|webp|svg)$/))
+        return "Image";
 
-    // Category (LearnDash Course)
-    if (body.includes("single-sfwd-courses"))
-        return "Category";
+    if (u.match(/\.(doc|docx|xls|xlsx|ppt|pptx|zip)$/))
+        return "Download";
 
-    // Topic
-    if (body.includes("single-sfwd-topic"))
-        return "Topic";
-    
-    // Toolkit
-    if (body.includes("single-sfwd-lessons"))
-        return "Toolkit";
-
-    // Standard Pages
-    if (body.includes("page"))
-        return "Standard Page";
-
-    // ---------- URL FALLBACKS ----------
+    // ---------- HOME ----------
 
     if (
+        body.includes("home") ||
         u === "https://clubhub-resources.british-gymnastics.org" ||
         u === "https://clubhub-resources.british-gymnastics.org/"
     )
         return "Home";
 
-    if (u.includes("/topic/"))
-        return "Topic";
-
-    if (u.includes("/lessons/"))
-        return "Toolkit";
+    // ---------- TOOLKITS ----------
 
     if (
-        u.includes("/lesson-category/") ||
-        u.includes("/category/")
+        body.includes("single-sfwd-courses") &&
+        u.includes("/courses/toolkits/")
     )
+        return "Toolkit Landing Page";
+
+    if (
+        body.includes("single-sfwd-lessons") &&
+        u.includes("/courses/toolkits/")
+    )
+        return "Toolkit";
+
+    // ---------- CLUBHUB CONTENT ----------
+
+    if (body.includes("single-sfwd-courses"))
         return "Category";
 
-    if (u.endsWith(".pdf"))
-        return "PDF";
+    if (body.includes("tax-ld_lesson_category"))
+        return "Topic Category";
+
+    if (body.includes("single-sfwd-topic"))
+        return "Topic";
+
+    if (body.includes("single-sfwd-lessons"))
+        return "Topic";
+
+    // ---------- STANDARD WORDPRESS ----------
+
+    if (body.includes("archive"))
+        return "Archive";
+
+    if (body.includes("search"))
+        return "Search";
+
+    if (body.includes("page"))
+        return "Standard Page";
+
+    // ---------- URL FALLBACKS ----------
+
+    if (u.match(/\/page\/\d+\/?$/))
+        return "Pagination";
+
+    if (u.includes("/courses/toolkits/lessons/"))
+        return "Toolkit";
+
+    if (u.includes("/courses/toolkits/"))
+        return "Toolkit Landing Page";
+
+    if (u.includes("/lesson-category/"))
+        return "Topic Category";
+
+    if (u.includes("/courses/") && u.includes("/lessons/"))
+        return "Topic";
+
+    if (u.includes("/courses/"))
+        return "Category";
 
     return "Standard Page";
 
