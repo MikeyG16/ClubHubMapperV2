@@ -19,7 +19,7 @@ const exportPages = pages.map(page => ({
     url: page.url,
     finalUrl: page.finalUrl,
 
-    parent: page.parent?.id || null,
+    parent: page.parent || null,
     children: page.children.map(child => child.id),
 
     depth: page.depth,

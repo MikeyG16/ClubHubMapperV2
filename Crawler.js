@@ -44,7 +44,7 @@ class Crawler {
 
         // TEST LIMIT
         // Change "< 5" to whatever you like whilst testing. && this.pages.length < 10
-        while (this.queue.length > 0 && this.pages.length < 20) {
+        while (this.queue.length > 0 && this.pages.length < 100) {
 
             const current = this.queue.shift();
 
@@ -71,6 +71,12 @@ class Crawler {
             }
 
             this.pages.push(pageData);
+
+            console.log(
+                "DEBUG technicalParent:",
+                pageData.title,
+                pageData.technicalParent
+            );
 
             this.pageMap.set(pageData.url, pageData);
 
@@ -110,8 +116,15 @@ class Crawler {
 
         }
 
-        this.buildHierarchy();
         this.buildIncomingLinks();
+        this.buildHierarchy();
+
+        console.log(
+            "DEBUG FINAL PARENT:",
+            this.pages.find(page =>
+                page.url.includes("/topic/syllabus")
+            )?.parent
+        );
 
         const crawlDuration = Date.now() - crawlStarted;
 
@@ -231,6 +244,8 @@ class Crawler {
 
                 depth,
 
+                technicalParent: parent,
+
                 contentType:
                 statusCode === 200
                     ? utils.pageType(finalUrl, bodyClass)
@@ -328,25 +343,345 @@ class Crawler {
 
     }
 
-    buildHierarchy() {
+buildHierarchy() {
 
-        for (const page of this.pages) {
+    // Clear existing hierarchy
+    for (const page of this.pages) {
 
-            if (!page.parent) {
-                continue;
-            }
+        page.children = [];
 
-            const parent = this.pageMap.get(page.parent);
+        // Parent will be determined from the ClubHub URL structure
+        page.parent = null;
 
-            if (parent) {
+    }
 
-                parent.children.push(page);
+    // Preserve the original crawl relationship separately
+    for (const page of this.pages) {
 
-            }
+        if (page.technicalParent === undefined) {
+
+            page.technicalParent = null;
 
         }
 
     }
+
+
+    // Build a normalised page lookup
+    const pageLookup = new Map();
+
+    for (const page of this.pages) {
+
+        pageLookup.set(
+            utils.normaliseUrl(page.url),
+            page
+        );
+
+    }
+
+
+    // --------------------------------------------------
+    // CLUBHUB PRIMARY PARENT DETECTION
+    // --------------------------------------------------
+
+    for (const page of this.pages) {
+
+        const url = utils.normaliseUrl(page.url);
+
+
+        // HOME
+        if (
+            page.contentType === "Home"
+        ) {
+            page.parent = null;
+            continue;
+        }
+
+
+        // ----------------------------------------------
+        // TOOLKIT TOPIC
+        // /courses/toolkits/lessons/[toolkit]/topic/[topic]
+        // ----------------------------------------------
+
+        const toolkitTopicMatch = url.match(
+            /\/courses\/toolkits\/lessons\/([^/]+)\/topic\/[^/]+\/?$/
+        );
+
+        if (toolkitTopicMatch) {
+
+            const toolkitSlug = toolkitTopicMatch[1];
+
+            const parentUrl =
+                "https://clubhub-resources.british-gymnastics.org" +
+                "/courses/toolkits/lessons/" +
+                toolkitSlug;
+
+            const parent = pageLookup.get(
+                utils.normaliseUrl(parentUrl)
+            );
+
+            if (parent) {
+
+                page.parent = parent.url;
+
+            }
+
+            continue;
+
+        }
+
+
+        // ----------------------------------------------
+        // TOOLKIT
+        // /courses/toolkits/lessons/[toolkit]
+        // ----------------------------------------------
+
+        const toolkitMatch = url.match(
+            /\/courses\/toolkits\/lessons\/([^/]+)\/?$/
+        );
+
+        if (
+            toolkitMatch &&
+            page.contentType === "Toolkit"
+        ) {
+
+            const parentUrl =
+                "https://clubhub-resources.british-gymnastics.org/courses/toolkits";
+
+            const parent = pageLookup.get(
+                utils.normaliseUrl(parentUrl)
+            );
+
+            if (parent) {
+
+                page.parent = parent.url;
+
+            }
+
+            continue;
+
+        }
+
+
+        // ----------------------------------------------
+        // TOOLKIT LANDING
+        // /courses/toolkits
+        // ----------------------------------------------
+
+        if (
+            page.contentType === "Toolkit Landing" ||
+            url.endsWith("/courses/toolkits")
+        ) {
+
+            const home = pageLookup.get(
+                "https://clubhub-resources.british-gymnastics.org/"
+            );
+
+            if (home) {
+
+                page.parent = home.url;
+
+            }
+
+            continue;
+
+        }
+
+
+        // ----------------------------------------------
+        // CATEGORY
+        // /courses/[category]
+        // ----------------------------------------------
+
+        const categoryMatch = url.match(
+            /\/courses\/([^/]+)\/?$/
+        );
+
+        if (
+            categoryMatch &&
+            page.contentType === "Category"
+        ) {
+
+            const home = pageLookup.get(
+                utils.normaliseUrl("https://clubhub-resources.british-gymnastics.org")
+            );
+
+            if (home) {
+                page.parent = home.url;
+
+            }
+
+            continue;
+
+        }
+
+
+        // ----------------------------------------------
+        // TOPIC
+        // /courses/[category]/lessons/[topic]
+        // ----------------------------------------------
+
+        const topicMatch = url.match(
+            /\/courses\/([^/]+)\/lessons\/([^/]+)\/?$/
+        );
+
+        if (
+            topicMatch &&
+            page.contentType === "Topic"
+        ) {
+
+            const categorySlug = topicMatch[1];
+
+            const parentUrl =
+                "https://clubhub-resources.british-gymnastics.org" +
+                "/courses/" +
+                categorySlug;
+
+            const parent = pageLookup.get(
+                utils.normaliseUrl(parentUrl)
+            );
+
+            if (parent) {
+
+                page.parent = parent.url;
+
+            }
+
+            continue;
+
+        }
+
+
+        // ----------------------------------------------
+        // TOPIC CATEGORY
+        // /lesson-category/[category]
+        //
+        // Topic Categories sit underneath the relevant
+        // ClubHub Category where the URL/content provides
+        // a clear structural relationship.
+        // ----------------------------------------------
+
+        if (page.contentType === "Topic Category") {
+
+            const topicCategorySlug = url.match(
+                /\/lesson-category\/([^/]+)\/?$/
+            );
+
+            if (topicCategorySlug) {
+
+                const slug = topicCategorySlug[1];
+
+                // Known ClubHub Category relationships
+                const categoryMap = {
+
+                    "risk-and-compliance": "health-and-safety",
+                    "facility": "health-and-safety",
+                    "people": "health-and-safety",
+                    "finance": "governance",
+                    "legislation": "governance",
+                    "operating-your-club": "club-development",
+                    "about-your-facility": "club-development",
+                    "marketing": "club-development",
+                    "programmes": "club-development",
+                    "developing-your-workforce": "people-development",
+                    "club-roles": "people-development",
+                    "volunteering": "people-development"
+                };
+
+                const categorySlug = categoryMap[slug];
+
+                if (categorySlug) {
+
+                    const parentUrl =
+                        "https://clubhub-resources.british-gymnastics.org/courses/" +
+                        categorySlug;
+
+                    const parent = pageLookup.get(
+                        utils.normaliseUrl(parentUrl)
+                    );
+
+                    if (parent) {
+
+                        page.parent = parent.url;
+
+                    }
+
+                }
+
+            }
+
+            continue;
+        }
+
+    }
+
+
+    // --------------------------------------------------
+    // BUILD CHILDREN FROM PRIMARY PARENTS
+    // --------------------------------------------------
+
+    for (const page of this.pages) {
+
+        if (!page.parent) {
+            continue;
+        }
+
+        const parent = pageLookup.get(
+            utils.normaliseUrl(page.parent)
+        );
+
+        if (!parent) {
+            continue;
+        }
+
+        if (!parent.children.some(child => child.id === page.id)) {
+
+            parent.children.push(page);
+
+        }
+
+    }
+
+
+    // --------------------------------------------------
+    // RECALCULATE DEPTH FROM PRIMARY HIERARCHY
+    // --------------------------------------------------
+
+    const home = this.pages.find(
+        page => page.contentType === "Home"
+    );
+
+    if (!home) {
+        return;
+    }
+
+
+    home.depth = 0;
+
+
+    const visited = new Set();
+
+    function assignDepth(page, depth) {
+
+        if (visited.has(page.id)) {
+            return;
+        }
+
+        visited.add(page.id);
+
+        page.depth = depth;
+
+        for (const child of page.children) {
+
+            assignDepth(child, depth + 1);
+
+        }
+
+    }
+
+    assignDepth(home, 0);
+
+}
 
     buildIncomingLinks() {
 
