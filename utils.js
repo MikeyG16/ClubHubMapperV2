@@ -249,6 +249,173 @@ module.exports = {
     normaliseUrl,
     isInternal,
     shouldIgnore,
-    pageType
+    pageType,
+    calculateWebsiteComposition
 };
 
+// ==========================================================
+// Website Composition
+// ==========================================================
+
+function calculateWebsiteComposition(pages){
+
+    const composition = {
+
+        totalPages: pages.length,
+
+        contentTypes: {},
+
+        depths: {},
+
+        media: {
+            images: 0,
+            pdfs: 0
+        },
+
+        links: {
+            internal: 0,
+            external: 0
+        }
+
+    };
+
+    pages.forEach(page => {
+
+        // --------------------------------------------------
+        // Content Type
+        // --------------------------------------------------
+
+        const type =
+            page.contentType || "Unknown";
+
+        if(!composition.contentTypes[type]){
+            composition.contentTypes[type] = 0;
+        }
+
+        composition.contentTypes[type]++;
+
+        // --------------------------------------------------
+        // Depth
+        // --------------------------------------------------
+
+        const depth =
+            Number.isFinite(page.depth)
+                ? page.depth
+                : 0;
+
+        if(!composition.depths[depth]){
+            composition.depths[depth] = 0;
+        }
+
+        composition.depths[depth]++;
+
+        // --------------------------------------------------
+        // Media
+        // --------------------------------------------------
+
+        composition.media.images +=
+            Number(page.imageCount) || 0;
+
+        composition.media.pdfs +=
+            Number(page.pdfCount) || 0;
+
+        // --------------------------------------------------
+        // Links
+        // --------------------------------------------------
+
+        composition.links.internal +=
+            Array.isArray(page.internalLinks)
+                ? page.internalLinks.length
+                : 0;
+
+        composition.links.external +=
+            Array.isArray(page.externalLinks)
+                ? page.externalLinks.length
+                : 0;
+
+    });
+
+    // --------------------------------------------------
+    // ClubHub Areas
+    // --------------------------------------------------
+
+    composition.areas = {};
+
+    const pageById = new Map();
+
+    pages.forEach(page => {
+
+        pageById.set(
+            page.id,
+            page
+        );
+
+    });
+
+    const home = pages.find(
+        page => page.contentType === "Home"
+    );
+
+    if (home && Array.isArray(home.children)) {
+
+        const areaIds = home.children;
+
+        // Create the top-level ClubHub areas
+        areaIds.forEach(areaId => {
+
+            const areaPage = pageById.get(areaId);
+
+            if (areaPage) {
+
+                composition.areas[areaPage.title] = 0;
+
+            }
+
+        });
+
+
+        // Count every page according to its top-level area
+        pages.forEach(page => {
+
+            let current = page;
+            let safetyCounter = 0;
+
+            while (
+                current &&
+                current.parent &&
+                safetyCounter < pages.length
+            ) {
+
+                const parent = pages.find(
+                    candidate =>
+                        normaliseUrl(candidate.url) ===
+                        normaliseUrl(current.parent)
+                );
+
+                if (!parent) {
+                    break;
+                }
+
+                // If the parent is one of the seven
+                // top-level areas, this page belongs to it.
+                if (areaIds.includes(parent.id)) {
+
+                    composition.areas[parent.title]++;
+
+                    break;
+
+                }
+
+                current = parent;
+
+                safetyCounter++;
+
+            }
+
+        });
+
+    }
+
+    return composition;
+
+}

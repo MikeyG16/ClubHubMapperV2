@@ -4,6 +4,7 @@ const path = require("path");
 const config = require("./config");
 const { exportExcel } = require("./excelExporter");
 const { exportHTML } = require("./htmlexporter");
+const { calculateWebsiteComposition } = require("./utils");
 
 async function exportData(pages, summary) {
 
@@ -51,6 +52,14 @@ const exportPages = pages.map(page => ({
 
 }));
 
+    // ==========================================================
+    // Website Composition
+    // ==========================================================
+
+    const composition =
+        calculateWebsiteComposition(pages);
+    
+ 
     // Save JSON
     
     const jsonFile = path.join(config.outputFolder, "sitemap.json");
@@ -60,6 +69,7 @@ const exportPages = pages.map(page => ({
         JSON.stringify(
             {
                 summary,
+                composition,
                 pages: exportPages
             },
             null,

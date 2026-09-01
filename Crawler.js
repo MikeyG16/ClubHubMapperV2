@@ -44,7 +44,7 @@ class Crawler {
 
         // TEST LIMIT
         // Change "< 5" to whatever you like whilst testing. && this.pages.length < 10
-        while (this.queue.length > 0 && this.pages.length < 100) {
+        while (this.queue.length > 0 && this.pages.length < 50) {
 
             const current = this.queue.shift();
 
