@@ -717,9 +717,9 @@ buildHierarchy() {
             continue;
         }
 
-        if (!parent.children.some(child => child.id === page.id)) {
+        if (!parent.children.includes(page.id)) {
 
-            parent.children.push(page);
+            parent.children.push(page.id);
 
         }
 
@@ -746,7 +746,7 @@ buildHierarchy() {
 
     function assignDepth(page, depth) {
 
-        if (visited.has(page.id)) {
+        if (!page || visited.has(page.id)) {
             return;
         }
 
@@ -754,9 +754,17 @@ buildHierarchy() {
 
         page.depth = depth;
 
-        for (const child of page.children) {
+        for (const childId of page.children) {
 
-            assignDepth(child, depth + 1);
+            const child = [...pageLookup.values()].find(
+                candidate => candidate.id === childId
+            );
+
+            if (child) {
+
+                assignDepth(child, depth + 1);
+
+            }
 
         }
 

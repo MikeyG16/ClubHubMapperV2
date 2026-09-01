@@ -819,7 +819,13 @@ function addTreeNode(page, prefix = "", isLast = true) {
 
     }
 
-    page.children.forEach((child, index) => {
+    page.children.forEach((childId, index) => {
+
+        const child = pages.find(p => p.id === childId);
+
+        if (!child) {
+            return;
+        }
 
         const lastChild = index === page.children.length - 1;
 

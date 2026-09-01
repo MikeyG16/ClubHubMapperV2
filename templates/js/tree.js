@@ -36,9 +36,9 @@ function renderSiteExplorer(){
 
 function renderTreeNode(page){
 
-    const hasChildren = page.children.length > 0;
-
-    const icon = hasChildren ? "▶" : "📄";
+    const hasChildren =
+        Array.isArray(page.children) &&
+        page.children.length > 0;
 
     let html = `
 
@@ -62,9 +62,6 @@ function renderTreeNode(page){
                 </span>
 
             </span>
-
-        </div>
-
     `;
 
     if(hasChildren){
@@ -72,23 +69,37 @@ function renderTreeNode(page){
         html += `
 
             <div class="treeChildren"
-                id="children-${page.id}">
+                 id="children-${page.id}">
 
         `;
 
         page.children.forEach(childId => {
 
-            const child = pages.find(p => p.id === childId);
+            const child = pages.find(
+                p => p.id === childId
+            );
 
-            if (child) {
+            if(child){
+
                 html += renderTreeNode(child);
+
             }
 
         });
 
-        html += "</div>";
+        html += `
+
+            </div>
+
+        `;
 
     }
+
+    html += `
+
+        </div>
+
+    `;
 
     return html;
 
@@ -126,21 +137,12 @@ function toggleTree(id,event){
     if(!children) return;
 
     const toggle =
-        event.target;
+        event.currentTarget;
 
-    if(children.style.display==="none"){
+    const isOpen =
+        children.classList.toggle("open");
 
-        children.style.display="block";
-
-        toggle.textContent="▼";
-
-    }
-    else{
-
-        children.style.display="none";
-
-        toggle.textContent="▶";
-
-    }
+    toggle.textContent =
+        isOpen ? "▼" : "▶";
 
 }

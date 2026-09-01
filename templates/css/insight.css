@@ -521,6 +521,12 @@ footer{
 
 }
 
+.treeChildren.open{
+
+    display:block;
+
+}
+
 .treeLabel{
 
     cursor:pointer;
