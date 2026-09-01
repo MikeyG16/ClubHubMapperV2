@@ -1389,6 +1389,7 @@ redirectSheet.columns = [
     { header: "URL", key: "url", width: 70 },
     { header: "Status", key: "status", width: 12 },
     { header: "Redirect", key: "redirect", width: 12 },
+    { header: "Redirect Target", key: "redirectTarget", width: 70 },
     { header: "Parent", key: "parent", width: 40 },
     { header: "Last Updated", key: "lastUpdated", width: 16 }
 ];
@@ -1402,6 +1403,7 @@ pages
             url: page.url,
             status: page.statusCode,
             redirect: "Yes",
+            redirectTarget: page.redirectTarget || "",
             parent: page.parent || "",
             lastUpdated: formatDate(page.lastModified)
         });
