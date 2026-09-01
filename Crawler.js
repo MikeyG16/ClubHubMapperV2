@@ -247,9 +247,9 @@ class Crawler {
                 technicalParent: parent,
 
                 contentType:
-                statusCode === 200
-                    ? utils.pageType(finalUrl, bodyClass)
-                    : "Failed",
+                    statusCode === 200
+                        ? this.classifyClubHubPage(finalUrl, bodyClass)
+                        : "Failed",
 
                 slug: wp?.slug || null,
                 wordpressStatus: wp?.status || null,
@@ -327,6 +327,88 @@ class Crawler {
             };
 
         }
+
+    }
+
+    classifyClubHubPage(url, bodyClass = "") {
+
+        const baseType = utils.pageType(url, bodyClass);
+
+        const normalisedUrl = utils.normaliseUrl(url);
+
+        // ----------------------------------------------
+        // CLUBHUB TOOLKIT LANDING PAGES
+        //
+        // Source of truth: ClubHub Information
+        // Architecture workbook
+        // ----------------------------------------------
+
+        const toolkitLandingUrls = new Set([
+
+            "https://clubhub-resources.british-gymnastics.org/courses/toolkits",
+
+            "https://clubhub-resources.british-gymnastics.org/courses/toolkits/lessons/facility-toolkit",
+
+            "https://clubhub-resources.british-gymnastics.org/courses/toolkits/lessons/health-and-safety-toolkit",
+
+            "https://clubhub-resources.british-gymnastics.org/courses/health-and-safety/lessons/securing-your-premises-for-a-closure-or-opening-after-a-closure",
+
+            "https://clubhub-resources.british-gymnastics.org/courses/policies-and-procedures/lessons/standards-of-conduct-coaches-instructors-officials",
+
+            "https://clubhub-resources.british-gymnastics.org/courses/policies-and-procedures/lessons/membership-rules",
+
+            "https://clubhub-resources.british-gymnastics.org/courses/policies-and-procedures/lessons/prevention-of-competition-manipulation-policy",
+
+            "https://clubhub-resources.british-gymnastics.org/courses/policies-and-procedures/lessons/affiliated-associations-policy",
+
+            "https://clubhub-resources.british-gymnastics.org/courses/policies-and-procedures/lessons/flexibility-training",
+
+            "https://clubhub-resources.british-gymnastics.org/courses/policies-and-procedures/lessons/health-safety-and-welfare-guidance-safe-participation",
+
+            "https://clubhub-resources.british-gymnastics.org/courses/toolkits/lessons/assistant-foundation-foundation-coach-hub"
+
+        ]);
+
+        if (toolkitLandingUrls.has(normalisedUrl)) {
+
+            return "Toolkit Landing";
+
+        }
+
+            // ----------------------------------------------
+            // CLUBHUB TOOLKIT PAGES
+            //
+            // Source of truth: ClubHub Information
+            // Architecture workbook
+            // ----------------------------------------------
+
+            const toolkitUrls = new Set([
+
+                "https://clubhub-resources.british-gymnastics.org/courses/toolkits/lessons/club-operations-toolkit",
+
+                "https://clubhub-resources.british-gymnastics.org/courses/toolkits/lessons/recreational-gymnastics-judging-toolkit",
+
+                "https://clubhub-resources.british-gymnastics.org/courses/toolkits/lessons/financial-toolkit",
+
+                "https://clubhub-resources.british-gymnastics.org/courses/toolkits/lessons/be-the-change-toolkit",
+
+                "https://clubhub-resources.british-gymnastics.org/courses/toolkits/lessons/strengthening-your-gymnastics-club",
+
+                "https://clubhub-resources.british-gymnastics.org/courses/toolkits/lessons/recruitment-and-selection-toolkit"
+
+            ]);
+
+            if (toolkitUrls.has(normalisedUrl)) {
+
+                return "Toolkit";
+
+            }
+
+        // ----------------------------------------------
+        // OTHERWISE KEEP THE EXISTING CLASSIFICATION
+        // ----------------------------------------------
+
+        return baseType;
 
     }
 
