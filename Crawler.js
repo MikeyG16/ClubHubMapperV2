@@ -257,6 +257,7 @@ class Crawler {
                 published: wp?.date || null,
                 authorId: wp?.author || null,
                 wordpressType: wp?.type || null,
+                metadataSource: wp ? "WordPress API" : "Not available",
 
                 statusCode,
 

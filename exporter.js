@@ -35,6 +35,7 @@ const exportPages = pages.map(page => ({
     published: page.published,
     lastModified: page.lastModified,
     authorId: page.authorId,
+    metadataSource: page.metadataSource,
 
     imageCount: page.imageCount,
     pdfCount: page.pdfCount,
