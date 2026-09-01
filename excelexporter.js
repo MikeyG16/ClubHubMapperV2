@@ -372,7 +372,7 @@ async function exportExcel(pages, summary) {
     workbook.creator = "ClubHub Insight v1.0";
     workbook.created = new Date();
 
- const brokenPages = pages.filter(p => p.statusCode >= 400).length;
+const brokenPages = pages.filter(p => p.statusCode >= 400).length;
 
 const orphanPages = pages.filter(p => p.orphan).length;
 
@@ -1035,9 +1035,16 @@ const COL = {
         page.outgoingLinkCount || 0
     );
 
-    metadataCell.value = metadataComplete
-        ? "Complete"
-        : "Incomplete";
+    let metadataStatus = "Incomplete";
+
+    if (!page.wordpressType) {
+        metadataStatus = "Not Available";
+    }
+    else if (metadataComplete) {
+        metadataStatus = "Complete";
+    }
+
+    metadataCell.value = metadataStatus;
 
     formatMetadataCell(
         metadataCell,

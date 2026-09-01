@@ -14,6 +14,9 @@ class WordPress {
         console.log("Loading WordPress pages...");
 
             await this.loadContentType("pages", "Pages");
+            await this.loadContentType("sfwd-courses", "Courses");
+            await this.loadContentType("sfwd-lessons", "Lessons");
+            await this.loadContentType("sfwd-topic", "Topics");
 
         console.log(
             `WordPress cache contains ${this.pages.size} items.`
