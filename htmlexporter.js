@@ -22,7 +22,7 @@ function copyDirectory(source, destination) {
 
 }
 
-function exportHTML(pages, summary) {
+function exportHTML(pages, summary, composition) {
 
     const templateFolder = path.join(__dirname, "templates");
 
@@ -43,6 +43,11 @@ function exportHTML(pages, summary) {
     html = html.replace(
         "__CRAWL_SUMMARY__",
         JSON.stringify(summary, null, 2)
+    );
+
+    html = html.replace(
+        "__WEBSITE_COMPOSITION__",
+        JSON.stringify(composition, null, 2)
     );
 
     fs.writeFileSync(

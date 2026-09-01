@@ -2,8 +2,8 @@
   "summary": {
     "website": "https://clubhub-resources.british-gymnastics.org/",
     "websiteName": "clubhub-resources.british-gymnastics.org",
-    "crawlDate": "2026-09-01T23:11:04.659Z",
-    "crawlDuration": 285003,
+    "crawlDate": "2026-09-01T23:36:22.350Z",
+    "crawlDuration": 278926,
     "pagesDiscovered": 50,
     "pagesSuccessful": 49,
     "pagesFailed": 1,
@@ -13,7 +13,7 @@
     "pdfLinksFound": 52,
     "internalLinksFound": 2977,
     "externalLinksFound": 706,
-    "averageLoad": 5516
+    "averageLoad": 5422
   },
   "composition": {
     "totalPages": 50,
@@ -157,7 +157,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4977,
+      "crawlTime": 4059,
       "visited": true,
       "error": null
     },
@@ -247,7 +247,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4184,
+      "crawlTime": 4003,
       "visited": true,
       "error": null
     },
@@ -371,7 +371,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5443,
+      "crawlTime": 5870,
       "visited": true,
       "error": null
     },
@@ -483,7 +483,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5413,
+      "crawlTime": 5362,
       "visited": true,
       "error": null
     },
@@ -587,7 +587,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5497,
+      "crawlTime": 5682,
       "visited": true,
       "error": null
     },
@@ -688,7 +688,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4576,
+      "crawlTime": 4664,
       "visited": true,
       "error": null
     },
@@ -796,7 +796,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5095,
+      "crawlTime": 4303,
       "visited": true,
       "error": null
     },
@@ -895,7 +895,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4389,
+      "crawlTime": 4702,
       "visited": true,
       "error": null
     },
@@ -993,7 +993,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5218,
+      "crawlTime": 5212,
       "visited": true,
       "error": null
     },
@@ -1092,7 +1092,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4845,
+      "crawlTime": 5280,
       "visited": true,
       "error": null
     },
@@ -1204,7 +1204,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4284,
+      "crawlTime": 4719,
       "visited": true,
       "error": null
     },
@@ -1309,7 +1309,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4893,
+      "crawlTime": 4092,
       "visited": true,
       "error": null
     },
@@ -1408,7 +1408,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 6146,
+      "crawlTime": 5277,
       "visited": true,
       "error": null
     },
@@ -1535,7 +1535,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4806,
+      "crawlTime": 4939,
       "visited": true,
       "error": null
     },
@@ -1637,7 +1637,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4828,
+      "crawlTime": 5978,
       "visited": true,
       "error": null
     },
@@ -1737,7 +1737,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5263,
+      "crawlTime": 4866,
       "visited": true,
       "error": null
     },
@@ -1866,7 +1866,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5545,
+      "crawlTime": 5417,
       "visited": true,
       "error": null
     },
@@ -1972,7 +1972,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5338,
+      "crawlTime": 5441,
       "visited": true,
       "error": null
     },
@@ -2068,7 +2068,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5939,
+      "crawlTime": 4953,
       "visited": true,
       "error": null
     },
@@ -2144,7 +2144,7 @@
       ],
       "externalLinks": [],
       "orphan": false,
-      "crawlTime": 4286,
+      "crawlTime": 3836,
       "visited": true,
       "error": null
     },
@@ -2238,7 +2238,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5003,
+      "crawlTime": 5569,
       "visited": true,
       "error": null
     },
@@ -2334,7 +2334,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4653,
+      "crawlTime": 4554,
       "visited": true,
       "error": null
     },
@@ -2455,7 +2455,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5184,
+      "crawlTime": 4854,
       "visited": true,
       "error": null
     },
@@ -2558,7 +2558,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4890,
+      "crawlTime": 5357,
       "visited": true,
       "error": null
     },
@@ -2661,7 +2661,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5358,
+      "crawlTime": 5179,
       "visited": true,
       "error": null
     },
@@ -2758,7 +2758,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4796,
+      "crawlTime": 4988,
       "visited": true,
       "error": null
     },
@@ -2852,7 +2852,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4114,
+      "crawlTime": 4653,
       "visited": true,
       "error": null
     },
@@ -2953,7 +2953,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4919,
+      "crawlTime": 4242,
       "visited": true,
       "error": null
     },
@@ -3115,7 +3115,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5341,
+      "crawlTime": 5270,
       "visited": true,
       "error": null
     },
@@ -3236,7 +3236,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5399,
+      "crawlTime": 4931,
       "visited": true,
       "error": null
     },
@@ -3357,7 +3357,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 6548,
+      "crawlTime": 4343,
       "visited": true,
       "error": null
     },
@@ -3468,7 +3468,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5924,
+      "crawlTime": 5505,
       "visited": true,
       "error": null
     },
@@ -3579,7 +3579,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5184,
+      "crawlTime": 5367,
       "visited": true,
       "error": null
     },
@@ -3684,7 +3684,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5033,
+      "crawlTime": 5118,
       "visited": true,
       "error": null
     },
@@ -3782,7 +3782,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4226,
+      "crawlTime": 4056,
       "visited": true,
       "error": null
     },
@@ -3892,7 +3892,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5371,
+      "crawlTime": 5277,
       "visited": true,
       "error": null
     },
@@ -3914,7 +3914,7 @@
       "internalLinks": [],
       "externalLinks": [],
       "orphan": false,
-      "crawlTime": 30132,
+      "crawlTime": 30120,
       "visited": false,
       "error": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://clubhub-resources.british-gymnastics.org/courses/video-on-demand/lessons/national-welfare-officer-conference-2023\", waiting until \"networkidle\"\u001b[22m\n"
     },
@@ -4021,7 +4021,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 6727,
+      "crawlTime": 5059,
       "visited": true,
       "error": null
     },
@@ -4110,7 +4110,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4380,
+      "crawlTime": 4059,
       "visited": true,
       "error": null
     },
@@ -4207,7 +4207,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4780,
+      "crawlTime": 4685,
       "visited": true,
       "error": null
     },
@@ -4304,7 +4304,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4776,
+      "crawlTime": 4863,
       "visited": true,
       "error": null
     },
@@ -4400,7 +4400,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4108,
+      "crawlTime": 4315,
       "visited": true,
       "error": null
     },
@@ -4497,7 +4497,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4239,
+      "crawlTime": 4210,
       "visited": true,
       "error": null
     },
@@ -4596,7 +4596,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4048,
+      "crawlTime": 4839,
       "visited": true,
       "error": null
     },
@@ -4690,7 +4690,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 4702,
+      "crawlTime": 4664,
       "visited": true,
       "error": null
     },
@@ -4779,7 +4779,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 3953,
+      "crawlTime": 3996,
       "visited": true,
       "error": null
     },
@@ -4868,7 +4868,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 3912,
+      "crawlTime": 6289,
       "visited": true,
       "error": null
     },
@@ -4978,7 +4978,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5305,
+      "crawlTime": 5162,
       "visited": true,
       "error": null
     },
@@ -5091,7 +5091,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5918,
+      "crawlTime": 5876,
       "visited": true,
       "error": null
     },
@@ -5206,7 +5206,7 @@
         "https://www.sportengland.org"
       ],
       "orphan": false,
-      "crawlTime": 5887,
+      "crawlTime": 5035,
       "visited": true,
       "error": null
     }

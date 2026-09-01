@@ -106,15 +106,15 @@ function buildNavigation(){
         },
 
         {
-            id: "links",
-            icon: "🔗",
-            title: "Internal Links"
-        },
-
-        {
             id: "media",
             icon: "🖼",
             title: "Media Inventory"
+        },
+
+        {
+            id: "composition",
+            icon: "📊",
+            title: "Website Composition"
         },
 
         {
@@ -226,6 +226,12 @@ function renderView(section){
         case "media":
 
             renderMediaInventory();
+
+            break;
+
+        case "composition":
+
+            renderWebsiteComposition();
 
             break;
 
@@ -389,5 +395,510 @@ function performGlobalSearch() {
         inventorySearch.focus();
 
     }
+
+}
+
+// ----------------------------------------------------------
+// Website Composition
+// ----------------------------------------------------------
+
+// ----------------------------------------------------------
+// Website Composition
+// ----------------------------------------------------------
+
+function renderWebsiteComposition(){
+
+    const composition = websiteComposition;
+
+    if (!composition) {
+
+        document.getElementById("contentPanel").innerHTML = `
+
+            <h2>📊 Website Composition</h2>
+
+            <p>
+                Website composition data is not available.
+            </p>
+
+        `;
+
+        return;
+
+    }
+
+    const totalPages =
+        Number(composition.totalPages) || 0;
+
+    const contentTypes =
+        Object.entries(composition.contentTypes || {});
+
+    const areas =
+        Object.entries(composition.areas || {});
+
+    const depths =
+        Object.entries(composition.depths || {});
+
+
+    function percentage(value){
+
+        if (!totalPages) return "0%";
+
+        return `${Math.round((value / totalPages) * 100)}%`;
+
+    }
+
+
+    function renderCompositionRows(items, labelFormatter){
+
+        return items.map(([key, value]) => {
+
+            const count = Number(value) || 0;
+
+            return `
+
+                <tr>
+
+                    <td>
+
+                        ${labelFormatter(key)}
+
+                    </td>
+
+                    <td class="compositionNumber">
+
+                        ${formatNumber(count)}
+
+                    </td>
+
+                    <td class="compositionPercentage">
+
+                        ${percentage(count)}
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        }).join("");
+
+    }
+
+
+    document.getElementById("contentPanel").innerHTML = `
+
+        <div class="compositionHeader">
+
+            <h2>📊 Website Composition</h2>
+
+            <p>
+
+                A high-level view of what the website is made of,
+                including content, structure, media and links.
+
+            </p>
+
+        </div>
+
+
+        <!-- ==================================================
+             Headline Metrics
+             ================================================== -->
+
+        <div class="summaryGrid compositionMetrics">
+
+
+            <div class="summaryCard compositionMetricCard">
+
+                <div class="compositionMetricIcon">📄</div>
+
+                <div>
+
+                    <div class="compositionMetricLabel">
+                        TOTAL PAGES
+                    </div>
+
+                    <div class="compositionMetricValue">
+                        ${formatNumber(totalPages)}
+                    </div>
+
+                    <div class="compositionMetricDescription">
+                        Pages included in the crawl
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="summaryCard compositionMetricCard">
+
+                <div class="compositionMetricIcon">🖼</div>
+
+                <div>
+
+                    <div class="compositionMetricLabel">
+                        MEDIA
+                    </div>
+
+                    <div class="compositionMetricValue">
+                        ${formatNumber(composition.media.images)}
+                    </div>
+
+                    <div class="compositionMetricDescription">
+                        Images
+                    </div>
+
+                    <div class="compositionMetricSecondary">
+                        ${formatNumber(composition.media.pdfs)} PDFs
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="summaryCard compositionMetricCard">
+
+                <div class="compositionMetricIcon">🔗</div>
+
+                <div>
+
+                    <div class="compositionMetricLabel">
+                        LINKS
+                    </div>
+
+                    <div class="compositionMetricValue">
+                        ${formatNumber(composition.links.internal)}
+                    </div>
+
+                    <div class="compositionMetricDescription">
+                        Internal links
+                    </div>
+
+                    <div class="compositionMetricSecondary">
+                        ${formatNumber(composition.links.external)} external
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ==================================================
+             Content Type Distribution
+             ================================================== -->
+
+        <div class="reportSection compositionSection">
+
+            <div class="compositionSectionHeader">
+
+                <div>
+
+                    <h3>📚 Content Type Distribution</h3>
+
+                    <p>
+                        How the crawled pages are classified by content type.
+                    </p>
+
+                </div>
+
+                <span class="compositionSectionTotal">
+                    ${formatNumber(totalPages)} pages
+                </span>
+
+            </div>
+
+
+            <div class="compositionTableWrapper">
+
+                <table class="reportTable compositionTable">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Content Type</th>
+
+                            <th class="numberColumn">Pages</th>
+
+                            <th class="numberColumn">Share</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        ${renderCompositionRows(
+                            contentTypes,
+                            key => key
+                        )}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             ClubHub Areas
+             ================================================== -->
+
+        <div class="reportSection compositionSection">
+
+            <div class="compositionSectionHeader">
+
+                <div>
+
+                    <h3>🗂 ClubHub Areas</h3>
+
+                    <p>
+                        Distribution of pages across the main ClubHub areas.
+                    </p>
+
+                </div>
+
+                <span class="compositionSectionTotal">
+                    ${formatNumber(
+                        areas.reduce(
+                            (total, [, count]) =>
+                                total + (Number(count) || 0),
+                            0
+                        )
+                    )} assigned
+                </span>
+
+            </div>
+
+
+            <div class="compositionTableWrapper">
+
+                <table class="reportTable compositionTable">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ClubHub Area</th>
+
+                            <th class="numberColumn">Pages</th>
+
+                            <th class="numberColumn">Share</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        ${renderCompositionRows(
+                            areas,
+                            key => key.replace(
+                                " – British Gymnastics Club Hub Resources",
+                                ""
+                            )
+                        )}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             Site Depth Distribution
+             ================================================== -->
+
+        <div class="reportSection compositionSection">
+
+            <div class="compositionSectionHeader">
+
+                <div>
+
+                    <h3>🌳 Site Depth Distribution</h3>
+
+                    <p>
+                        How many pages sit at each level of the site hierarchy.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="compositionTableWrapper">
+
+                <table class="reportTable compositionTable">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Site Depth</th>
+
+                            <th class="numberColumn">Pages</th>
+
+                            <th class="numberColumn">Share</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        ${renderCompositionRows(
+                            depths,
+                            key => `Depth ${key}`
+                        )}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             Media Composition
+             ================================================== -->
+
+        <div class="reportSection compositionSection">
+
+            <div class="compositionSectionHeader">
+
+                <div>
+
+                    <h3>🖼 Media Composition</h3>
+
+                    <p>
+                        Media resources identified across the crawled pages.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="compositionMiniGrid">
+
+                <div class="compositionMiniCard">
+
+                    <span class="compositionMiniIcon">🖼</span>
+
+                    <div>
+
+                        <strong>
+                            ${formatNumber(composition.media.images)}
+                        </strong>
+
+                        <span>
+                            Images
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="compositionMiniCard">
+
+                    <span class="compositionMiniIcon">📑</span>
+
+                    <div>
+
+                        <strong>
+                            ${formatNumber(composition.media.pdfs)}
+                        </strong>
+
+                        <span>
+                            PDFs
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             Link Composition
+             ================================================== -->
+
+        <div class="reportSection compositionSection">
+
+            <div class="compositionSectionHeader">
+
+                <div>
+
+                    <h3>🔗 Link Composition</h3>
+
+                    <p>
+                        Links identified across the crawled pages.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="compositionMiniGrid">
+
+                <div class="compositionMiniCard">
+
+                    <span class="compositionMiniIcon">↗</span>
+
+                    <div>
+
+                        <strong>
+                            ${formatNumber(composition.links.internal)}
+                        </strong>
+
+                        <span>
+                            Internal links
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="compositionMiniCard">
+
+                    <span class="compositionMiniIcon">↗</span>
+
+                    <div>
+
+                        <strong>
+                            ${formatNumber(composition.links.external)}
+                        </strong>
+
+                        <span>
+                            External links
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
 
 }

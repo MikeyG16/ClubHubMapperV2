@@ -815,3 +815,203 @@ footer{
     border-left-color:#ca8a04;
 
 }
+
+/* ==========================================================
+   Website Composition
+   ========================================================== */
+
+.compositionHeader {
+    margin-bottom: 24px;
+}
+
+.compositionHeader h2 {
+    margin-bottom: 8px;
+}
+
+.compositionHeader p {
+    margin: 0;
+    color: #666;
+}
+
+
+.compositionMetrics {
+    margin-bottom: 28px;
+}
+
+
+.compositionMetricCard {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+
+.compositionMetricIcon {
+    font-size: 28px;
+    line-height: 1;
+    padding-top: 2px;
+}
+
+
+.compositionMetricLabel {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+
+.compositionMetricValue {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+
+.compositionMetricDescription {
+    font-size: 13px;
+    color: #666;
+}
+
+
+.compositionMetricSecondary {
+    font-size: 13px;
+    color: #666;
+    margin-top: 3px;
+}
+
+
+.compositionSection {
+    margin-top: 28px;
+}
+
+
+.compositionSectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 12px;
+}
+
+
+.compositionSectionHeader h3 {
+    margin: 0 0 5px 0;
+}
+
+
+.compositionSectionHeader p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+
+.compositionSectionTotal {
+    white-space: nowrap;
+    font-size: 13px;
+    color: #666;
+    padding-top: 3px;
+}
+
+
+.compositionTableWrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+.compositionTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.compositionTable th,
+.compositionTable td {
+    padding: 11px 14px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+}
+
+
+.compositionTable th {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.compositionTable tbody tr:hover {
+    background: #f8fafc;
+}
+
+
+.compositionTable .numberColumn,
+.compositionTable .compositionNumber,
+.compositionTable .compositionPercentage {
+    text-align: right;
+    white-space: nowrap;
+}
+
+
+.compositionPercentage {
+    color: #666;
+    width: 80px;
+}
+
+
+.compositionMiniGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+
+.compositionMiniCard {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+}
+
+
+.compositionMiniIcon {
+    font-size: 25px;
+}
+
+
+.compositionMiniCard strong {
+    display: block;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+
+.compositionMiniCard span {
+    display: block;
+    margin-top: 3px;
+    font-size: 13px;
+    color: #666;
+}
+
+
+@media (max-width: 800px) {
+
+    .compositionSectionHeader {
+        display: block;
+    }
+
+    .compositionSectionTotal {
+        display: block;
+        margin-top: 6px;
+    }
+
+    .compositionMiniGrid {
+        grid-template-columns: 1fr;
+    }
+
+}
