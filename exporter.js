@@ -44,6 +44,10 @@ const exportPages = pages.map(page => ({
     internalLinks: page.internalLinks,
     externalLinks: page.externalLinks,
 
+    incomingLinks: page.incomingLinks,
+    incomingLinkCount: page.incomingLinkCount,
+    outgoingLinkCount: page.outgoingLinkCount,
+
     orphan: page.orphan,
 
     crawlTime: page.crawlTime,
