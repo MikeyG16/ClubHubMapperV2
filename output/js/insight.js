@@ -130,6 +130,12 @@ function buildNavigation(){
         },
 
         {
+            id: "largest",
+            icon: "📦",
+            title: "Largest Pages"
+        },
+
+        {
             id: "tree",
             icon: "🌳",
             title: "Site Tree"
@@ -256,6 +262,10 @@ function renderView(section){
 
             renderMostReferenced();
 
+            break;
+
+        case "largest":
+            renderLargestPages();
             break;
 
         default:
@@ -1058,6 +1068,159 @@ function renderMostReferenced(){
                             </tr>
 
                         `).join("")}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+// ----------------------------------------------------------
+// Largest Pages / Resources
+// ----------------------------------------------------------
+
+function renderLargestPages(){
+
+    const rankedPages = [...pages]
+        .filter(page => page.visited !== false)
+        .sort(
+            (a, b) =>
+                (Number(b.htmlSize) || 0) -
+                (Number(a.htmlSize) || 0)
+        );
+
+    const largestPages = rankedPages.slice(0, 20);
+
+    document.getElementById("contentPanel").innerHTML = `
+
+        <div class="compositionHeader">
+
+            <h2>📦 Largest Pages</h2>
+
+            <p>
+                Pages with the largest HTML footprint within
+                the crawled website.
+            </p>
+
+        </div>
+
+
+        <div class="reportSection compositionSection">
+
+            <div class="compositionSectionHeader">
+
+                <div>
+
+                    <h3>📄 Largest Pages / Resources</h3>
+
+                    <p>
+                        Ranked by HTML size in bytes.
+                    </p>
+
+                </div>
+
+                <span class="compositionSectionTotal">
+                    Top 20
+                </span>
+
+            </div>
+
+
+            <div class="compositionTableWrapper">
+
+                <table class="reportTable compositionTable">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Page</th>
+
+                            <th>Type</th>
+
+                            <th class="numberColumn">
+                                HTML Size
+                            </th>
+
+                            <th class="numberColumn">
+                                Images
+                            </th>
+
+                            <th class="numberColumn">
+                                PDFs
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        ${largestPages.map(page => {
+
+                            const htmlSize =
+                                Number(page.htmlSize) || 0;
+
+                            return `
+
+                                <tr>
+
+                                    <td>
+
+                                        <strong>
+
+                                            <a href="#"
+                                                onclick="pageReturnView = 'largest'; showPage(getPageByUrl('${page.url}')); return false;">
+
+                                                ${page.title || "(Untitled)"}
+
+                                            </a>
+
+                                        </strong>
+
+                                    </td>
+
+                                    <td>
+                                        ${page.contentType || "Unknown"}
+                                    </td>
+
+                                    <td class="compositionNumber">
+
+                                        ${formatNumber(
+                                            Math.round(
+                                                htmlSize / 1024
+                                            )
+                                        )} KB
+
+                                    </td>
+
+                                    <td class="compositionNumber">
+
+                                        ${formatNumber(
+                                            page.imageCount || 0
+                                        )}
+
+                                    </td>
+
+                                    <td class="compositionNumber">
+
+                                        ${formatNumber(
+                                            page.pdfCount || 0
+                                        )}
+
+                                    </td>
+
+                                </tr>
+
+                            `;
+
+                        }).join("")}
 
                     </tbody>
 

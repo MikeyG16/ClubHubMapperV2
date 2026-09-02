@@ -228,7 +228,9 @@ class Crawler {
 
             );
 
-                        return {
+            const htmlSize = (await this.page.content()).length;
+
+            return {
 
                 id: this.nextId++,
 
@@ -276,6 +278,8 @@ class Crawler {
                 imageCount,
 
                 pdfCount,
+
+                htmlSize,
 
                 visited: true,
 

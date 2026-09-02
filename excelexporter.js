@@ -3,7 +3,8 @@ const path = require("path");
 const config = require("./config");
 
 const {
-    getMostReferencedPages
+    getMostReferencedPages,
+    getLargestPages
 } = require("./utils");
 
 function formatDate(dateString) {
@@ -2093,6 +2094,91 @@ mostReferenced.forEach((page, index) => {
 
 });
 
+// ======================================================
+// Largest Pages / Resources
+// ======================================================
+
+const largestPagesSheet =
+    workbook.addWorksheet("Largest Pages");
+
+largestPagesSheet.columns = [
+    {
+        header: "Rank",
+        key: "rank",
+        width: 10
+    },
+    {
+        header: "Title",
+        key: "title",
+        width: 65
+    },
+    {
+        header: "URL",
+        key: "url",
+        width: 75
+    },
+    {
+        header: "Content Type",
+        key: "contentType",
+        width: 22
+    },
+    {
+        header: "HTML Size (Bytes)",
+        key: "htmlSize",
+        width: 20
+    },
+    {
+        header: "HTML Size (KB)",
+        key: "htmlSizeKB",
+        width: 18
+    },
+    {
+        header: "Images",
+        key: "images",
+        width: 12
+    },
+    {
+        header: "PDFs",
+        key: "pdfs",
+        width: 12
+    }
+];
+
+const largestPages =
+    getLargestPages(pages, 20);
+
+largestPages.forEach((page, index) => {
+
+    const htmlSize =
+        Number(page.htmlSize) || 0;
+
+    largestPagesSheet.addRow({
+
+        rank: index + 1,
+
+        title:
+            page.title || "(Untitled)",
+
+        url:
+            page.url || "",
+
+        contentType:
+            page.contentType || "Unknown",
+
+        htmlSize,
+
+        htmlSizeKB:
+            Math.round((htmlSize / 1024) * 10) / 10,
+
+        images:
+            Number(page.imageCount) || 0,
+
+        pdfs:
+            Number(page.pdfCount) || 0
+
+    });
+
+});
 
 // ------------------------------------------------------
 // Formatting

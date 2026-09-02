@@ -2,8 +2,8 @@
   "summary": {
     "website": "https://clubhub-resources.british-gymnastics.org/",
     "websiteName": "clubhub-resources.british-gymnastics.org",
-    "crawlDate": "2026-09-02T11:58:34.900Z",
-    "crawlDuration": 291269,
+    "crawlDate": "2026-09-02T15:13:02.705Z",
+    "crawlDuration": 302297,
     "pagesDiscovered": 50,
     "pagesSuccessful": 49,
     "pagesFailed": 1,
@@ -13,7 +13,7 @@
     "pdfLinksFound": 52,
     "internalLinksFound": 2977,
     "externalLinksFound": 706,
-    "averageLoad": 5660
+    "averageLoad": 5850
   },
   "composition": {
     "totalPages": 50,
@@ -80,6 +80,7 @@
       "metadataSource": "WordPress API",
       "imageCount": 25,
       "pdfCount": 0,
+      "htmlSize": 525642,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -209,7 +210,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 59,
       "orphan": false,
-      "crawlTime": 4954,
+      "crawlTime": 4811,
       "visited": true,
       "error": null
     },
@@ -233,6 +234,7 @@
       "metadataSource": "WordPress API",
       "imageCount": 25,
       "pdfCount": 0,
+      "htmlSize": 347486,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/my-notes",
         "https://clubhub-resources.british-gymnastics.org",
@@ -331,7 +333,7 @@
       "incomingLinkCount": 28,
       "outgoingLinkCount": 48,
       "orphan": false,
-      "crawlTime": 3815,
+      "crawlTime": 4820,
       "visited": true,
       "error": null
     },
@@ -355,6 +357,7 @@
       "metadataSource": "Not available",
       "imageCount": 29,
       "pdfCount": 0,
+      "htmlSize": 476699,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/toolkits/lessons/assistant-foundation-foundation-coach-hub",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -507,7 +510,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 75,
       "orphan": false,
-      "crawlTime": 6357,
+      "crawlTime": 5798,
       "visited": true,
       "error": null
     },
@@ -531,6 +534,7 @@
       "metadataSource": "Not available",
       "imageCount": 37,
       "pdfCount": 1,
+      "htmlSize": 481315,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/club-development/lessons/british-gymnastics-logos-and-brand-guidelines",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -671,7 +675,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 66,
       "orphan": false,
-      "crawlTime": 5777,
+      "crawlTime": 6191,
       "visited": true,
       "error": null
     },
@@ -695,6 +699,7 @@
       "metadataSource": "Not available",
       "imageCount": 29,
       "pdfCount": 1,
+      "htmlSize": 431210,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/policies-and-procedures/lessons/prevention-of-competition-manipulation-policy",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -827,7 +832,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 61,
       "orphan": false,
-      "crawlTime": 5061,
+      "crawlTime": 5919,
       "visited": true,
       "error": null
     },
@@ -851,6 +856,7 @@
       "metadataSource": "Not available",
       "imageCount": 30,
       "pdfCount": 2,
+      "htmlSize": 435243,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/policies-and-procedures/lessons/complaints-and-disciplinary-policy",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -980,7 +986,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 58,
       "orphan": false,
-      "crawlTime": 4731,
+      "crawlTime": 5114,
       "visited": true,
       "error": null
     },
@@ -1008,6 +1014,7 @@
       "metadataSource": "Not available",
       "imageCount": 25,
       "pdfCount": 0,
+      "htmlSize": 372170,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/health-and-safety",
         "https://clubhub-resources.british-gymnastics.org",
@@ -1140,7 +1147,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 62,
       "orphan": false,
-      "crawlTime": 4657,
+      "crawlTime": 5129,
       "visited": true,
       "error": null
     },
@@ -1164,6 +1171,7 @@
       "metadataSource": "Not available",
       "imageCount": 31,
       "pdfCount": 0,
+      "htmlSize": 412138,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/lesson-category/risk-and-compliance",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -1291,7 +1299,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 56,
       "orphan": false,
-      "crawlTime": 4603,
+      "crawlTime": 4842,
       "visited": true,
       "error": null
     },
@@ -1315,6 +1323,7 @@
       "metadataSource": "Not available",
       "imageCount": 29,
       "pdfCount": 0,
+      "htmlSize": 398761,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/lesson-category/facility",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -1441,7 +1450,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 55,
       "orphan": false,
-      "crawlTime": 4920,
+      "crawlTime": 4700,
       "visited": true,
       "error": null
     },
@@ -1465,6 +1474,7 @@
       "metadataSource": "Not available",
       "imageCount": 30,
       "pdfCount": 0,
+      "htmlSize": 405047,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/lesson-category/people",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -1592,7 +1602,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 56,
       "orphan": false,
-      "crawlTime": 5172,
+      "crawlTime": 6629,
       "visited": true,
       "error": null
     },
@@ -1616,6 +1626,7 @@
       "metadataSource": "WordPress API",
       "imageCount": 25,
       "pdfCount": 0,
+      "htmlSize": 378301,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/health-and-safety-policies-and-procedures",
         "https://clubhub-resources.british-gymnastics.org",
@@ -1756,7 +1767,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 70,
       "orphan": false,
-      "crawlTime": 4829,
+      "crawlTime": 4921,
       "visited": true,
       "error": null
     },
@@ -1783,6 +1794,7 @@
       "metadataSource": "Not available",
       "imageCount": 25,
       "pdfCount": 0,
+      "htmlSize": 369033,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/governance",
         "https://clubhub-resources.british-gymnastics.org",
@@ -1913,7 +1925,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 60,
       "orphan": false,
-      "crawlTime": 4895,
+      "crawlTime": 4338,
       "visited": true,
       "error": null
     },
@@ -1937,6 +1949,7 @@
       "metadataSource": "Not available",
       "imageCount": 30,
       "pdfCount": 0,
+      "htmlSize": 404793,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/lesson-category/finance",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -2064,7 +2077,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 56,
       "orphan": false,
-      "crawlTime": 5336,
+      "crawlTime": 5363,
       "visited": true,
       "error": null
     },
@@ -2088,6 +2101,7 @@
       "metadataSource": "WordPress API",
       "imageCount": 25,
       "pdfCount": 0,
+      "htmlSize": 401360,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/governance-policies-and-procedures",
         "https://clubhub-resources.british-gymnastics.org",
@@ -2243,7 +2257,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 85,
       "orphan": false,
-      "crawlTime": 5861,
+      "crawlTime": 5259,
       "visited": true,
       "error": null
     },
@@ -2267,6 +2281,7 @@
       "metadataSource": "Not available",
       "imageCount": 34,
       "pdfCount": 0,
+      "htmlSize": 432173,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/lesson-category/legislation",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -2397,7 +2412,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 59,
       "orphan": false,
-      "crawlTime": 10765,
+      "crawlTime": 5116,
       "visited": true,
       "error": null
     },
@@ -2421,6 +2436,7 @@
       "metadataSource": "Not available",
       "imageCount": 29,
       "pdfCount": 0,
+      "htmlSize": 398878,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/lesson-tag/equality",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -2549,7 +2565,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 57,
       "orphan": false,
-      "crawlTime": 5244,
+      "crawlTime": 4628,
       "visited": true,
       "error": null
     },
@@ -2578,6 +2594,7 @@
       "metadataSource": "Not available",
       "imageCount": 25,
       "pdfCount": 0,
+      "htmlSize": 415804,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/club-development",
         "https://clubhub-resources.british-gymnastics.org",
@@ -2730,7 +2747,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 82,
       "orphan": false,
-      "crawlTime": 7146,
+      "crawlTime": 6062,
       "visited": true,
       "error": null
     },
@@ -2754,6 +2771,7 @@
       "metadataSource": "Not available",
       "imageCount": 35,
       "pdfCount": 0,
+      "htmlSize": 437559,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/lesson-category/operating-your-club",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -2888,7 +2906,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 63,
       "orphan": false,
-      "crawlTime": 4981,
+      "crawlTime": 5377,
       "visited": true,
       "error": null
     },
@@ -2912,6 +2930,7 @@
       "metadataSource": "Not available",
       "imageCount": 29,
       "pdfCount": 0,
+      "htmlSize": 397973,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/lesson-category/about-your-facility",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -3036,7 +3055,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 53,
       "orphan": false,
-      "crawlTime": 4652,
+      "crawlTime": 4982,
       "visited": true,
       "error": null
     },
@@ -3060,6 +3079,7 @@
       "metadataSource": "Not available",
       "imageCount": 21,
       "pdfCount": 0,
+      "htmlSize": 345248,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/lesson-category/marketing",
         "https://clubhub-resources.british-gymnastics.org",
@@ -3164,7 +3184,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 48,
       "orphan": false,
-      "crawlTime": 3297,
+      "crawlTime": 3504,
       "visited": true,
       "error": null
     },
@@ -3188,6 +3208,7 @@
       "metadataSource": "Not available",
       "imageCount": 27,
       "pdfCount": 0,
+      "htmlSize": 384783,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/lesson-category/programmes",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -3310,7 +3331,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 51,
       "orphan": false,
-      "crawlTime": 5007,
+      "crawlTime": 5204,
       "visited": true,
       "error": null
     },
@@ -3334,6 +3355,7 @@
       "metadataSource": "Not available",
       "imageCount": 29,
       "pdfCount": 0,
+      "htmlSize": 398042,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/lesson-category/rise",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -3458,7 +3480,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 53,
       "orphan": false,
-      "crawlTime": 4936,
+      "crawlTime": 7001,
       "visited": true,
       "error": null
     },
@@ -3486,6 +3508,7 @@
       "metadataSource": "Not available",
       "imageCount": 25,
       "pdfCount": 0,
+      "htmlSize": 399266,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/people-development",
         "https://clubhub-resources.british-gymnastics.org",
@@ -3631,7 +3654,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 75,
       "orphan": false,
-      "crawlTime": 4925,
+      "crawlTime": 6399,
       "visited": true,
       "error": null
     },
@@ -3655,6 +3678,7 @@
       "metadataSource": "Not available",
       "imageCount": 35,
       "pdfCount": 0,
+      "htmlSize": 436130,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/lesson-category/developing-your-workforce",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -3786,7 +3810,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 60,
       "orphan": false,
-      "crawlTime": 4969,
+      "crawlTime": 5758,
       "visited": true,
       "error": null
     },
@@ -3810,6 +3834,7 @@
       "metadataSource": "Not available",
       "imageCount": 35,
       "pdfCount": 0,
+      "htmlSize": 439113,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/lesson-category/club-roles",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -3941,7 +3966,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 60,
       "orphan": false,
-      "crawlTime": 5284,
+      "crawlTime": 5741,
       "visited": true,
       "error": null
     },
@@ -3965,6 +3990,7 @@
       "metadataSource": "Not available",
       "imageCount": 29,
       "pdfCount": 0,
+      "htmlSize": 398122,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/lesson-category/volunteering",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -4090,7 +4116,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 54,
       "orphan": false,
-      "crawlTime": 4558,
+      "crawlTime": 5093,
       "visited": true,
       "error": null
     },
@@ -4114,6 +4140,7 @@
       "metadataSource": "Not available",
       "imageCount": 25,
       "pdfCount": 0,
+      "htmlSize": 353489,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/welfare-and-safe-sport",
         "https://clubhub-resources.british-gymnastics.org",
@@ -4236,7 +4263,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 52,
       "orphan": false,
-      "crawlTime": 4013,
+      "crawlTime": 4945,
       "visited": true,
       "error": null
     },
@@ -4260,6 +4287,7 @@
       "metadataSource": "WordPress API",
       "imageCount": 25,
       "pdfCount": 0,
+      "htmlSize": 366063,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/welfare-and-safe-sport-policies-and-procedures",
         "https://clubhub-resources.british-gymnastics.org",
@@ -4389,7 +4417,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 59,
       "orphan": false,
-      "crawlTime": 4225,
+      "crawlTime": 5421,
       "visited": true,
       "error": null
     },
@@ -4415,6 +4443,7 @@
       "metadataSource": "Not available",
       "imageCount": 25,
       "pdfCount": 0,
+      "htmlSize": 454631,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/toolkits",
         "https://clubhub-resources.british-gymnastics.org",
@@ -4603,7 +4632,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 118,
       "orphan": false,
-      "crawlTime": 4971,
+      "crawlTime": 4838,
       "visited": true,
       "error": null
     },
@@ -4627,6 +4656,7 @@
       "metadataSource": "Not available",
       "imageCount": 31,
       "pdfCount": 0,
+      "htmlSize": 461677,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/toolkits/lessons/club-operations-toolkit",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -4776,7 +4806,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 76,
       "orphan": false,
-      "crawlTime": 5180,
+      "crawlTime": 5610,
       "visited": true,
       "error": null
     },
@@ -4807,6 +4837,7 @@
       "metadataSource": "Not available",
       "imageCount": 25,
       "pdfCount": 0,
+      "htmlSize": 410445,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/policies-and-procedures",
         "https://clubhub-resources.british-gymnastics.org",
@@ -4949,7 +4980,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 72,
       "orphan": false,
-      "crawlTime": 4384,
+      "crawlTime": 4746,
       "visited": true,
       "error": null
     },
@@ -4973,6 +5004,7 @@
       "metadataSource": "Not available",
       "imageCount": 35,
       "pdfCount": 6,
+      "htmlSize": 483350,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/policies-and-procedures/lessons/training-holistic-development",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -5112,7 +5144,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 66,
       "orphan": false,
-      "crawlTime": 9626,
+      "crawlTime": 6125,
       "visited": true,
       "error": null
     },
@@ -5136,6 +5168,7 @@
       "metadataSource": "Not available",
       "imageCount": 34,
       "pdfCount": 6,
+      "htmlSize": 487051,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/policies-and-procedures/lessons/flexibility-training",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -5275,7 +5308,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 68,
       "orphan": false,
-      "crawlTime": 7176,
+      "crawlTime": 6220,
       "visited": true,
       "error": null
     },
@@ -5299,6 +5332,7 @@
       "metadataSource": "Not available",
       "imageCount": 29,
       "pdfCount": 1,
+      "htmlSize": 430548,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/policies-and-procedures/lessons/affiliated-associations-policy",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -5432,7 +5466,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 62,
       "orphan": false,
-      "crawlTime": 5403,
+      "crawlTime": 5228,
       "visited": true,
       "error": null
     },
@@ -5456,6 +5490,7 @@
       "metadataSource": "Not available",
       "imageCount": 25,
       "pdfCount": 0,
+      "htmlSize": 365171,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/video-on-demand",
         "https://clubhub-resources.british-gymnastics.org",
@@ -5582,7 +5617,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 56,
       "orphan": false,
-      "crawlTime": 4067,
+      "crawlTime": 4264,
       "visited": true,
       "error": null
     },
@@ -5606,6 +5641,7 @@
       "metadataSource": "Not available",
       "imageCount": 34,
       "pdfCount": 6,
+      "htmlSize": 484186,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/policies-and-procedures/lessons/weighing-gymnasts",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -5744,7 +5780,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 61,
       "orphan": false,
-      "crawlTime": 5979,
+      "crawlTime": 5772,
       "visited": true,
       "error": null
     },
@@ -5819,7 +5855,7 @@
       "incomingLinkCount": 49,
       "outgoingLinkCount": 0,
       "orphan": false,
-      "crawlTime": 30130,
+      "crawlTime": 30116,
       "visited": false,
       "error": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://clubhub-resources.british-gymnastics.org/courses/video-on-demand/lessons/national-welfare-officer-conference-2023\", waiting until \"networkidle\"\u001b[22m\n"
     },
@@ -5843,6 +5879,7 @@
       "metadataSource": "Not available",
       "imageCount": 33,
       "pdfCount": 5,
+      "htmlSize": 481949,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/policies-and-procedures/lessons/academic-education",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -5978,7 +6015,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 61,
       "orphan": false,
-      "crawlTime": 5241,
+      "crawlTime": 6106,
       "visited": true,
       "error": null
     },
@@ -6002,6 +6039,7 @@
       "metadataSource": "WordPress API",
       "imageCount": 25,
       "pdfCount": 0,
+      "htmlSize": 343714,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/newsletters",
         "https://clubhub-resources.british-gymnastics.org",
@@ -6119,7 +6157,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 47,
       "orphan": false,
-      "crawlTime": 4224,
+      "crawlTime": 5846,
       "visited": true,
       "error": null
     },
@@ -6143,6 +6181,7 @@
       "metadataSource": "WordPress API",
       "imageCount": 33,
       "pdfCount": 0,
+      "htmlSize": 369490,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/club-newsletter",
         "https://clubhub-resources.british-gymnastics.org",
@@ -6268,7 +6307,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 47,
       "orphan": false,
-      "crawlTime": 4864,
+      "crawlTime": 4952,
       "visited": true,
       "error": null
     },
@@ -6292,6 +6331,7 @@
       "metadataSource": "WordPress API",
       "imageCount": 33,
       "pdfCount": 0,
+      "htmlSize": 369601,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/welfare-officer-newsletter",
         "https://clubhub-resources.british-gymnastics.org",
@@ -6417,7 +6457,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 47,
       "orphan": false,
-      "crawlTime": 5642,
+      "crawlTime": 5397,
       "visited": true,
       "error": null
     },
@@ -6441,6 +6481,7 @@
       "metadataSource": "WordPress API",
       "imageCount": 32,
       "pdfCount": 0,
+      "htmlSize": 366203,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/coach-newsletter",
         "https://clubhub-resources.british-gymnastics.org",
@@ -6565,7 +6606,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 47,
       "orphan": false,
-      "crawlTime": 3946,
+      "crawlTime": 4615,
       "visited": true,
       "error": null
     },
@@ -6589,6 +6630,7 @@
       "metadataSource": "WordPress API",
       "imageCount": 33,
       "pdfCount": 0,
+      "htmlSize": 369534,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/gymblast-newsletter",
         "https://clubhub-resources.british-gymnastics.org",
@@ -6714,7 +6756,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 47,
       "orphan": false,
-      "crawlTime": 4104,
+      "crawlTime": 4894,
       "visited": true,
       "error": null
     },
@@ -6738,6 +6780,7 @@
       "metadataSource": "WordPress API",
       "imageCount": 25,
       "pdfCount": 10,
+      "htmlSize": 371445,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/opus-newsletter",
         "https://clubhub-resources.british-gymnastics.org",
@@ -6865,7 +6908,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 57,
       "orphan": false,
-      "crawlTime": 4143,
+      "crawlTime": 5923,
       "visited": true,
       "error": null
     },
@@ -6889,6 +6932,7 @@
       "metadataSource": "WordPress API",
       "imageCount": 31,
       "pdfCount": 0,
+      "htmlSize": 371406,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/my-account",
         "https://clubhub-resources.british-gymnastics.org",
@@ -7011,7 +7055,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 52,
       "orphan": false,
-      "crawlTime": 4120,
+      "crawlTime": 5203,
       "visited": true,
       "error": null
     },
@@ -7035,6 +7079,7 @@
       "metadataSource": "WordPress API",
       "imageCount": 25,
       "pdfCount": 0,
+      "htmlSize": 346513,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/request-a-feature",
         "https://clubhub-resources.british-gymnastics.org",
@@ -7152,7 +7197,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 47,
       "orphan": false,
-      "crawlTime": 4776,
+      "crawlTime": 3981,
       "visited": true,
       "error": null
     },
@@ -7176,6 +7221,7 @@
       "metadataSource": "WordPress API",
       "imageCount": 25,
       "pdfCount": 0,
+      "htmlSize": 346093,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/search",
         "https://clubhub-resources.british-gymnastics.org",
@@ -7293,7 +7339,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 47,
       "orphan": false,
-      "crawlTime": 4201,
+      "crawlTime": 4814,
       "visited": true,
       "error": null
     },
@@ -7317,6 +7363,7 @@
       "metadataSource": "WordPress API",
       "imageCount": 25,
       "pdfCount": 0,
+      "htmlSize": 482920,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/whats-new",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -7408,7 +7455,7 @@
       "incomingLinkCount": 1,
       "outgoingLinkCount": 68,
       "orphan": false,
-      "crawlTime": 4708,
+      "crawlTime": 6621,
       "visited": true,
       "error": null
     },
@@ -7432,6 +7479,7 @@
       "metadataSource": "Not available",
       "imageCount": 34,
       "pdfCount": 6,
+      "htmlSize": 477622,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/policies-and-procedures/lessons/nutrition",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -7536,7 +7584,7 @@
       "incomingLinkCount": 11,
       "outgoingLinkCount": 68,
       "orphan": false,
-      "crawlTime": 5315,
+      "crawlTime": 6468,
       "visited": true,
       "error": null
     },
@@ -7560,6 +7608,7 @@
       "metadataSource": "Not available",
       "imageCount": 36,
       "pdfCount": 8,
+      "htmlSize": 480751,
       "internalLinks": [
         "https://clubhub-resources.british-gymnastics.org/courses/policies-and-procedures/lessons/pain-injury-illness",
         "https://clubhub-resources.british-gymnastics.org/my-notes",
@@ -7665,7 +7714,7 @@
       "incomingLinkCount": 10,
       "outgoingLinkCount": 70,
       "orphan": false,
-      "crawlTime": 5849,
+      "crawlTime": 5719,
       "visited": true,
       "error": null
     }

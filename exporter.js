@@ -41,6 +41,8 @@ const exportPages = pages.map(page => ({
     imageCount: page.imageCount,
     pdfCount: page.pdfCount,
 
+    htmlSize: page.htmlSize,
+
     internalLinks: page.internalLinks,
     externalLinks: page.externalLinks,
 

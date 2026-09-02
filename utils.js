@@ -251,7 +251,8 @@ module.exports = {
     shouldIgnore,
     pageType,
     calculateWebsiteComposition,
-    getMostReferencedPages
+    getMostReferencedPages,
+    getLargestPages
 };
 
 // ==========================================================
@@ -433,6 +434,23 @@ function getMostReferencedPages(pages, limit = 20) {
             (a, b) =>
                 (Number(b.incomingLinkCount) || 0) -
                 (Number(a.incomingLinkCount) || 0)
+        )
+        .slice(0, limit);
+
+}
+
+// ======================================================
+// Largest Pages / Resources
+// ======================================================
+
+function getLargestPages(pages, limit = 20) {
+
+    return [...pages]
+        .filter(page => page.visited !== false)
+        .sort(
+            (a, b) =>
+                (Number(b.htmlSize) || 0) -
+                (Number(a.htmlSize) || 0)
         )
         .slice(0, limit);
 
