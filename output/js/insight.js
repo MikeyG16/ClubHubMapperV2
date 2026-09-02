@@ -1015,7 +1015,14 @@ function renderMostReferenced(){
                                 <td>
 
                                     <strong>
-                                        ${page.title || "(Untitled)"}
+
+                                        <a href="#"
+                                            onclick="pageReturnView = 'importance'; showPage(getPageByUrl('${page.url}')); return false;">
+
+                                            ${page.title || "(Untitled)"}
+
+                                        </a>
+
                                     </strong>
 
                                 </td>
