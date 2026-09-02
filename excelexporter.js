@@ -2,6 +2,10 @@ const ExcelJS = require("exceljs");
 const path = require("path");
 const config = require("./config");
 
+const {
+    getMostReferencedPages
+} = require("./utils");
+
 function formatDate(dateString) {
 
     if (!dateString) return "";
@@ -365,7 +369,7 @@ function formatPriorityCell(cell, priority) {
 
 }
 
-async function exportExcel(pages, summary) {
+async function exportExcel(pages, summary, composition) {
 
     const workbook = new ExcelJS.Workbook();
 
@@ -1744,6 +1748,432 @@ mediaSheet.pageSetup = {
 };
 
 mediaSheet.properties.defaultRowHeight = 20;
+
+// ======================================================
+// Website Composition
+// ======================================================
+
+const compositionSheet =
+    workbook.addWorksheet("Website Composition");
+
+compositionSheet.columns = [
+    { header: "Category", key: "category", width: 35 },
+    { header: "Item", key: "item", width: 55 },
+    { header: "Pages / Count", key: "count", width: 18 },
+    { header: "Share", key: "share", width: 15 }
+];
+
+function compositionShare(value, total) {
+
+    if (!total) return "0%";
+
+    return `${Math.round((value / total) * 100)}%`;
+
+}
+
+const compositionTotal =
+    Number(composition.totalPages) || 0;
+
+
+// ------------------------------------------------------
+// Summary
+// ------------------------------------------------------
+
+compositionSheet.addRow([
+    "Summary",
+    "Total Pages",
+    compositionTotal,
+    "100%"
+]);
+
+
+// ------------------------------------------------------
+// Content Type Distribution
+// ------------------------------------------------------
+
+compositionSheet.addRow([]);
+
+compositionSheet.addRow([
+    "Content Type Distribution",
+    "",
+    "",
+    ""
+]);
+
+Object.entries(composition.contentTypes || {})
+    .forEach(([type, count]) => {
+
+        const value = Number(count) || 0;
+
+        compositionSheet.addRow([
+            "Content Type",
+            type,
+            value,
+            compositionShare(value, compositionTotal)
+        ]);
+
+    });
+
+
+// ------------------------------------------------------
+// ClubHub Areas
+// ------------------------------------------------------
+
+compositionSheet.addRow([]);
+
+compositionSheet.addRow([
+    "ClubHub Areas",
+    "",
+    "",
+    ""
+]);
+
+Object.entries(composition.areas || {})
+    .forEach(([area, count]) => {
+
+        const value = Number(count) || 0;
+
+        compositionSheet.addRow([
+            "ClubHub Area",
+            area.replace(
+                " – British Gymnastics Club Hub Resources",
+                ""
+            ),
+            value,
+            compositionShare(value, compositionTotal)
+        ]);
+
+    });
+
+
+// ------------------------------------------------------
+// Site Depth Distribution
+// ------------------------------------------------------
+
+compositionSheet.addRow([]);
+
+compositionSheet.addRow([
+    "Site Depth Distribution",
+    "",
+    "",
+    ""
+]);
+
+Object.entries(composition.depths || {})
+    .forEach(([depth, count]) => {
+
+        const value = Number(count) || 0;
+
+        compositionSheet.addRow([
+            "Site Depth",
+            `Depth ${depth}`,
+            value,
+            compositionShare(value, compositionTotal)
+        ]);
+
+    });
+
+
+// ------------------------------------------------------
+// Media Composition
+// ------------------------------------------------------
+
+compositionSheet.addRow([]);
+
+compositionSheet.addRow([
+    "Media Composition",
+    "Images",
+    Number(composition.media?.images) || 0,
+    ""
+]);
+
+compositionSheet.addRow([
+    "Media Composition",
+    "PDFs",
+    Number(composition.media?.pdfs) || 0,
+    ""
+]);
+
+
+// ------------------------------------------------------
+// Link Composition
+// ------------------------------------------------------
+
+compositionSheet.addRow([]);
+
+compositionSheet.addRow([
+    "Link Composition",
+    "Internal Links",
+    Number(composition.links?.internal) || 0,
+    ""
+]);
+
+compositionSheet.addRow([
+    "Link Composition",
+    "External Links",
+    Number(composition.links?.external) || 0,
+    ""
+]);
+
+
+// ------------------------------------------------------
+// Formatting
+// ------------------------------------------------------
+
+compositionSheet.getRow(1).font = {
+    bold: true,
+    color: {
+        argb: "FFFFFFFF"
+    }
+};
+
+compositionSheet.getRow(1).alignment = {
+    horizontal: "center",
+    vertical: "middle"
+};
+
+compositionSheet.getRow(1).fill = {
+    type: "pattern",
+    pattern: "solid",
+    fgColor: {
+        argb: "FF0057B8"
+    }
+};
+
+compositionSheet.getRow(1).height = 24;
+
+
+// Section headings
+
+compositionSheet.eachRow((row) => {
+
+    const category =
+        row.getCell(1).value;
+
+    if (
+        category === "Content Type Distribution" ||
+        category === "ClubHub Areas" ||
+        category === "Site Depth Distribution"
+    ) {
+
+        row.font = {
+            bold: true
+        };
+
+        row.fill = {
+            type: "pattern",
+            pattern: "solid",
+            fgColor: {
+                argb: "FFEFEFEF"
+            }
+        };
+
+    }
+
+});
+
+
+// Number formatting
+
+compositionSheet.eachRow((row, rowNumber) => {
+
+    if (rowNumber === 1) return;
+
+    row.getCell(3).alignment = {
+        horizontal: "right"
+    };
+
+    row.getCell(4).alignment = {
+        horizontal: "right"
+    };
+
+    if (
+        typeof row.getCell(3).value === "number"
+    ) {
+
+        row.getCell(3).numFmt = "#,##0";
+
+    }
+
+});
+
+compositionSheet.views = [
+    {
+        state: "frozen",
+        ySplit: 1
+    }
+];
+
+compositionSheet.autoFilter = {
+    from: "A1",
+    to: "D1"
+};
+
+compositionSheet.pageSetup = {
+    orientation: "landscape",
+    fitToPage: true,
+    fitToWidth: 1
+};
+
+compositionSheet.properties.defaultRowHeight = 20;
+
+// ======================================================
+// Most Referenced
+// ======================================================
+
+const mostReferencedSheet =
+    workbook.addWorksheet("Most Referenced");
+
+mostReferencedSheet.columns = [
+    {
+        header: "Rank",
+        key: "rank",
+        width: 10
+    },
+    {
+        header: "Title",
+        key: "title",
+        width: 65
+    },
+    {
+        header: "URL",
+        key: "url",
+        width: 75
+    },
+    {
+        header: "Content Type",
+        key: "contentType",
+        width: 22
+    },
+    {
+        header: "Incoming Links",
+        key: "incomingLinks",
+        width: 18
+    },
+    {
+        header: "Outgoing Links",
+        key: "outgoingLinks",
+        width: 18
+    },
+    {
+        header: "Depth",
+        key: "depth",
+        width: 12
+    }
+];
+
+const mostReferenced =
+    getMostReferencedPages(pages, 20);
+
+mostReferenced.forEach((page, index) => {
+
+    mostReferencedSheet.addRow({
+
+        rank: index + 1,
+
+        title:
+            page.title || "(Untitled)",
+
+        url:
+            page.url || "",
+
+        contentType:
+            page.contentType || "Unknown",
+
+        incomingLinks:
+            Number(page.incomingLinkCount) || 0,
+
+        outgoingLinks:
+            Number(page.outgoingLinkCount) || 0,
+
+        depth:
+            Number(page.depth) || 0
+
+    });
+
+});
+
+
+// ------------------------------------------------------
+// Formatting
+// ------------------------------------------------------
+
+const mostReferencedHeader =
+    mostReferencedSheet.getRow(1);
+
+mostReferencedHeader.font = {
+    bold: true,
+    color: {
+        argb: "FFFFFFFF"
+    }
+};
+
+mostReferencedHeader.alignment = {
+    horizontal: "center",
+    vertical: "middle"
+};
+
+mostReferencedHeader.fill = {
+    type: "pattern",
+    pattern: "solid",
+    fgColor: {
+        argb: "FF0057B8"
+    }
+};
+
+mostReferencedHeader.height = 24;
+
+
+// Number formatting
+
+mostReferencedSheet.eachRow(
+    (row, rowNumber) => {
+
+        if (rowNumber === 1) return;
+
+        row.getCell(1).alignment = {
+            horizontal: "center"
+        };
+
+        row.getCell(5).alignment = {
+            horizontal: "right"
+        };
+
+        row.getCell(6).alignment = {
+            horizontal: "right"
+        };
+
+        row.getCell(7).alignment = {
+            horizontal: "right"
+        };
+
+        row.getCell(5).numFmt = "#,##0";
+        row.getCell(6).numFmt = "#,##0";
+        row.getCell(7).numFmt = "0";
+
+    }
+);
+
+
+mostReferencedSheet.views = [
+    {
+        state: "frozen",
+        ySplit: 1
+    }
+];
+
+mostReferencedSheet.autoFilter = {
+    from: "A1",
+    to: "G1"
+};
+
+mostReferencedSheet.pageSetup = {
+    orientation: "landscape",
+    fitToPage: true,
+    fitToWidth: 1
+};
+
+mostReferencedSheet.properties.defaultRowHeight = 20;
 
     workbook.views = [
         {

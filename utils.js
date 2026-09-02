@@ -250,7 +250,8 @@ module.exports = {
     isInternal,
     shouldIgnore,
     pageType,
-    calculateWebsiteComposition
+    calculateWebsiteComposition,
+    getMostReferencedPages
 };
 
 // ==========================================================
@@ -417,5 +418,22 @@ function calculateWebsiteComposition(pages){
     }
 
     return composition;
+
+}
+
+// ======================================================
+// Most Referenced Pages
+// ======================================================
+
+function getMostReferencedPages(pages, limit = 20) {
+
+    return [...pages]
+        .filter(page => page.visited !== false)
+        .sort(
+            (a, b) =>
+                (Number(b.incomingLinkCount) || 0) -
+                (Number(a.incomingLinkCount) || 0)
+        )
+        .slice(0, limit);
 
 }

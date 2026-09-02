@@ -91,7 +91,7 @@ const exportPages = pages.map(page => ({
 
 
     // Export Excel
-    await exportExcel(pages, summary);
+    await exportExcel(pages, summary, composition);
 
     // Export HTML
     exportHTML(exportPages, summary, composition);

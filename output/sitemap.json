@@ -2,8 +2,8 @@
   "summary": {
     "website": "https://clubhub-resources.british-gymnastics.org/",
     "websiteName": "clubhub-resources.british-gymnastics.org",
-    "crawlDate": "2026-09-02T09:00:58.146Z",
-    "crawlDuration": 272536,
+    "crawlDate": "2026-09-02T10:25:31.980Z",
+    "crawlDuration": 284501,
     "pagesDiscovered": 50,
     "pagesSuccessful": 49,
     "pagesFailed": 1,
@@ -13,7 +13,7 @@
     "pdfLinksFound": 52,
     "internalLinksFound": 2977,
     "externalLinksFound": 706,
-    "averageLoad": 5289
+    "averageLoad": 5526
   },
   "composition": {
     "totalPages": 50,
@@ -209,7 +209,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 59,
       "orphan": false,
-      "crawlTime": 4744,
+      "crawlTime": 4910,
       "visited": true,
       "error": null
     },
@@ -331,7 +331,7 @@
       "incomingLinkCount": 28,
       "outgoingLinkCount": 48,
       "orphan": false,
-      "crawlTime": 3734,
+      "crawlTime": 4559,
       "visited": true,
       "error": null
     },
@@ -507,7 +507,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 75,
       "orphan": false,
-      "crawlTime": 4348,
+      "crawlTime": 5475,
       "visited": true,
       "error": null
     },
@@ -671,7 +671,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 66,
       "orphan": false,
-      "crawlTime": 5320,
+      "crawlTime": 5483,
       "visited": true,
       "error": null
     },
@@ -827,7 +827,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 61,
       "orphan": false,
-      "crawlTime": 4903,
+      "crawlTime": 5020,
       "visited": true,
       "error": null
     },
@@ -980,7 +980,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 58,
       "orphan": false,
-      "crawlTime": 4431,
+      "crawlTime": 4534,
       "visited": true,
       "error": null
     },
@@ -1140,7 +1140,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 62,
       "orphan": false,
-      "crawlTime": 4874,
+      "crawlTime": 4418,
       "visited": true,
       "error": null
     },
@@ -1291,7 +1291,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 56,
       "orphan": false,
-      "crawlTime": 4137,
+      "crawlTime": 5392,
       "visited": true,
       "error": null
     },
@@ -1441,7 +1441,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 55,
       "orphan": false,
-      "crawlTime": 4192,
+      "crawlTime": 4989,
       "visited": true,
       "error": null
     },
@@ -1592,7 +1592,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 56,
       "orphan": false,
-      "crawlTime": 4285,
+      "crawlTime": 5170,
       "visited": true,
       "error": null
     },
@@ -1756,7 +1756,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 70,
       "orphan": false,
-      "crawlTime": 3800,
+      "crawlTime": 4772,
       "visited": true,
       "error": null
     },
@@ -1913,7 +1913,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 60,
       "orphan": false,
-      "crawlTime": 3898,
+      "crawlTime": 4146,
       "visited": true,
       "error": null
     },
@@ -2064,7 +2064,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 56,
       "orphan": false,
-      "crawlTime": 5053,
+      "crawlTime": 4900,
       "visited": true,
       "error": null
     },
@@ -2243,7 +2243,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 85,
       "orphan": false,
-      "crawlTime": 4077,
+      "crawlTime": 5262,
       "visited": true,
       "error": null
     },
@@ -2397,7 +2397,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 59,
       "orphan": false,
-      "crawlTime": 5152,
+      "crawlTime": 6788,
       "visited": true,
       "error": null
     },
@@ -2549,7 +2549,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 57,
       "orphan": false,
-      "crawlTime": 4767,
+      "crawlTime": 5116,
       "visited": true,
       "error": null
     },
@@ -2730,7 +2730,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 82,
       "orphan": false,
-      "crawlTime": 5044,
+      "crawlTime": 5254,
       "visited": true,
       "error": null
     },
@@ -2888,7 +2888,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 63,
       "orphan": false,
-      "crawlTime": 6319,
+      "crawlTime": 5422,
       "visited": true,
       "error": null
     },
@@ -3036,7 +3036,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 53,
       "orphan": false,
-      "crawlTime": 5008,
+      "crawlTime": 7407,
       "visited": true,
       "error": null
     },
@@ -3164,7 +3164,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 48,
       "orphan": false,
-      "crawlTime": 5295,
+      "crawlTime": 3946,
       "visited": true,
       "error": null
     },
@@ -3310,7 +3310,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 51,
       "orphan": false,
-      "crawlTime": 4227,
+      "crawlTime": 6183,
       "visited": true,
       "error": null
     },
@@ -3458,7 +3458,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 53,
       "orphan": false,
-      "crawlTime": 4315,
+      "crawlTime": 4485,
       "visited": true,
       "error": null
     },
@@ -3631,7 +3631,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 75,
       "orphan": false,
-      "crawlTime": 4426,
+      "crawlTime": 4571,
       "visited": true,
       "error": null
     },
@@ -3786,7 +3786,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 60,
       "orphan": false,
-      "crawlTime": 4517,
+      "crawlTime": 4754,
       "visited": true,
       "error": null
     },
@@ -3941,7 +3941,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 60,
       "orphan": false,
-      "crawlTime": 4651,
+      "crawlTime": 6221,
       "visited": true,
       "error": null
     },
@@ -4090,7 +4090,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 54,
       "orphan": false,
-      "crawlTime": 4433,
+      "crawlTime": 4668,
       "visited": true,
       "error": null
     },
@@ -4236,7 +4236,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 52,
       "orphan": false,
-      "crawlTime": 6486,
+      "crawlTime": 4658,
       "visited": true,
       "error": null
     },
@@ -4389,7 +4389,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 59,
       "orphan": false,
-      "crawlTime": 4514,
+      "crawlTime": 4114,
       "visited": true,
       "error": null
     },
@@ -4603,7 +4603,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 118,
       "orphan": false,
-      "crawlTime": 4793,
+      "crawlTime": 4646,
       "visited": true,
       "error": null
     },
@@ -4776,7 +4776,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 76,
       "orphan": false,
-      "crawlTime": 4360,
+      "crawlTime": 5480,
       "visited": true,
       "error": null
     },
@@ -4949,7 +4949,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 72,
       "orphan": false,
-      "crawlTime": 4287,
+      "crawlTime": 4758,
       "visited": true,
       "error": null
     },
@@ -5112,7 +5112,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 66,
       "orphan": false,
-      "crawlTime": 5844,
+      "crawlTime": 5252,
       "visited": true,
       "error": null
     },
@@ -5275,7 +5275,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 68,
       "orphan": false,
-      "crawlTime": 5046,
+      "crawlTime": 5485,
       "visited": true,
       "error": null
     },
@@ -5432,7 +5432,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 62,
       "orphan": false,
-      "crawlTime": 4914,
+      "crawlTime": 5145,
       "visited": true,
       "error": null
     },
@@ -5582,7 +5582,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 56,
       "orphan": false,
-      "crawlTime": 4270,
+      "crawlTime": 4154,
       "visited": true,
       "error": null
     },
@@ -5744,7 +5744,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 61,
       "orphan": false,
-      "crawlTime": 4394,
+      "crawlTime": 5074,
       "visited": true,
       "error": null
     },
@@ -5819,7 +5819,7 @@
       "incomingLinkCount": 49,
       "outgoingLinkCount": 0,
       "orphan": false,
-      "crawlTime": 30112,
+      "crawlTime": 30115,
       "visited": false,
       "error": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://clubhub-resources.british-gymnastics.org/courses/video-on-demand/lessons/national-welfare-officer-conference-2023\", waiting until \"networkidle\"\u001b[22m\n"
     },
@@ -5978,7 +5978,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 61,
       "orphan": false,
-      "crawlTime": 5172,
+      "crawlTime": 5257,
       "visited": true,
       "error": null
     },
@@ -6119,7 +6119,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 47,
       "orphan": false,
-      "crawlTime": 4501,
+      "crawlTime": 4272,
       "visited": true,
       "error": null
     },
@@ -6268,7 +6268,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 47,
       "orphan": false,
-      "crawlTime": 9521,
+      "crawlTime": 4817,
       "visited": true,
       "error": null
     },
@@ -6417,7 +6417,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 47,
       "orphan": false,
-      "crawlTime": 5438,
+      "crawlTime": 5407,
       "visited": true,
       "error": null
     },
@@ -6565,7 +6565,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 47,
       "orphan": false,
-      "crawlTime": 4255,
+      "crawlTime": 4570,
       "visited": true,
       "error": null
     },
@@ -6714,7 +6714,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 47,
       "orphan": false,
-      "crawlTime": 4275,
+      "crawlTime": 4955,
       "visited": true,
       "error": null
     },
@@ -6865,7 +6865,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 57,
       "orphan": false,
-      "crawlTime": 4196,
+      "crawlTime": 4171,
       "visited": true,
       "error": null
     },
@@ -7011,7 +7011,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 52,
       "orphan": false,
-      "crawlTime": 3850,
+      "crawlTime": 6170,
       "visited": true,
       "error": null
     },
@@ -7152,7 +7152,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 47,
       "orphan": false,
-      "crawlTime": 3915,
+      "crawlTime": 4533,
       "visited": true,
       "error": null
     },
@@ -7293,7 +7293,7 @@
       "incomingLinkCount": 48,
       "outgoingLinkCount": 47,
       "orphan": false,
-      "crawlTime": 4945,
+      "crawlTime": 3989,
       "visited": true,
       "error": null
     },
@@ -7408,7 +7408,7 @@
       "incomingLinkCount": 1,
       "outgoingLinkCount": 68,
       "orphan": false,
-      "crawlTime": 4877,
+      "crawlTime": 5028,
       "visited": true,
       "error": null
     },
@@ -7536,7 +7536,7 @@
       "incomingLinkCount": 11,
       "outgoingLinkCount": 68,
       "orphan": false,
-      "crawlTime": 5344,
+      "crawlTime": 5219,
       "visited": true,
       "error": null
     },
@@ -7665,7 +7665,7 @@
       "incomingLinkCount": 10,
       "outgoingLinkCount": 70,
       "orphan": false,
-      "crawlTime": 5186,
+      "crawlTime": 5199,
       "visited": true,
       "error": null
     }
