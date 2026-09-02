@@ -118,6 +118,12 @@ function buildNavigation(){
         },
 
         {
+            id: "importance",
+            icon: "⭐",
+            title: "Most Referenced"
+        },
+
+        {
             id: "tree",
             icon: "🌳",
             title: "Site Tree"
@@ -232,6 +238,12 @@ function renderView(section){
         case "composition":
 
             renderWebsiteComposition();
+
+            break;
+
+        case "importance":
+
+            renderMostReferenced();
 
             break;
 
@@ -894,6 +906,144 @@ function renderWebsiteComposition(){
                     </div>
 
                 </div>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+// ----------------------------------------------------------
+// Most Referenced / Structural Importance
+// ----------------------------------------------------------
+
+function renderMostReferenced(){
+
+    const rankedPages = [...pages]
+        .filter(page => page.visited !== false)
+        .sort(
+            (a, b) =>
+                (Number(b.incomingLinkCount) || 0) -
+                (Number(a.incomingLinkCount) || 0)
+        );
+
+    const mostReferenced = rankedPages.slice(0, 20);
+
+    document.getElementById("contentPanel").innerHTML = `
+
+        <div class="compositionHeader">
+
+            <h2>⭐ Most Referenced</h2>
+
+            <p>
+                Pages most heavily referenced by other pages
+                within the website's internal linking structure.
+            </p>
+
+        </div>
+
+
+        <div class="reportSection compositionSection">
+
+            <div class="compositionSectionHeader">
+
+                <div>
+
+                    <h3>🔗 Most Referenced Pages</h3>
+
+                    <p>
+                        Ranked by the number of unique internal pages
+                        linking to each page.
+                    </p>
+
+                </div>
+
+                <span class="compositionSectionTotal">
+                    Top 20
+                </span>
+
+            </div>
+
+
+            <div class="compositionTableWrapper">
+
+                <table class="reportTable compositionTable">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Page</th>
+
+                            <th>Type</th>
+
+                            <th class="numberColumn">
+                                Incoming
+                            </th>
+
+                            <th class="numberColumn">
+                                Outgoing
+                            </th>
+
+                            <th class="numberColumn">
+                                Depth
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        ${mostReferenced.map(page => `
+
+                            <tr>
+
+                                <td>
+
+                                    <strong>
+                                        ${page.title || "(Untitled)"}
+                                    </strong>
+
+                                </td>
+
+                                <td>
+                                    ${page.contentType || "Unknown"}
+                                </td>
+
+                                <td class="compositionNumber">
+
+                                    ${formatNumber(
+                                        page.incomingLinkCount || 0
+                                    )}
+
+                                </td>
+
+                                <td class="compositionNumber">
+
+                                    ${formatNumber(
+                                        page.outgoingLinkCount || 0
+                                    )}
+
+                                </td>
+
+                                <td class="compositionNumber">
+
+                                    ${formatNumber(
+                                        page.depth || 0
+                                    )}
+
+                                </td>
+
+                            </tr>
+
+                        `).join("")}
+
+                    </tbody>
+
+                </table>
 
             </div>
 

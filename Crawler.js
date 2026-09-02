@@ -794,7 +794,9 @@ buildHierarchy() {
 
             if (!target) continue;
 
-            target.incomingLinks.push(page.url);
+            if (target.id !== page.id) {
+                target.incomingLinks.push(page.url);
+            }
 
         }
 
@@ -805,6 +807,7 @@ buildHierarchy() {
 
         page.incomingLinks = [...new Set(page.incomingLinks)];
         page.incomingLinkCount = page.incomingLinks.length;
+        
         page.orphan =
             page.incomingLinkCount === 0 &&
             page.parent === null;
