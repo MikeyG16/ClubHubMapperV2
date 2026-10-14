@@ -1,0 +1,3849 @@
+
+========================================
+     ClubHub Insight v2
+========================================
+
+✓ Launching Chromium...
+✓ Opening login page...
+✓ Checking login form...
+✓ Entering credentials...
+✓ Signing in...
+✓ Login successful
+
+========================================
+ Login Complete
+========================================
+
+Starting crawl...
+
+
+Loading WordPress pages...
+Loaded 61 Pages (page 1)
+WordPress cache contains 61 items.
+
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [
+    "id",
+    "date",
+    "date_gmt",
+    "guid",
+    "modified",
+    "modified_gmt",
+    "slug",
+    "status",
+    "type",
+    "link",
+    "title",
+    "content",
+    "excerpt",
+    "author",
+    "featured_media",
+    "parent",
+    "menu_order",
+    "comment_status",
+    "ping_status",
+    "template",
+    "meta",
+    "class_list",
+    "_links"
+  ],
+  "title": {
+    "rendered": "Welcome"
+  },
+  "contentType": "object",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: British Gymnastics Club Hub Resources – British Gymnastics Club Hub Resources Library null
+[1] 200 | Home | Depth 0 | British Gymnastics Club Hub Resources – British Gymnastics Club Hub Resources Library
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [
+    "id",
+    "date",
+    "date_gmt",
+    "guid",
+    "modified",
+    "modified_gmt",
+    "slug",
+    "status",
+    "type",
+    "link",
+    "title",
+    "content",
+    "excerpt",
+    "author",
+    "featured_media",
+    "parent",
+    "menu_order",
+    "comment_status",
+    "ping_status",
+    "template",
+    "meta",
+    "class_list",
+    "_links"
+  ],
+  "title": {
+    "rendered": "My Notes"
+  },
+  "contentType": "object",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 1,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "site-main post-238537 page type-page status-publish hentry",
+        "textLength": 387,
+        "preview": "My Notes My Notes Welcome to Notes section. Here, you can annotate any documents found on the Club Hub and save them to read later. Your notes are stored using "
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: My Notes – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[2] 200 | Standard Page | Depth 1 | My Notes – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 1,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-785b3e5 e-con-full e-flex e-con e-child",
+        "textLength": 750,
+        "preview": "Latest policies Disciplinary Regulations Club Development, Governance, Policies and Procedures Safeguarding Regulations Club Development, Governance, Policies a"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Disciplinary Regulations – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[3] 200 | Topic | Depth 1 | Disciplinary Regulations – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 2,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "site-main post-263802 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 990,
+        "preview": "Safeguarding Regulations Home › Categories › Policies and Procedures Safeguarding Regulations Safeguarding Regulations View policy Safeguarding Regulations Flow"
+      },
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-785b3e5 e-con-full e-flex e-con e-child",
+        "textLength": 750,
+        "preview": "Latest policies Disciplinary Regulations Club Development, Governance, Policies and Procedures Safeguarding Regulations Club Development, Governance, Policies a"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Safeguarding Regulations – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[4] 200 | Topic | Depth 1 | Safeguarding Regulations – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 1,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-785b3e5 e-con-full e-flex e-con e-child",
+        "textLength": 750,
+        "preview": "Latest policies Disciplinary Regulations Club Development, Governance, Policies and Procedures Safeguarding Regulations Club Development, Governance, Policies a"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Position of Trust Guidance – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[5] 200 | Topic | Depth 1 | Position of Trust Guidance – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 1,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-785b3e5 e-con-full e-flex e-con e-child",
+        "textLength": 750,
+        "preview": "Latest policies Disciplinary Regulations Club Development, Governance, Policies and Procedures Safeguarding Regulations Club Development, Governance, Policies a"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Registration Rules for Organisations – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[6] 200 | Topic | Depth 1 | Registration Rules for Organisations – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 1,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "site-main post-258501 sfwd-courses type-sfwd-courses status-publish hentry",
+        "textLength": 2356,
+        "preview": "Health and Safety Health and Safety Access Expert Health & Safety Support ADD TO FAVOURITES Opus Safety are the Health and Safety Partners to British Gymnastics"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Health and Safety – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[7] 200 | Category | Depth 1 | Health and Safety – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Risk and Compliance – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[8] 200 | Topic Category | Depth 1 | Risk and Compliance – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Facility – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[9] 200 | Topic Category | Depth 1 | Facility – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: People – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[10] 200 | Topic Category | Depth 1 | People – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [
+    "id",
+    "date",
+    "date_gmt",
+    "guid",
+    "modified",
+    "modified_gmt",
+    "slug",
+    "status",
+    "type",
+    "link",
+    "title",
+    "content",
+    "excerpt",
+    "author",
+    "featured_media",
+    "parent",
+    "menu_order",
+    "comment_status",
+    "ping_status",
+    "template",
+    "meta",
+    "class_list",
+    "_links"
+  ],
+  "title": {
+    "rendered": "Health and Safety Policies and Procedures"
+  },
+  "contentType": "object",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 1,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "site-main post-259007 page type-page status-publish hentry",
+        "textLength": 4507,
+        "preview": "Health and Safety Policies and Procedures Nutrition ADD TO FAVOURITES The Safeguarding Policy: Nutrition outlines the mandatory points which clubs and coaches m"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Health and Safety Policies and Procedures – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[11] 200 | Standard Page | Depth 1 | Health and Safety Policies and Procedures – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 1,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "site-main post-258507 sfwd-courses type-sfwd-courses status-publish hentry",
+        "textLength": 1957,
+        "preview": "Governance Governance Finance ADD TO FAVOURITES As a gymnastics club, you will likely deal with finances on a daily basis. UK & Overseas Travel ADD TO FAVOURITE"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Governance – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[12] 200 | Category | Depth 1 | Governance – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Finance – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[13] 200 | Topic Category | Depth 1 | Finance – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [
+    "id",
+    "date",
+    "date_gmt",
+    "guid",
+    "modified",
+    "modified_gmt",
+    "slug",
+    "status",
+    "type",
+    "link",
+    "title",
+    "content",
+    "excerpt",
+    "author",
+    "featured_media",
+    "parent",
+    "menu_order",
+    "comment_status",
+    "ping_status",
+    "template",
+    "meta",
+    "class_list",
+    "_links"
+  ],
+  "title": {
+    "rendered": "Governance Policies and Procedures"
+  },
+  "contentType": "object",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 1,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "site-main post-259019 page type-page status-publish hentry",
+        "textLength": 7448,
+        "preview": "Governance Policies and Procedures Disciplinary Regulations ADD TO FAVOURITES View policy Disciplinary Regulations Flowchart View policy Disciplinary Regulation"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Governance Policies and Procedures – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[14] 200 | Standard Page | Depth 1 | Governance Policies and Procedures – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Legislation – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[15] 200 | Topic Category | Depth 1 | Legislation – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: equality – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[16] 200 | Archive | Depth 1 | equality – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 1,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "site-main post-258499 sfwd-courses type-sfwd-courses status-publish hentry",
+        "textLength": 6958,
+        "preview": "Club Development Club Development Advice and guidance for club signage and information to display ADD TO FAVOURITES Having certain certificates and information "
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Club Development – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[17] 200 | Category | Depth 1 | Club Development – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Operating your club – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[18] 200 | Topic Category | Depth 1 | Operating your club – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: About your facility – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[19] 200 | Topic Category | Depth 1 | About your facility – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 1,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "site-main",
+        "textLength": 75,
+        "preview": "The page can’t be found. It looks like nothing was found at this location."
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Page not found – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[20] 404 | Failed | Depth 1 | Page not found – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Programmes – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[21] 200 | Topic Category | Depth 1 | Programmes – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Rise Gymnastics – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[22] 200 | Topic Category | Depth 1 | Rise Gymnastics – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 1,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "site-main post-258503 sfwd-courses type-sfwd-courses status-publish hentry",
+        "textLength": 5171,
+        "preview": "People Development People Development Education Opportunities Coaching, Instructing and Young Leaders ADD TO FAVOURITES We have a wide range of courses to help "
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: People Development – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[23] 200 | Category | Depth 1 | People Development – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Developing your workforce – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[24] 200 | Topic Category | Depth 1 | Developing your workforce – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Club Roles – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[25] 200 | Topic Category | Depth 1 | Club Roles – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Volunteering – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[26] 200 | Topic Category | Depth 1 | Volunteering – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 1,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "site-main post-258505 sfwd-courses type-sfwd-courses status-publish hentry",
+        "textLength": 909,
+        "preview": "Welfare and Safe Sport Welfare and Safe Sport British Gymnastics Safe Sport policies for Clubs ADD TO FAVOURITES To keep gymnastics safe, there are a number of "
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Welfare and Safe Sport – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[27] 200 | Category | Depth 1 | Welfare and Safe Sport – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [
+    "id",
+    "date",
+    "date_gmt",
+    "guid",
+    "modified",
+    "modified_gmt",
+    "slug",
+    "status",
+    "type",
+    "link",
+    "title",
+    "content",
+    "excerpt",
+    "author",
+    "featured_media",
+    "parent",
+    "menu_order",
+    "comment_status",
+    "ping_status",
+    "template",
+    "meta",
+    "class_list",
+    "_links"
+  ],
+  "title": {
+    "rendered": "Welfare and Safe Sport Policies and Procedures"
+  },
+  "contentType": "object",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 1,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "site-main post-259025 page type-page status-publish hentry",
+        "textLength": 3049,
+        "preview": "Welfare and Safe Sport Policies and Procedures National Welfare Officer Conference 2023 ADD TO FAVOURITES Watch some of the guest speakers talk about: Safeguard"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Welfare and Safe Sport Policies and Procedures – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[28] 200 | Standard Page | Depth 1 | Welfare and Safe Sport Policies and Procedures – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Toolkits and Guides – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[29] 200 | Toolkit Landing | Depth 1 | Toolkits and Guides – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Assistant Foundation & Foundation Coach Hub – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[30] 200 | Toolkit Landing | Depth 1 | Assistant Foundation & Foundation Coach Hub – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 1,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-55450bd2 e-con-full e-flex e-con e-child",
+        "textLength": 939,
+        "preview": "Latest toolkits People Development, Toolkit This Hub has been designed to provide you with all the information you will need for Assistant Foundation & Foundati"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Club Operations Toolkit – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[31] 200 | Toolkit | Depth 1 | Club Operations Toolkit – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Policies and Procedures – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[32] 200 | Category | Depth 1 | Policies and Procedures – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 3,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "site-main post-263707 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-dbs ld_lesson_tag-safeguarding ld_lesson_tag-safeguarding-policy",
+        "textLength": 2190,
+        "preview": "DBS Legislation Guidance Home › Categories › Policies and Procedures DBS Legislation Guidance DBS Legislation Guidance These policies supersede our previous pol"
+      },
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-6d04e3f1 e-con-full e-flex e-con e-child",
+        "textLength": 899,
+        "preview": "What does my club need to do for all new policies? Ensure you understand the specific points and how you currently implement these practices. See where you can "
+      },
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-640adc63 e-con-full e-flex e-con e-child",
+        "textLength": 750,
+        "preview": "Latest policies Disciplinary Regulations Club Development, Governance, Policies and Procedures Safeguarding Regulations Club Development, Governance, Policies a"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: DBS Legislation Guidance – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[33] 200 | Topic | Depth 1 | DBS Legislation Guidance – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Video on Demand – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[34] 200 | Category | Depth 1 | Video on Demand – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 3,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-7eea1dc e-con-full e-flex e-con e-child",
+        "textLength": 1233,
+        "preview": "What does my club need to do for all new policies? Ensure you understand the specific points and how you currently implement these practices. See where you can "
+      },
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-196c0e27 e-con-full e-flex e-con e-child",
+        "textLength": 482,
+        "preview": "Frequently asked questions What is a ‘performance’ reason for weighing a gymnast? What can I do as a Club Welfare Officer? What is Khamis-Roche method? Where ca"
+      },
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-778084de e-con-full e-flex e-con e-child",
+        "textLength": 750,
+        "preview": "Latest policies Disciplinary Regulations Club Development, Governance, Policies and Procedures Safeguarding Regulations Club Development, Governance, Policies a"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Weighing Gymnasts – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[35] 200 | Topic | Depth 1 | Weighing Gymnasts – British Gymnastics Club Hub Resources
+DEBUG technicalParent: (Failed) undefined
+[36] - | Failed | Depth 1 | (Failed)
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 3,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-4fe2c72 e-con-full e-flex e-con e-child",
+        "textLength": 1160,
+        "preview": "What does my club need to do for all new policies? Ensure you understand the specific points and how you currently implement these practices. See where you can "
+      },
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-f3c2c5a e-con-full e-flex e-con e-child",
+        "textLength": 767,
+        "preview": "Frequently asked questions Do British Gymnastics put on National squad activity during formal education (i.e., school time)? Our Club provides sessions for scho"
+      },
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-bb970c3 e-con-full e-flex e-con e-child",
+        "textLength": 750,
+        "preview": "Latest policies Disciplinary Regulations Club Development, Governance, Policies and Procedures Safeguarding Regulations Club Development, Governance, Policies a"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Academic Education – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[37] 200 | Topic | Depth 1 | Academic Education – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [
+    "id",
+    "date",
+    "date_gmt",
+    "guid",
+    "modified",
+    "modified_gmt",
+    "slug",
+    "status",
+    "type",
+    "link",
+    "title",
+    "content",
+    "excerpt",
+    "author",
+    "featured_media",
+    "parent",
+    "menu_order",
+    "comment_status",
+    "ping_status",
+    "template",
+    "meta",
+    "class_list",
+    "_links"
+  ],
+  "title": {
+    "rendered": "Newsletters"
+  },
+  "contentType": "object",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Newsletters – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[38] 200 | Standard Page | Depth 1 | Newsletters – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [
+    "id",
+    "date",
+    "date_gmt",
+    "guid",
+    "modified",
+    "modified_gmt",
+    "slug",
+    "status",
+    "type",
+    "link",
+    "title",
+    "content",
+    "excerpt",
+    "author",
+    "featured_media",
+    "parent",
+    "menu_order",
+    "comment_status",
+    "ping_status",
+    "template",
+    "meta",
+    "class_list",
+    "_links"
+  ],
+  "title": {
+    "rendered": "Club Newsletter"
+  },
+  "contentType": "object",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Club Newsletter – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[39] 200 | Standard Page | Depth 1 | Club Newsletter – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [
+    "id",
+    "date",
+    "date_gmt",
+    "guid",
+    "modified",
+    "modified_gmt",
+    "slug",
+    "status",
+    "type",
+    "link",
+    "title",
+    "content",
+    "excerpt",
+    "author",
+    "featured_media",
+    "parent",
+    "menu_order",
+    "comment_status",
+    "ping_status",
+    "template",
+    "meta",
+    "class_list",
+    "_links"
+  ],
+  "title": {
+    "rendered": "Welfare Officer Newsletter"
+  },
+  "contentType": "object",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Welfare Officer Newsletter – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[40] 200 | Standard Page | Depth 1 | Welfare Officer Newsletter – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [
+    "id",
+    "date",
+    "date_gmt",
+    "guid",
+    "modified",
+    "modified_gmt",
+    "slug",
+    "status",
+    "type",
+    "link",
+    "title",
+    "content",
+    "excerpt",
+    "author",
+    "featured_media",
+    "parent",
+    "menu_order",
+    "comment_status",
+    "ping_status",
+    "template",
+    "meta",
+    "class_list",
+    "_links"
+  ],
+  "title": {
+    "rendered": "Coach Newsletter"
+  },
+  "contentType": "object",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 1,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "site-main post-251078 page type-page status-publish hentry",
+        "textLength": 132,
+        "preview": "Coach Newsletter Coach Newsletter All newsletters October 2024 August 2024 May 2024 April 2024 March 2024 February 2024 January 2024"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Coach Newsletter – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[41] 200 | Standard Page | Depth 1 | Coach Newsletter – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [
+    "id",
+    "date",
+    "date_gmt",
+    "guid",
+    "modified",
+    "modified_gmt",
+    "slug",
+    "status",
+    "type",
+    "link",
+    "title",
+    "content",
+    "excerpt",
+    "author",
+    "featured_media",
+    "parent",
+    "menu_order",
+    "comment_status",
+    "ping_status",
+    "template",
+    "meta",
+    "class_list",
+    "_links"
+  ],
+  "title": {
+    "rendered": "Gymblast Newsletter"
+  },
+  "contentType": "object",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 1,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "site-main post-251083 page type-page status-publish hentry",
+        "textLength": 150,
+        "preview": "Gymblast Newsletter Gymblast Newsletter All newsletters September 2024 August 2024 July 2024 May 2024 April 2024 March 2024 February 2024 January 2024"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Gymblast Newsletter – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[42] 200 | Standard Page | Depth 1 | Gymblast Newsletter – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [
+    "id",
+    "date",
+    "date_gmt",
+    "guid",
+    "modified",
+    "modified_gmt",
+    "slug",
+    "status",
+    "type",
+    "link",
+    "title",
+    "content",
+    "excerpt",
+    "author",
+    "featured_media",
+    "parent",
+    "menu_order",
+    "comment_status",
+    "ping_status",
+    "template",
+    "meta",
+    "class_list",
+    "_links"
+  ],
+  "title": {
+    "rendered": "Opus Newsletter"
+  },
+  "contentType": "object",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Opus Newsletter – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[43] 200 | Standard Page | Depth 1 | Opus Newsletter – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [
+    "id",
+    "date",
+    "date_gmt",
+    "guid",
+    "modified",
+    "modified_gmt",
+    "slug",
+    "status",
+    "type",
+    "link",
+    "title",
+    "content",
+    "excerpt",
+    "author",
+    "featured_media",
+    "parent",
+    "menu_order",
+    "comment_status",
+    "ping_status",
+    "template",
+    "meta",
+    "class_list",
+    "_links"
+  ],
+  "title": {
+    "rendered": "My account"
+  },
+  "contentType": "object",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 1,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "site-main post-252747 page type-page status-publish hentry",
+        "textLength": 222,
+        "preview": "Michael Glossop 5274876 My profile My notes My favourites First Name Last Name Nickname Display Name 5274876 Michael Glossop Michael Glossop Glossop Michael Ema"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: My account – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[44] 200 | Standard Page | Depth 1 | My account – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [
+    "id",
+    "date",
+    "date_gmt",
+    "guid",
+    "modified",
+    "modified_gmt",
+    "slug",
+    "status",
+    "type",
+    "link",
+    "title",
+    "content",
+    "excerpt",
+    "author",
+    "featured_media",
+    "parent",
+    "menu_order",
+    "comment_status",
+    "ping_status",
+    "template",
+    "meta",
+    "class_list",
+    "_links"
+  ],
+  "title": {
+    "rendered": "Request a feature"
+  },
+  "contentType": "object",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Request a feature – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[45] 200 | Standard Page | Depth 1 | Request a feature – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [
+    "id",
+    "date",
+    "date_gmt",
+    "guid",
+    "modified",
+    "modified_gmt",
+    "slug",
+    "status",
+    "type",
+    "link",
+    "title",
+    "content",
+    "excerpt",
+    "author",
+    "featured_media",
+    "parent",
+    "menu_order",
+    "comment_status",
+    "ping_status",
+    "template",
+    "meta",
+    "class_list",
+    "_links"
+  ],
+  "title": {
+    "rendered": "Search"
+  },
+  "contentType": "object",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 17,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Search – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[46] 200 | Standard Page | Depth 1 | Search – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [
+    "id",
+    "date",
+    "date_gmt",
+    "guid",
+    "modified",
+    "modified_gmt",
+    "slug",
+    "status",
+    "type",
+    "link",
+    "title",
+    "content",
+    "excerpt",
+    "author",
+    "featured_media",
+    "parent",
+    "menu_order",
+    "comment_status",
+    "ping_status",
+    "template",
+    "meta",
+    "class_list",
+    "_links"
+  ],
+  "title": {
+    "rendered": "What&#8217;s new"
+  },
+  "contentType": "object",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: What’s new – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[47] 200 | Standard Page | Depth 1 | What’s new – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 4,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "site-main post-259853 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-health-and-safety category-policies-and-procedures ld_lesson_category-policies-and-procedures",
+        "textLength": 3338,
+        "preview": "Nutrition Home › Categories › Policies and Procedures Nutrition Nutrition The Safeguarding Policy: Nutrition outlines the mandatory points which clubs and coach"
+      },
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-460a7bf0 e-con-full e-flex e-con e-child",
+        "textLength": 1111,
+        "preview": "What does my club need to do for all new policies? Ensure you understand the specific points and how you currently implement these practices. See where you can "
+      },
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-3300ba41 e-con-full e-flex e-con e-child",
+        "textLength": 819,
+        "preview": "Frequently asked questions Do clubs need to provide snacks? If I am a qualified nutritionist and coach, can I provide bespoke, nutritional advice to gymnasts in"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Nutrition – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[48] 200 | Topic | Depth 1 | Nutrition – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 3,
+    "details": [
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-abfdcdc e-con-full e-flex e-con e-child",
+        "textLength": 1265,
+        "preview": "What does my club need to do for all new policies? Ensure you understand the specific points and how you currently implement these practices. See where you can "
+      },
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-00a81fb e-con-full e-flex e-con e-child",
+        "textLength": 201,
+        "preview": "Frequently asked questions Pain, Injury & Illness Who has the final decision? Why is medical advice not final? Concussion Am I eligible for the enhanced pathway"
+      },
+      {
+        "tag": "MAIN",
+        "className": "elementor-element elementor-element-413225a e-con-full e-flex e-con e-child",
+        "textLength": 750,
+        "preview": "Latest policies Disciplinary Regulations Club Development, Governance, Policies and Procedures Safeguarding Regulations Club Development, Governance, Policies a"
+      }
+    ]
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Pain, Injury & Illness – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[49] 200 | Topic | Depth 1 | Pain, Injury & Illness – British Gymnastics Club Hub Resources
+WORDPRESS DATA DIAGNOSTIC: {
+  "keys": [],
+  "contentType": "undefined",
+  "contentLength": null,
+  "contentPreview": null
+}
+CONTENT SELECTOR DIAGNOSTIC: [
+  {
+    "selector": "main",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": "article",
+    "count": 16,
+    "details": [
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-262897 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-people-development category-toolkit ld_lesson_category-developing-your-workforce",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-260300 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-strengthening-your-gymnastics-club category-toolkit",
+        "textLength": 0,
+        "preview": ""
+      },
+      {
+        "tag": "ARTICLE",
+        "className": "elementor-post elementor-grid-item post-263755 sfwd-lessons type-sfwd-lessons status-publish has-post-thumbnail hentry category-club-development category-governance category-policies-and-procedures tag-safeguarding ld_lesson_tag-benefits ld_lesson_tag-club-membership ld_lesson_tag-gymnasts ld_lesson_tag-insurance ld_lesson_tag-membership ld_lesson_tag-safeguarding",
+        "textLength": 0,
+        "preview": ""
+      }
+    ]
+  },
+  {
+    "selector": "[role='main']",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".entry-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".lesson-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".course-content",
+    "count": 0,
+    "details": []
+  },
+  {
+    "selector": ".content-area",
+    "count": 0,
+    "details": []
+  }
+]
+DEBUG technicalParent: Health and Safety System – British Gymnastics Club Hub Resources https://clubhub-resources.british-gymnastics.org
+[50] 200 | Toolkit Landing | Depth 1 | Health and Safety System – British Gymnastics Club Hub Resources
+Structural anomaly test: {
+  pagesReceived: 50,
+  anomaliesFound: 1,
+  anomalyTypes: [ 'Not connected to home hierarchy' ]
+}
+Structural anomalies identified: 1
+DEBUG FINAL PARENT: undefined
+
+========================================
+ ClubHub Insight Crawl Statistics
+========================================
+Pages Discovered           : 50
+Pages Crawled Successfully : 49
+Pages Failed to Crawl      : 1
+Redirects Encountered      : 0
+Images Found               : 1410
+PDF Links Found            : 45
+Internal Links Found       : 2913
+External Links Found       : 703
+Average Page Load          : 4151 ms
+Crawl Duration             : 214 seconds
+========================================
+
+Diagnostic near-duplicate pairs at 65%: 0
+Diagnostic matches: []
+
+S3-08 — Content Similarity Evidence
+Resources compared: 38
+Exact-match pairs: 0
+Near-duplicate pairs: 0
+
+========================================
+ JSON Export Complete
+========================================
+JSON : output\sitemap.json
+
+
+========================================
+ Excel Export Complete
+========================================
+Excel : output\ClubHubInsight.xlsx
+========================================
+
+
+========================================
+ HTML Export Complete
+========================================
+HTML : output\ClubHubInsight.html
+
+
+========================================
+ Crawl Complete
+========================================
+
+Pages discovered : 50
+

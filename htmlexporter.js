@@ -22,7 +22,15 @@ function copyDirectory(source, destination) {
 
 }
 
-function exportHTML(pages, summary, composition) {
+function exportHTML(
+    pages,
+    summary,
+    composition,
+    resources = [],
+    crawlCoverage = {},
+    unmatchedLinks = [],
+    contentSimilarity = {}
+) {
 
     const templateFolder = path.join(__dirname, "templates");
 
@@ -41,6 +49,11 @@ function exportHTML(pages, summary, composition) {
     );
 
     html = html.replace(
+        "__RESOURCE_DATA__",
+        JSON.stringify(resources, null, 2)
+    );
+
+    html = html.replace(
         "__CRAWL_SUMMARY__",
         JSON.stringify(summary, null, 2)
     );
@@ -48,6 +61,21 @@ function exportHTML(pages, summary, composition) {
     html = html.replace(
         "__WEBSITE_COMPOSITION__",
         JSON.stringify(composition, null, 2)
+    );
+
+    html = html.replace(
+        "__CRAWL_COVERAGE__",
+        JSON.stringify(crawlCoverage, null, 2)
+    );
+
+    html = html.replace(
+        "__UNMATCHED_LINKS__",
+        JSON.stringify(unmatchedLinks, null, 2)
+    );
+
+    html = html.replace(
+        "__CONTENT_SIMILARITY__",
+        JSON.stringify(contentSimilarity, null, 2)
     );
 
     fs.writeFileSync(

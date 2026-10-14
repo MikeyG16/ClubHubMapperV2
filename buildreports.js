@@ -5,6 +5,7 @@ const config = require("./config");
 
 const { exportData } = require("./exporter");
 const { exportHTML } = require("./htmlExporter");
+const { detectContentSimilarity } = require("./utils");
 
 async function buildReports() {
 
@@ -39,7 +40,15 @@ async function buildReports() {
 
     await exportData(pages);
 
-    exportHTML(pages);
+    const contentSimilarity = detectContentSimilarity(pages);
+
+    console.log("");
+    console.log("S3-08 — Content Similarity Evidence");
+    console.log(`Resources compared: ${contentSimilarity.resourcesCompared}`);
+    console.log(`Exact-match pairs: ${contentSimilarity.exactMatchCount}`);
+    console.log(`Near-duplicate pairs: ${contentSimilarity.nearDuplicateCount}`);
+
+    exportHTML(pages, contentSimilarity);
 
     console.log("");
     console.log("========================================");

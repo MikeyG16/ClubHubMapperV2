@@ -82,6 +82,18 @@ function buildNavigation(){
         },
 
         {
+            id: "resources",
+            icon: "🔗",
+            title: "Duplicate Resources"
+        },
+
+        {
+            id: "contentSimilarity",
+            icon: "🧩",
+            title: "Content Similarity Evidence"
+        },
+
+        {
             id: "freshness",
             icon: "🕒",
             title: "Content Freshness"
@@ -139,7 +151,13 @@ function buildNavigation(){
             id: "tree",
             icon: "🌳",
             title: "Site Tree"
-        }
+        },
+
+        {
+            id: "unmatched",
+            icon: "🔎",
+            title: "Unmatched Links"
+        },
 
     ]
     
@@ -202,6 +220,24 @@ function renderView(section){
         case "inventory":
 
             renderContentInventory();
+
+            break;
+        
+        case "resources":
+
+            renderDuplicateResources();
+
+            break;
+        
+        case "contentSimilarity":
+
+            renderContentSimilarity();
+
+            break;
+        
+        case "unmatched":
+
+            renderUnmatchedLinks();
 
             break;
 
@@ -1717,4 +1753,509 @@ function renderMetricGuide(){
 
     `;
 
+}
+
+// ==========================================================
+// Duplicate Resources
+// ==========================================================
+
+function renderDuplicateResources() {
+
+    const panel = document.getElementById("contentPanel");
+
+    const duplicateResources = (resources || [])
+        .filter(resource =>
+            resource.occurrenceCount > 1
+        );
+
+    let html = `
+        <h2>🔗 Duplicate Resources</h2>
+
+        <p>
+            Canonical resources with multiple observed crawl
+            occurrences. These records show URL, redirect and
+            hierarchy evidence; they do not determine whether
+            occurrences should be merged or removed.
+        </p>
+
+        <p>
+            <strong>${duplicateResources.length}</strong>
+            canonical resources with multiple occurrences
+        </p>
+    `;
+
+    if (duplicateResources.length === 0) {
+
+        html += `
+            <div class="card">
+                <p>
+                    No canonical resources with multiple
+                    occurrences were found in this crawl.
+                </p>
+            </div>
+        `;
+
+        panel.innerHTML = html;
+        return;
+
+    }
+
+    duplicateResources.forEach(resource => {
+
+        html += `
+            <div class="card">
+
+                <h3>${resource.title || "(Untitled)"}</h3>
+
+                <p>
+                    <strong>Canonical URL:</strong><br>
+                    <a href="${resource.canonicalUrl}"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        ${resource.canonicalUrl}
+                    </a>
+                </p>
+
+                <p>
+                    <strong>Content type:</strong>
+                    ${resource.contentType || "Unknown"}
+                    &nbsp; | &nbsp;
+                    <strong>Occurrences:</strong>
+                    ${resource.occurrenceCount}
+                    &nbsp; | &nbsp;
+                    <strong>Redirected occurrences:</strong>
+                    ${resource.redirectedOccurrenceCount}
+                </p>
+
+                <div class="compositionTableWrapper">
+
+                    <table class="reportTable">
+
+                        <thead>
+                            <tr>
+                                <th>Observed Page</th>
+                                <th>Status</th>
+                                <th>Canonical</th>
+                                <th>Redirect</th>
+                                <th>Parent</th>
+                                <th>Crawl Parent</th>
+                                <th>Depth</th>
+                                <th>Crawl Depth</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+        `;
+
+        (resource.occurrences || []).forEach(occurrence => {
+
+            const isCanonical =
+                occurrence.id === resource.canonicalOccurrenceId;
+
+            html += `
+                <tr>
+
+                    <td>
+                        <a href="#"
+                           onclick="showResourceOccurrence(${Number(occurrence.id)}); return false;">
+                            ${occurrence.title || "(Untitled)"}
+                        </a>
+                        <br>
+                        <small>${occurrence.url || ""}</small>
+                    </td>
+
+                    <td>${occurrence.statusCode ?? "-"}</td>
+
+                    <td>${isCanonical ? "Yes" : "No"}</td>
+
+                    <td>
+                        ${occurrence.redirected ? "Yes" : "No"}
+                        ${
+                            occurrence.redirectTarget
+                                ? `<br><small>${occurrence.redirectTarget}</small>`
+                                : ""
+                        }
+                    </td>
+
+                    <td>${occurrence.parent || "-"}</td>
+
+                    <td>${occurrence.technicalParent || "-"}</td>
+
+                    <td>${occurrence.depth ?? "-"}</td>
+
+                    <td>${occurrence.crawlDepth ?? "-"}</td>
+
+                </tr>
+            `;
+
+        });
+
+        html += `
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        `;
+
+    });
+
+    panel.innerHTML = html;
+
+}
+
+
+function renderContentSimilarity() {
+
+    const panel = document.getElementById("contentPanel");
+    const evidence = contentSimilarity || {};
+    const matches = evidence.matches || [];
+
+    const escapeHtml = value =>
+        String(value ?? "").replace(/[&<>"']/g, character => ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+        })[character]);
+
+    const formatPercent = value =>
+        `${(Number(value || 0) * 100).toFixed(1)}%`;
+
+    let html = `
+        <h2>🧩 Content Similarity Evidence</h2>
+
+        <p>
+            Identifies distinct canonical resources with identical
+            or strongly similar text. These are candidates for human
+            review, not automatic merging or deletion.
+        </p>
+
+        <div class="card">
+            <p>
+                <strong>Resources compared:</strong>
+                ${Number(evidence.resourcesCompared || 0)}
+                &nbsp; | &nbsp;
+                <strong>Exact-match pairs:</strong>
+                ${Number(evidence.exactMatchCount || 0)}
+                &nbsp; | &nbsp;
+                <strong>Near-duplicate pairs:</strong>
+                ${Number(evidence.nearDuplicateCount || 0)}
+            </p>
+            <p>
+                Near-duplicate threshold:
+                ${formatPercent(
+                    evidence.settings?.nearDuplicateThreshold ?? 0.85
+                )}
+            </p>
+        </div>
+    `;
+
+    if (matches.length === 0) {
+        html += `
+            <div class="card">
+                <p>
+                    No exact-match or near-duplicate content pairs
+                    were identified among the eligible resources
+                    in this crawl.
+                </p>
+                <p>
+                    This does not prove that no duplicate content
+                    exists. Results depend on crawl coverage and
+                    the detector's minimum content thresholds.
+                </p>
+            </div>
+        `;
+
+        panel.innerHTML = html;
+        return;
+    }
+
+    html += `
+        <div class="compositionTableWrapper">
+            <table class="reportTable compositionTable">
+                <thead>
+                    <tr>
+                        <th>Match type</th>
+                        <th>Similarity</th>
+                        <th>Resource A</th>
+                        <th>Resource B</th>
+                    </tr>
+                </thead>
+                <tbody>
+    `;
+
+    matches.forEach(match => {
+
+        const resourceA = match.resourceA || {};
+        const resourceB = match.resourceB || {};
+
+        const renderResource = resource => {
+            const url = String(resource.url || "");
+            const safeUrl = escapeHtml(url);
+
+            const link = /^https?:\/\//i.test(url)
+                ? `<a href="${safeUrl}" target="_blank"
+                      rel="noopener noreferrer">
+                      ${escapeHtml(resource.title || "(Untitled)")}
+                   </a>`
+                : escapeHtml(resource.title || "(Untitled)");
+
+            return `
+                ${link}
+                <br>
+                <small>${safeUrl}</small>
+                <br>
+                <small>
+                    Type: ${escapeHtml(resource.contentType || "Unknown")}
+                    &nbsp; | &nbsp;
+                    Text length: ${Number(resource.textLength || 0)}
+                    characters
+                </small>
+            `;
+        };
+
+        html += `
+            <tr>
+                <td>${escapeHtml(match.matchType || "Unknown")}</td>
+                <td>${formatPercent(match.similarity)}</td>
+                <td>${renderResource(resourceA)}</td>
+                <td>${renderResource(resourceB)}</td>
+            </tr>
+        `;
+
+    });
+
+    html += `
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h3>How to interpret these results</h3>
+            <ul>
+                <li>
+                    <strong>Exact match:</strong> the normalised
+                    text is identical.
+                </li>
+                <li>
+                    <strong>Near-duplicate:</strong> the text
+                    shingles meet the configured similarity threshold.
+                </li>
+                <li>
+                    Similarity is a review signal, not a judgement
+                    that either resource is unnecessary.
+                </li>
+            </ul>
+        </div>
+    `;
+
+    panel.innerHTML = html;
+}
+
+
+// ----------------------------------------------------------
+// Open an occurrence in Page Inspector
+// ----------------------------------------------------------
+
+function showResourceOccurrence(id) {
+
+    const page = pages.find(
+        candidate => candidate.id === id
+    );
+
+    if (!page) return;
+
+    pageReturnView = "resources";
+
+    showPage(page);
+
+}
+
+
+function renderUnmatchedLinks() {
+
+    const panel = document.getElementById("contentPanel");
+
+    const coverage = crawlCoverage || {};
+    const links = unmatchedLinks || [];
+
+    const escapeHtml = value =>
+        String(value ?? "").replace(/[&<>"']/g, character => ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+        })[character]);
+
+    const completed = coverage.completed === true;
+    const stoppedAtLimit = coverage.stoppedAtPageLimit === true;
+
+    let coverageMessage;
+
+    if (completed) {
+        coverageMessage = `
+            <p>
+                The crawl queue was exhausted. This improves coverage,
+                but does not prove that every website resource was found.
+            </p>
+        `;
+    } else if (stoppedAtLimit) {
+        coverageMessage = `
+            <p>
+                The crawl stopped at its page limit. Some targets may
+                simply not have been crawled yet.
+            </p>
+        `;
+    } else {
+        coverageMessage = `
+            <p>
+                Crawl completion has not been confirmed. Interpret
+                unmatched targets cautiously.
+            </p>
+        `;
+    }
+
+    const coverageDetails = `
+        <div class="card">
+            <h3>⚠️ Crawl Coverage</h3>
+            ${coverageMessage}
+            <p>
+                <strong>Pages crawled:</strong>
+                ${formatNumber(coverage.pagesCrawled ?? pages.length)}
+                &nbsp; | &nbsp;
+                <strong>Page limit:</strong>
+                ${coverage.pageLimit == null
+                    ? "Not recorded"
+                    : formatNumber(coverage.pageLimit)}
+            </p>
+            <p>
+                <strong>Queued URLs remaining:</strong>
+                ${formatNumber(coverage.queuedUrlsRemaining ?? 0)}
+                &nbsp; | &nbsp;
+                <strong>Queue exhausted:</strong>
+                ${completed ? "Yes" : "No"}
+            </p>
+            <p>
+                These are unmatched-link findings, not confirmed broken
+                pages. Check crawl coverage and investigate each target
+                before drawing conclusions.
+            </p>
+        </div>
+    `;
+
+    const sortedLinks = [...links].sort((a, b) =>
+        (Number(b.referenceCount) || 0) -
+        (Number(a.referenceCount) || 0)
+    );
+
+    let tableContent = "";
+
+    if (sortedLinks.length === 0) {
+
+        tableContent = `
+            <div class="card">
+                <p>
+                    No unmatched internal-link targets were identified
+                    in the available crawl records.
+                </p>
+            </div>
+        `;
+
+    } else {
+
+        tableContent = `
+            <div class="compositionTableWrapper">
+                <table class="reportTable compositionTable">
+                    <thead>
+                        <tr>
+                            <th>Target URL</th>
+                            <th class="numberColumn">Source Pages</th>
+                            <th>Observed Sources</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${sortedLinks.map(item => {
+
+                            const url = String(item.url || "");
+                            const safeUrl = escapeHtml(url);
+                            const sources = [
+                                ...new Set(item.sourcePages || [])
+                            ];
+
+                            return `
+                                <tr>
+                                    <td>
+                                        <a href="${safeUrl}"
+                                           target="_blank"
+                                           rel="noopener noreferrer">
+                                            ${safeUrl}
+                                        </a>
+                                    </td>
+                                    <td class="compositionNumber">
+                                        ${formatNumber(
+                                            item.referenceCount ??
+                                            sources.length
+                                        )}
+                                    </td>
+                                    <td>
+                                        ${sources.length
+                                            ? sources.map(source => {
+                                                const safeSource =
+                                                    escapeHtml(source);
+
+                                                return `
+                                                    <div>
+                                                        <a href="${safeSource}"
+                                                           target="_blank"
+                                                           rel="noopener noreferrer">
+                                                            ${safeSource}
+                                                        </a>
+                                                    </div>
+                                                `;
+                                            }).join("")
+                                            : "No source details recorded"}
+                                    </td>
+                                </tr>
+                            `;
+
+                        }).join("")}
+                    </tbody>
+                </table>
+            </div>
+        `;
+
+    }
+
+    panel.innerHTML = `
+        <div class="compositionHeader">
+            <h2>🔎 Unmatched Links</h2>
+            <p>
+                Internal-link targets for which the crawler did not find
+                a corresponding page record. Use these findings to
+                investigate potential missing resources, crawl gaps
+                and URL mismatches.
+            </p>
+        </div>
+
+        ${coverageDetails}
+
+        <div class="reportSection compositionSection">
+            <div class="compositionSectionHeader">
+                <div>
+                    <h3>Unmatched Targets</h3>
+                    <p>
+                        ${formatNumber(sortedLinks.length)}
+                        unique target URLs, ordered by source-page count.
+                    </p>
+                </div>
+            </div>
+
+            ${tableContent}
+        </div>
+    `;
 }

@@ -130,7 +130,7 @@ function showPage(page){
 
 </div>
 
-    <div class="card">
+        <div class="card">
 
     <h3>Hierarchy</h3>
 
@@ -149,6 +149,26 @@ function showPage(page){
                         })()
                         : "-"
                 }
+            </span>
+        </div>
+
+        <div class="infoRow">
+            <span class="infoLabel">Parent Status</span>
+            <span class="infoValue">
+                ${
+                    page.parentStatus === "root"
+                        ? "Root page"
+                        : page.parentStatus === "has-parent"
+                            ? "Has parent"
+                            : "Unknown"
+                }
+            </span>
+        </div>
+
+        <div class="infoRow">
+            <span class="infoLabel">Depth</span>
+            <span class="infoValue">
+                ${page.depth ?? "-"}
             </span>
         </div>
 
@@ -181,31 +201,135 @@ function showPage(page){
 
 </div>
 
-    <div class="card">
+<div class="card">
 
-    <h3>Content</h3>
+    <h3>Observed Crawl Relationship</h3>
 
     <div class="infoList">
 
         <div class="infoRow">
-            <span class="infoLabel">Images</span>
-            <span class="infoValue">${page.imageCount ?? 0}</span>
+            <span class="infoLabel">Discovered From</span>
+            <span class="infoValue">
+                ${
+                    page.crawlParent
+                        ? (() => {
+                            const crawlParent = getPageByUrl(page.crawlParent);
+                            return crawlParent
+                                ? `<a href="#" onclick="showPage(getPageByUrl('${page.crawlParent}'));return false;">${crawlParent.title}</a>`
+                                : page.crawlParent;
+                        })()
+                        : "Starting page"
+                }
+            </span>
         </div>
 
         <div class="infoRow">
-            <span class="infoLabel">PDF Links</span>
-            <span class="infoValue">${page.pdfCount ?? 0}</span>
+            <span class="infoLabel">Crawl Depth</span>
+            <span class="infoValue">
+                ${page.crawlDepth ?? "-"}
+            </span>
         </div>
 
-        <div class="infoRow">
-            <span class="infoLabel">Internal Links</span>
-            <span class="infoValue">${(page.internalLinks ?? []).length}</span>
-        </div>
+    </div>
+
+</div>
 
         <div class="infoRow">
-            <span class="infoLabel">External Links</span>
-            <span class="infoValue">${(page.externalLinks ?? []).length}</span>
+            <span class="infoLabel">Sub-Pages</span>
+            <span class="infoValue">
+
+                ${
+                    (page.children ?? []).length
+                        ? (page.children ?? []).map(childId => {
+
+                            const child = pages.find(p => p.id === childId);
+
+                            return child
+                                ? `<div>
+                                        <a href="#" onclick="showPage(getPageByUrl('${child.url}'));return false;">
+                                            ${child.title}
+                                        </a>
+                                </div>`
+                                : "";
+
+                        }).join("")
+                        : "None"
+                }
+
+            </span>
         </div>
+
+    </div>
+
+</div>
+
+    <div class="card">
+
+        <h3>Canonical Resource</h3>
+
+        <div class="infoList">
+
+            <div class="infoRow">
+                <span class="infoLabel">Resource ID</span>
+                <span class="infoValue">
+                    ${page.canonicalResourceId || "-"}
+                </span>
+            </div>
+
+            <div class="infoRow">
+                <span class="infoLabel">Canonical URL</span>
+                <span class="infoValue">
+                    ${
+                        page.canonicalUrl
+                            ? `<a href="${page.canonicalUrl}" target="_blank" rel="noopener noreferrer">${page.canonicalUrl}</a>`
+                            : "-"
+                    }
+                </span>
+            </div>
+
+            <div class="infoRow">
+                <span class="infoLabel">Canonical Occurrence</span>
+                <span class="infoValue">
+                    ${page.isCanonicalOccurrence === true ? "Yes" : page.isCanonicalOccurrence === false ? "No" : "-"}
+                </span>
+            </div>
+
+            <div class="infoRow">
+                <span class="infoLabel">Observed Occurrences</span>
+                <span class="infoValue">
+                    ${page.resourceOccurrenceCount ?? "-"}
+                </span>
+            </div>
+
+        </div>
+
+</div>
+
+    <div class="card">
+
+        <h3>Content</h3>
+
+        <div class="infoList">
+
+            <div class="infoRow">
+                <span class="infoLabel">Images</span>
+                <span class="infoValue">${page.imageCount ?? 0}</span>
+            </div>
+
+            <div class="infoRow">
+                <span class="infoLabel">PDF Links</span>
+                <span class="infoValue">${page.pdfCount ?? 0}</span>
+            </div>
+
+            <div class="infoRow">
+                <span class="infoLabel">Internal Links</span>
+                <span class="infoValue">${(page.internalLinks ?? []).length}</span>
+            </div>
+
+            <div class="infoRow">
+                <span class="infoLabel">External Links</span>
+                <span class="infoValue">${(page.externalLinks ?? []).length}</span>
+            </div>
 
     </div>
 

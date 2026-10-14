@@ -2,6 +2,7 @@ const { createBrowser, closeBrowser } = require("./browser");
 const login = require("./login");
 const Crawler = require("./crawler");
 const { exportData } = require("./exporter");
+const { detectContentSimilarity } = require("./utils");
 
 (async () => {
 
@@ -33,7 +34,38 @@ const { exportData } = require("./exporter");
 
         const result = await crawler.crawl();
 
-        await exportData(result.pages, result.summary);
+        // S3-08 — Content Similarity Evidence
+        const contentSimilarity = detectContentSimilarity(result.pages);
+
+        const diagnosticSimilarity = detectContentSimilarity(
+            result.pages,
+            { nearDuplicateThreshold: 0.65 }
+        );
+
+        console.log(
+            `Diagnostic near-duplicate pairs at 65%: ${diagnosticSimilarity.nearDuplicateCount}`
+        );
+
+        console.log(
+            "Diagnostic matches:",
+            JSON.stringify(diagnosticSimilarity.matches, null, 2)
+        );
+
+        console.log("");
+        console.log("S3-08 — Content Similarity Evidence");
+        console.log(`Resources compared: ${contentSimilarity.resourcesCompared}`);
+        console.log(`Exact-match pairs: ${contentSimilarity.exactMatchCount}`);
+        console.log(`Near-duplicate pairs: ${contentSimilarity.nearDuplicateCount}`);
+
+        await exportData(
+            result.pages,
+            result.summary,
+            result.resources,
+            result.crawlCoverage,
+            result.unmatchedLinks,
+            result.structuralAnomalies,
+            contentSimilarity
+        );
 
         console.log("");
         console.log("========================================");

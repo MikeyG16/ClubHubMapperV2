@@ -18,6 +18,8 @@ class Crawler {
 
         this.pageMap = new Map();
 
+        this.canonicalResources = [];
+
         this.nextId = 1;
 
     }
@@ -116,8 +118,25 @@ class Crawler {
 
         }
 
+        // Group all observed crawl records into canonical resources.
+        // Individual occurrences remain intact as evidence.
+        this.canonicalResources = utils.buildCanonicalResources(this.pages);
+
         this.buildIncomingLinks();
+        this.buildUnmatchedLinks();
         this.buildHierarchy();
+
+        // Rebuild after hierarchy has been established so the canonical
+        // resource record contains the final parent/depth evidence.
+        this.canonicalResources = utils.buildCanonicalResources(this.pages);
+
+        // S3-07 — Structural Anomaly Evidence
+        this.structuralAnomalies =
+            utils.detectStructuralAnomalies(this.pages);
+
+        console.log(
+            `Structural anomalies identified: ${this.structuralAnomalies.length}`
+        );
 
         console.log(
             "DEBUG FINAL PARENT:",
@@ -127,12 +146,24 @@ class Crawler {
         );
 
         const crawlDuration = Date.now() - crawlStarted;
+        
+        const crawlCoverage = {
+            completed: this.queue.length === 0,
+            stoppedAtPageLimit: this.pages.length >= 50 && this.queue.length > 0,
+            pageLimit: 50,
+            pagesCrawled: this.pages.length,
+            queuedUrlsRemaining: this.queue.length
+        };
 
         const crawlSummary = this.printSummary(crawlDuration);
 
         return {
             pages: this.pages,
-            summary: crawlSummary
+            resources: this.canonicalResources,
+            summary: crawlSummary,
+            crawlCoverage,
+            unmatchedLinks: this.unmatchedLinks,
+            structuralAnomalies: this.structuralAnomalies
         };
 
     }
@@ -184,7 +215,81 @@ class Crawler {
 
             const wp = await this.wordpress.getPageData(finalUrl);
 
+            console.log("WORDPRESS DATA DIAGNOSTIC:", JSON.stringify({
+                keys: wp ? Object.keys(wp) : [],
+                title: wp?.title,
+                contentType: typeof wp?.content,
+                contentLength: typeof wp?.content === "string" ? wp.content.length : null,
+                contentPreview: typeof wp?.content === "string" ? wp.content.slice(0, 300) : null
+            }, null, 2));
+
             const bodyClass = await this.page.evaluate(() => document.body.className);
+
+            const contentSelectors = await this.page.evaluate(() => {
+                const selectors = [
+                    "main",
+                    "article",
+                    "[role='main']",
+                    ".entry-content",
+                    ".lesson-content",
+                    ".course-content",
+                    ".content-area"
+                ];
+
+                return selectors.map(selector => {
+                    const elements = [...document.querySelectorAll(selector)];
+
+                    return {
+                        selector,
+                        count: elements.length,
+                        details: elements.slice(0, 3).map(el => ({
+                            tag: el.tagName,
+                            className: el.className,
+                            textLength: (el.innerText || "").length,
+                            preview: (el.innerText || "")
+                                .replace(/\s+/g, " ")
+                                .trim()
+                                .slice(0, 160)
+                        }))
+                    };
+                });
+            });
+
+            console.log(
+                "CONTENT SELECTOR DIAGNOSTIC:",
+                JSON.stringify(contentSelectors, null, 2)
+            );
+
+            const contentText = await this.page.evaluate(() => {
+                const clone = document.body.cloneNode(true);
+
+                clone.querySelectorAll(`
+                    script,
+                    style,
+                    noscript,
+                    nav,
+                    header,
+                    footer,
+                    aside,
+                    iframe,
+                    form,
+                    button,
+                    input,
+                    select,
+                    textarea,
+                    [role="navigation"],
+                    [role="dialog"],
+                    [aria-label*="cookie" i],
+                    [class*="cookie" i],
+                    [id*="cookie" i]
+                `).forEach(el => el.remove());
+
+                return clone.innerText
+                    .replace(/\s+/g, " ")
+                    .trim();
+            });
+
+
 
             const links = await this.extractLinks();
 
@@ -234,15 +339,20 @@ class Crawler {
 
                 id: this.nextId++,
 
+                requestedUrl: url,
+
                 title: title || "(Untitled)",
+
+                contentText,
 
                 url: finalUrl,
 
                 finalUrl,
 
-                parent,
+                canonicalUrl: finalUrl,
 
-                children: [],
+                crawlParent: parent,
+                crawlDepth: depth,
 
                 depth,
 
@@ -293,15 +403,18 @@ class Crawler {
 
                 id: this.nextId++,
 
+                requestedUrl: url,
+
                 title: "(Failed)",
 
                 url,
 
                 finalUrl: url,
 
-                parent,
+                canonicalUrl: url,
 
-                children: [],
+                crawlParent: parent,
+                crawlDepth: depth,
 
                 depth,
 
@@ -440,6 +553,10 @@ buildHierarchy() {
         // Parent will be determined from the ClubHub URL structure
         page.parent = null;
 
+        // Track whether this is a genuine root or has a parent.
+        // Do not attempt to distinguish uncrawled parents here.
+        page.parentStatus = "unknown";
+
     }
 
     // Preserve the original crawl relationship separately
@@ -481,6 +598,7 @@ buildHierarchy() {
             page.contentType === "Home"
         ) {
             page.parent = null;
+            page.parentStatus = "root";
             continue;
         }
 
@@ -510,6 +628,7 @@ buildHierarchy() {
             if (parent) {
 
                 page.parent = parent.url;
+                page.parentStatus = "has-parent";
 
             }
 
@@ -542,6 +661,7 @@ buildHierarchy() {
             if (parent) {
 
                 page.parent = parent.url;
+                page.parentStatus = "has-parent";
 
             }
 
@@ -567,6 +687,7 @@ buildHierarchy() {
             if (home) {
 
                 page.parent = home.url;
+                page.parentStatus = "has-parent";
 
             }
 
@@ -595,6 +716,7 @@ buildHierarchy() {
 
             if (home) {
                 page.parent = home.url;
+                page.parentStatus = "has-parent";
 
             }
 
@@ -631,6 +753,7 @@ buildHierarchy() {
             if (parent) {
 
                 page.parent = parent.url;
+                page.parentStatus = "has-parent";
 
             }
 
@@ -690,6 +813,7 @@ buildHierarchy() {
                     if (parent) {
 
                         page.parent = parent.url;
+                        page.parentStatus = "has-parent";
 
                     }
 
@@ -819,6 +943,47 @@ buildHierarchy() {
     }
 
 }
+
+
+    buildUnmatchedLinks() {
+
+        const unmatched = new Map();
+
+        for (const page of this.pages) {
+
+            for (const link of page.internalLinks) {
+
+                const target = this.pageMap.get(
+                    utils.normaliseUrl(link)
+                );
+
+                if (target) continue;
+
+                if (!unmatched.has(link)) {
+                    unmatched.set(link, {
+                        url: link,
+                        sourcePages: []
+                    });
+                }
+
+                unmatched.get(link).sourcePages.push(page.url);
+
+            }
+
+        }
+
+        this.unmatchedLinks = [...unmatched.values()].map(item => {
+            const sourcePages = [...new Set(item.sourcePages)];
+
+            return {
+                url: item.url,
+                sourcePages,
+                referenceCount: sourcePages.length
+            };
+        });
+
+    }
+
 
     printSummary(crawlDuration) {
 

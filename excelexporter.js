@@ -370,12 +370,22 @@ function formatPriorityCell(cell, priority) {
 
 }
 
-async function exportExcel(pages, summary, composition) {
+async function exportExcel(
+    pages,
+    summary,
+    composition,
+    resources = [],
+    crawlCoverage = {},
+    unmatchedLinks = [],
+    contentSimilarity = {}
+) {
 
     const workbook = new ExcelJS.Workbook();
 
     workbook.creator = "ClubHub Insight v1.0";
     workbook.created = new Date();
+
+    
 
 const brokenPages = pages.filter(p => p.statusCode >= 400).length;
 
@@ -897,7 +907,10 @@ treeSheet.properties.defaultRowHeight = 20;
         { header: "Title", key: "title", width: 45 },
         { header: "URL", key: "url", width: 70 },
         { header: "Parent", key: "parent", width: 50 },
+        { header: "Parent Status", key: "parentStatus", width: 16 },
         { header: "Depth", key: "depth", width: 8 },
+        { header: "Crawl Parent", key: "crawlParent", width: 50 },
+        { header: "Crawl Depth", key: "crawlDepth", width: 12 },
         { header: "Content Type", key: "contentType", width: 18 },
         { header: "WP Type", key: "wordpressType", width: 15 },
         { header: "Status Code", key: "statusCode", width: 12 },
@@ -923,25 +936,28 @@ const COL = {
     TITLE: 2,
     URL: 3,
     PARENT: 4,
-    DEPTH: 5,
-    TYPE: 6,
-    WP_TYPE: 7,
-    STATUS: 8,
-    WP_STATUS: 9,
-    REDIRECT: 10,
-    INCOMING: 11,
-    OUTGOING: 12,
-    IMAGES: 13,
-    PDFS: 14,
-    PUBLISHED_DATE: 15,
-    PUBLISHED_TIME: 16,
-    LAST_UPDATED: 17,
-    PAGE_AGE: 18,
-    UPDATED_TIME: 19,
-    CRAWL_TIME: 20,
-    METADATA: 21,
-    CONTENT_SCORE: 22,
-    REVIEW_PRIORITY: 23
+    PARENT_STATUS: 5,
+    DEPTH: 6,
+    CRAWL_PARENT: 7,
+    CRAWL_DEPTH: 8,
+    TYPE: 9,
+    WP_TYPE: 10,
+    STATUS: 11,
+    WP_STATUS: 12,
+    REDIRECT: 13,
+    INCOMING: 14,
+    OUTGOING: 15,
+    IMAGES: 16,
+    PDFS: 17,
+    PUBLISHED_DATE: 18,
+    PUBLISHED_TIME: 19,
+    LAST_UPDATED: 20,
+    PAGE_AGE: 21,
+    UPDATED_TIME: 22,
+    CRAWL_TIME: 23,
+    METADATA: 24,
+    CONTENT_SCORE: 25,
+    REVIEW_PRIORITY: 26
 };
 
    pages.forEach(page => {
@@ -952,7 +968,10 @@ const COL = {
         title: page.title,
         url: page.url,
         parent: page.parent || "",
+        parentStatus: page.parentStatus || "",
         depth: page.depth,
+        crawlParent: page.crawlParent || "",
+        crawlDepth: page.crawlDepth ?? "",
         contentType: page.contentType,
         wordpressType: page.wordpressType || "",
         statusCode: page.statusCode,
@@ -1169,18 +1188,17 @@ const COL = {
 
     sheet.autoFilter = {
         from: "A1",
-        to: "W1"
+        to: "Z1"
     }; 
 
+    sheet.getColumn(1).width = 8;    // ID
     sheet.getColumn(2).width = 40;   // Title
     sheet.getColumn(3).width = 65;   // URL
     sheet.getColumn(4).width = 40;   // Parent
-
-    sheet.getColumn(1).width = 8;
-    sheet.getColumn(5).width = 8;
-    sheet.getColumn(6).width = 15;
-    sheet.getColumn(7).width = 15;
-    sheet.getColumn(8).width = 12;
+    sheet.getColumn(5).width = 16;   // Parent Status
+    sheet.getColumn(6).width = 8;    // Depth
+    sheet.getColumn(7).width = 40;   // Crawl Parent
+    sheet.getColumn(8).width = 12;   // Crawl Depth
     sheet.getColumn(9).width = 15;
     sheet.getColumn(10).width = 10;
     sheet.getColumn(11).width = 16;
@@ -1196,6 +1214,9 @@ const COL = {
     sheet.getColumn(21).width = 14;
     sheet.getColumn(22).width = 14;
     sheet.getColumn(23).width = 18;
+    sheet.getColumn(24).width = 14;
+    sheet.getColumn(25).width = 14;
+    sheet.getColumn(26).width = 18;
 
     sheet.pageSetup = {
         orientation: "landscape",
@@ -1204,6 +1225,87 @@ const COL = {
     };
 
     sheet.properties.defaultRowHeight = 20;
+
+    // ======================================================
+    // S3-08 — Content Similarity Evidence
+    // ======================================================
+
+    const similaritySheet =
+        workbook.addWorksheet("Content Similarity");
+
+    similaritySheet.columns = [
+        { header: "Match Type", key: "matchType", width: 20 },
+        { header: "Similarity", key: "similarity", width: 14 },
+        { header: "Resource A Title", key: "titleA", width: 42 },
+        { header: "Resource A URL", key: "urlA", width: 65 },
+        { header: "Resource A Type", key: "typeA", width: 18 },
+        { header: "Resource A Text Length", key: "lengthA", width: 22 },
+        { header: "Resource B Title", key: "titleB", width: 42 },
+        { header: "Resource B URL", key: "urlB", width: 65 },
+        { header: "Resource B Type", key: "typeB", width: 18 },
+        { header: "Resource B Text Length", key: "lengthB", width: 22 }
+    ];
+
+    const similarityMatches = contentSimilarity.matches || [];
+
+    similarityMatches.forEach(match => {
+
+        const resourceA = match.resourceA || {};
+        const resourceB = match.resourceB || {};
+
+        similaritySheet.addRow({
+            matchType: match.matchType || "Unknown",
+            similarity: Number(match.similarity || 0),
+            titleA: resourceA.title || "",
+            urlA: resourceA.url || "",
+            typeA: resourceA.contentType || "",
+            lengthA: resourceA.textLength || 0,
+            titleB: resourceB.title || "",
+            urlB: resourceB.url || "",
+            typeB: resourceB.contentType || "",
+            lengthB: resourceB.textLength || 0
+        });
+
+    });
+
+    similaritySheet.getRow(1).font = {
+        bold: true,
+        color: { argb: "FFFFFFFF" }
+    };
+
+    similaritySheet.getRow(1).fill = {
+        type: "pattern",
+        pattern: "solid",
+        fgColor: { argb: "FF0057B8" }
+    };
+
+    similaritySheet.getRow(1).alignment = {
+        horizontal: "center",
+        vertical: "middle",
+        wrapText: true
+    };
+
+    similaritySheet.getRow(1).height = 30;
+
+    similaritySheet.getColumn("similarity").numFmt = "0.0%";
+
+    similaritySheet.views = [{
+        state: "frozen",
+        ySplit: 1
+    }];
+
+    similaritySheet.autoFilter = {
+        from: "A1",
+        to: "J1"
+    };
+
+    similaritySheet.pageSetup = {
+        orientation: "landscape",
+        fitToPage: true,
+        fitToWidth: 1
+    };
+
+    similaritySheet.properties.defaultRowHeight = 20;
 
 // ======================================================
 // Content Freshness
@@ -2266,7 +2368,250 @@ mostReferencedSheet.properties.defaultRowHeight = 20;
             activeTab: 0
         }
     ];
+    // ======================================================
+    // Duplicate Resources
+    // ======================================================
 
+    const duplicateResourcesSheet =
+        workbook.addWorksheet("Duplicate Resources");
+
+    duplicateResourcesSheet.columns = [
+        { header: "Resource ID", key: "id", width: 20 },
+        { header: "Title", key: "title", width: 45 },
+        { header: "Canonical URL", key: "canonicalUrl", width: 70 },
+        { header: "Content Type", key: "contentType", width: 18 },
+        { header: "Occurrences", key: "occurrenceCount", width: 14 },
+        { header: "Duplicate Occurrences", key: "duplicateCount", width: 20 },
+        { header: "Redirected Occurrences", key: "redirectedCount", width: 22 },
+        { header: "Observed URL", key: "url", width: 70 },
+        { header: "Status Code", key: "statusCode", width: 12 },
+        { header: "Canonical Occurrence", key: "canonicalOccurrence", width: 20 },
+        { header: "Redirected", key: "redirected", width: 12 },
+        { header: "Redirect Target", key: "redirectTarget", width: 70 },
+        { header: "Parent", key: "parent", width: 65 },
+        { header: "Crawl Parent", key: "crawlParent", width: 65 },
+        { header: "Depth", key: "depth", width: 10 },
+        { header: "Crawl Depth", key: "crawlDepth", width: 14 }
+    ];
+
+    const duplicateResources = (resources || [])
+        .filter(resource => resource.occurrenceCount > 1);
+
+    duplicateResources.forEach(resource => {
+
+        (resource.occurrences || []).forEach(occurrence => {
+
+            duplicateResourcesSheet.addRow({
+                id: resource.id,
+                title: resource.title,
+                canonicalUrl: resource.canonicalUrl,
+                contentType: resource.contentType,
+                occurrenceCount: resource.occurrenceCount,
+                duplicateCount: resource.duplicateOccurrenceCount,
+                redirectedCount: resource.redirectedOccurrenceCount,
+                url: occurrence.url,
+                statusCode: occurrence.statusCode,
+                canonicalOccurrence:
+                    occurrence.id === resource.canonicalOccurrenceId
+                        ? "Yes"
+                        : "No",
+                redirected: occurrence.redirected ? "Yes" : "No",
+                redirectTarget: occurrence.redirectTarget || "",
+                parent: occurrence.parent || "",
+                crawlParent: occurrence.technicalParent || "",
+                depth: occurrence.depth,
+                crawlDepth: occurrence.crawlDepth
+            });
+
+        });
+
+    });
+
+    // Format the worksheet header.
+    duplicateResourcesSheet.getRow(1).font = {
+        bold: true,
+        color: { argb: "FFFFFFFF" }
+    };
+
+    duplicateResourcesSheet.getRow(1).fill = {
+        type: "pattern",
+        pattern: "solid",
+        fgColor: { argb: "FF0057B8" }
+    };
+
+    duplicateResourcesSheet.getRow(1).alignment = {
+        horizontal: "center",
+        vertical: "middle"
+    };
+
+    duplicateResourcesSheet.getRow(1).height = 24;
+
+    duplicateResourcesSheet.views = [{
+        state: "frozen",
+        ySplit: 1
+    }];
+
+    duplicateResourcesSheet.autoFilter = {
+        from: "A1",
+        to: "P1"
+    };
+
+    duplicateResourcesSheet.pageSetup = {
+        orientation: "landscape",
+        fitToPage: true,
+        fitToWidth: 1
+    };
+
+    duplicateResourcesSheet.properties.defaultRowHeight = 20;
+
+    
+    // ======================================================
+    // Unmatched Links — S3-06
+    // ======================================================
+
+    const unmatchedSheet = workbook.addWorksheet("Unmatched Links");
+
+    unmatchedSheet.columns = [
+        { header: "Target URL", key: "url", width: 75 },
+        { header: "Source Page Count", key: "referenceCount", width: 20 },
+        { header: "Source Pages", key: "sourcePages", width: 100 }
+    ];
+
+    // Crawl coverage context
+    unmatchedSheet.getCell("A2").value = "Crawl Coverage";
+    unmatchedSheet.getCell("A2").font = { bold: true, size: 14 };
+
+    unmatchedSheet.getCell("A3").value = "Crawl completed";
+    unmatchedSheet.getCell("B3").value =
+        crawlCoverage.completed === true ? "Yes" : "No";
+
+    unmatchedSheet.getCell("A4").value = "Stopped at page limit";
+    unmatchedSheet.getCell("B4").value =
+        crawlCoverage.stoppedAtPageLimit === true ? "Yes" : "No";
+
+    unmatchedSheet.getCell("A5").value = "Pages crawled";
+    unmatchedSheet.getCell("B5").value =
+        crawlCoverage.pagesCrawled ?? pages.length;
+
+    unmatchedSheet.getCell("A6").value = "Page limit";
+    unmatchedSheet.getCell("B6").value =
+        crawlCoverage.pageLimit ?? "Not recorded";
+
+    unmatchedSheet.getCell("A7").value = "Queued URLs remaining";
+    unmatchedSheet.getCell("B7").value =
+        crawlCoverage.queuedUrlsRemaining ?? "Not recorded";
+
+    unmatchedSheet.mergeCells("A9:C10");
+    unmatchedSheet.getCell("A9").value =
+        "Important: Unmatched targets are URLs without a corresponding " +
+        "page record in this crawl. They are not confirmed broken or " +
+        "missing resources. Incomplete crawl coverage may explain some " +
+        "or all of these findings.";
+
+    unmatchedSheet.getCell("A9").alignment = {
+        wrapText: true,
+        vertical: "middle"
+    };
+
+    unmatchedSheet.getCell("A9").font = {
+        italic: true,
+        bold: true
+    };
+
+    unmatchedSheet.getRow(9).height = 30;
+    unmatchedSheet.getRow(10).height = 25;
+
+    // Leave row 11 blank; the table header starts on row 12.
+    unmatchedSheet.getRow(11).height = 8;
+
+    const unmatchedHeader = unmatchedSheet.getRow(12);
+
+    unmatchedHeader.values = [
+        "Target URL",
+        "Source Page Count",
+        "Source Pages"
+    ];
+
+    unmatchedHeader.font = {
+        bold: true,
+        color: { argb: "FFFFFFFF" }
+    };
+
+    unmatchedHeader.fill = {
+        type: "pattern",
+        pattern: "solid",
+        fgColor: { argb: "FF0057B8" }
+    };
+
+    unmatchedHeader.alignment = {
+        horizontal: "center",
+        vertical: "middle",
+        wrapText: true
+    };
+
+    unmatchedHeader.height = 24;
+
+    const sortedUnmatchedLinks = [...(unmatchedLinks || [])].sort(
+        (a, b) =>
+            (Number(b.referenceCount) || 0) -
+            (Number(a.referenceCount) || 0)
+    );
+
+    sortedUnmatchedLinks.forEach(item => {
+
+        const sourcePages = [...new Set(item.sourcePages || [])];
+
+        const row = unmatchedSheet.addRow({
+            url: item.url || "",
+            referenceCount:
+                item.referenceCount ?? sourcePages.length,
+            sourcePages: sourcePages.join("\n")
+        });
+
+        if (item.url) {
+        row.getCell(1).value = {
+            text: item.url,
+            hyperlink: item.url
+        };
+
+        row.getCell(1).font = {
+            color: { argb: "FF0563C1" },
+            underline: true
+        };
+    }
+
+        row.getCell(3).alignment = {
+            wrapText: true,
+            vertical: "top"
+        };
+
+        row.getCell(2).alignment = {
+            horizontal: "right",
+            vertical: "top"
+        };
+
+        row.getCell(2).numFmt = "#,##0";
+    });
+
+    unmatchedSheet.autoFilter = {
+        from: "A12",
+        to: `C${Math.max(12, unmatchedSheet.rowCount)}`
+    };
+
+    unmatchedSheet.views = [{
+        state: "frozen",
+        ySplit: 12
+    }];
+
+    unmatchedSheet.pageSetup = {
+        orientation: "landscape",
+        fitToPage: true,
+        fitToWidth: 1
+    };
+
+    unmatchedSheet.properties.defaultRowHeight = 30;
+
+    
     const filename = path.join(
         config.outputFolder,
         config.excelFile
@@ -2283,6 +2628,7 @@ mostReferencedSheet.properties.defaultRowHeight = 20;
     console.log("");
 
 }
+
 
 module.exports = {
     exportExcel

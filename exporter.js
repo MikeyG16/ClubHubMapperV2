@@ -6,7 +6,15 @@ const { exportExcel } = require("./excelExporter");
 const { exportHTML } = require("./htmlexporter");
 const { calculateWebsiteComposition } = require("./utils");
 
-async function exportData(pages, summary) {
+async function exportData(
+    pages,
+    summary,
+    resources = [],
+    crawlCoverage = {},
+    unmatchedLinks = [],
+    structuralAnomalies = [],
+    contentSimilarity = {}
+) {
 
     // Ensure output folder exists
     if (!fs.existsSync(config.outputFolder)) {
@@ -17,11 +25,17 @@ const exportPages = pages.map(page => ({
 
     id: page.id,
     title: page.title,
+    contentText: page.contentText,
     url: page.url,
     finalUrl: page.finalUrl,
 
     parent: page.parent || null,
+    parentStatus: page.parentStatus,
     children: page.children,
+
+    // Observed crawl relationship
+    crawlParent: page.crawlParent,
+    crawlDepth: page.crawlDepth,
 
     depth: page.depth,
     contentType: page.contentType,
@@ -76,6 +90,10 @@ const exportPages = pages.map(page => ({
             {
                 summary,
                 composition,
+                resources,
+                crawlCoverage,
+                unmatchedLinks,
+                structuralAnomalies,
                 pages: exportPages
             },
             null,
@@ -93,10 +111,26 @@ const exportPages = pages.map(page => ({
 
 
     // Export Excel
-    await exportExcel(pages, summary, composition);
+    await exportExcel(
+        exportPages,
+        summary,
+        composition,
+        resources,
+        crawlCoverage,
+        unmatchedLinks,
+        contentSimilarity
+    );
 
     // Export HTML
-    exportHTML(exportPages, summary, composition);
+    exportHTML(
+        exportPages,
+        summary,
+        composition,
+        resources,
+        crawlCoverage,
+        unmatchedLinks,
+        contentSimilarity
+    );
 
 }
 
