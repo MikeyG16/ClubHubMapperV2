@@ -94,6 +94,7 @@ const exportPages = pages.map(page => ({
                 crawlCoverage,
                 unmatchedLinks,
                 structuralAnomalies,
+                contentSimilarity,
                 pages: exportPages
             },
             null,
@@ -118,6 +119,7 @@ const exportPages = pages.map(page => ({
         resources,
         crawlCoverage,
         unmatchedLinks,
+        structuralAnomalies,
         contentSimilarity
     );
 
@@ -129,6 +131,7 @@ const exportPages = pages.map(page => ({
         resources,
         crawlCoverage,
         unmatchedLinks,
+        structuralAnomalies,
         contentSimilarity
     );
 

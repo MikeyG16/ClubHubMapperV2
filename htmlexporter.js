@@ -29,6 +29,7 @@ function exportHTML(
     resources = [],
     crawlCoverage = {},
     unmatchedLinks = [],
+    structuralAnomalies = [],
     contentSimilarity = {}
 ) {
 
@@ -71,6 +72,11 @@ function exportHTML(
     html = html.replace(
         "__UNMATCHED_LINKS__",
         JSON.stringify(unmatchedLinks, null, 2)
+    );
+
+    html = html.replace(
+        "__STRUCTURAL_ANOMALIES__",
+        JSON.stringify(structuralAnomalies, null, 2)
     );
 
     html = html.replace(

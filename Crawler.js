@@ -46,7 +46,11 @@ class Crawler {
 
         // TEST LIMIT
         // Change "< 5" to whatever you like whilst testing. && this.pages.length < 10
-        while (this.queue.length > 0) {
+        // Crawl until the queue is empty or the configured page limit is reached.
+        while (
+            this.queue.length > 0 &&
+            this.pages.length < config.maxPages
+        ) {
 
             const current = this.queue.shift();
 
@@ -73,12 +77,6 @@ class Crawler {
             }
 
             this.pages.push(pageData);
-
-            console.log(
-                "DEBUG technicalParent:",
-                pageData.title,
-                pageData.technicalParent
-            );
 
             this.pageMap.set(pageData.url, pageData);
 
@@ -138,19 +136,14 @@ class Crawler {
             `Structural anomalies identified: ${this.structuralAnomalies.length}`
         );
 
-        console.log(
-            "DEBUG FINAL PARENT:",
-            this.pages.find(page =>
-                page.url.includes("/topic/syllabus")
-            )?.parent
-        );
-
         const crawlDuration = Date.now() - crawlStarted;
         
         const crawlCoverage = {
             completed: this.queue.length === 0,
-            stoppedAtPageLimit: this.pages.length >= 50 && this.queue.length > 0,
-            pageLimit: 50,
+            stoppedAtPageLimit:
+                this.pages.length >= config.maxPages &&
+                this.queue.length > 0,
+            pageLimit: config.maxPages,
             pagesCrawled: this.pages.length,
             queuedUrlsRemaining: this.queue.length
         };
@@ -215,13 +208,26 @@ class Crawler {
 
             const wp = await this.wordpress.getPageData(finalUrl);
 
-            console.log("WORDPRESS DATA DIAGNOSTIC:", JSON.stringify({
-                keys: wp ? Object.keys(wp) : [],
-                title: wp?.title,
-                contentType: typeof wp?.content,
-                contentLength: typeof wp?.content === "string" ? wp.content.length : null,
-                contentPreview: typeof wp?.content === "string" ? wp.content.slice(0, 300) : null
-            }, null, 2));
+
+		if (config.debug) {
+            console.log(
+                "WORDPRESS DATA DIAGNOSTIC:",
+                JSON.stringify({
+                    keys: wp ? Object.keys(wp) : [],
+                    title: wp?.title,
+                    contentType: typeof wp?.content,
+                    contentLength:
+                        typeof wp?.content === "string"
+                            ? wp.content.length
+                            : null,
+                    contentPreview:
+                        typeof wp?.content === "string"
+                            ? wp.content.slice(0, 300)
+                            : null
+                }, null, 2)
+            );
+        }
+
 
             const bodyClass = await this.page.evaluate(() => document.body.className);
 
@@ -255,10 +261,14 @@ class Crawler {
                 });
             });
 
-            console.log(
-                "CONTENT SELECTOR DIAGNOSTIC:",
-                JSON.stringify(contentSelectors, null, 2)
-            );
+            
+            if (config.debug) {
+                console.log(
+                    "CONTENT SELECTOR DIAGNOSTIC:",
+                    JSON.stringify(contentSelectors, null, 2)
+                );
+            }
+
 
             const contentText = await this.page.evaluate(() => {
                 const clone = document.body.cloneNode(true);
@@ -681,7 +691,7 @@ buildHierarchy() {
         ) {
 
             const home = pageLookup.get(
-                "https://clubhub-resources.british-gymnastics.org/"
+                utils.normaliseUrl("https://clubhub-resources.british-gymnastics.org")
             );
 
             if (home) {
@@ -824,8 +834,42 @@ buildHierarchy() {
             continue;
         }
 
+        // ----------------------------------------------
+        // NESTED TOPIC
+        // /courses/[category]/lessons/[lesson]/topic/[topic]
+        // ----------------------------------------------
+
+        const nestedTopicMatch = url.match(
+            /\/courses\/([^/]+)\/lessons\/([^/]+)\/topic\/[^/]+\/?$/
+        );
+
+        if (nestedTopicMatch) {
+
+            const parentUrl =
+                "https://clubhub-resources.british-gymnastics.org" +
+                "/courses/" +
+                nestedTopicMatch[1] +
+                "/lessons/" +
+                nestedTopicMatch[2];
+
+            const parent = pageLookup.get(
+                utils.normaliseUrl(parentUrl)
+            );
+
+            if (parent) {
+
+                page.parent = parent.url;
+                page.parentStatus = "has-parent";
+
+            }
+
+            continue;
+
+        }
+
     }
 
+    
 
     // --------------------------------------------------
     // BUILD CHILDREN FROM PRIMARY PARENTS

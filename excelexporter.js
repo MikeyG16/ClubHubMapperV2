@@ -377,6 +377,7 @@ async function exportExcel(
     resources = [],
     crawlCoverage = {},
     unmatchedLinks = [],
+    structuralAnomalies = [],
     contentSimilarity = {}
 ) {
 
@@ -2465,6 +2466,144 @@ mostReferencedSheet.properties.defaultRowHeight = 20;
     duplicateResourcesSheet.properties.defaultRowHeight = 20;
 
     
+
+    // ======================================================
+    // Structural Anomalies — S3-07
+    // ======================================================
+
+    const structuralSheet = workbook.addWorksheet("Structural Anomalies");
+
+    structuralSheet.columns = [
+        { header: "Anomaly Type", key: "type", width: 34 },
+        { header: "Resource Title", key: "title", width: 45 },
+        { header: "Content Type", key: "contentType", width: 20 },
+        { header: "Resource URL", key: "url", width: 75 },
+        { header: "Related URL", key: "relatedUrl", width: 75 },
+        { header: "Evidence", key: "evidence", width: 90 }
+    ];
+
+    structuralSheet.addRow([
+        "Structural Anomaly Evidence — S3-07"
+    ]);
+
+    structuralSheet.mergeCells("A1:F1");
+    structuralSheet.getCell("A1").font = {
+        bold: true,
+        size: 14
+    };
+
+    structuralSheet.addRow([
+        "These findings identify potential structural issues in the crawled data. " +
+        "They are evidence for review, not confirmation that a resource is incorrect. " +
+        "Incomplete crawl coverage may affect some findings."
+    ]);
+
+    structuralSheet.mergeCells("A2:F2");
+    structuralSheet.getCell("A2").alignment = {
+        wrapText: true,
+        vertical: "middle"
+    };
+    structuralSheet.getCell("A2").font = {
+        italic: true
+    };
+    structuralSheet.getRow(2).height = 36;
+
+    structuralSheet.addRow([]);
+
+    const structuralHeader = structuralSheet.addRow([
+        "Anomaly Type",
+        "Resource Title",
+        "Content Type",
+        "Resource URL",
+        "Related URL",
+        "Evidence"
+    ]);
+
+    structuralHeader.font = {
+        bold: true,
+        color: { argb: "FFFFFFFF" }
+    };
+
+    structuralHeader.fill = {
+        type: "pattern",
+        pattern: "solid",
+        fgColor: { argb: "FF0057B8" }
+    };
+
+    structuralHeader.alignment = {
+        horizontal: "center",
+        vertical: "middle",
+        wrapText: true
+    };
+
+    structuralHeader.height = 30;
+
+    const sortedStructuralAnomalies = [
+        ...(structuralAnomalies || [])
+    ].sort((a, b) =>
+        String(a.type || "").localeCompare(String(b.type || "")) ||
+        String(a.title || "").localeCompare(String(b.title || ""))
+    );
+
+    sortedStructuralAnomalies.forEach(item => {
+        const row = structuralSheet.addRow({
+            type: item.type || "",
+            title: item.title || "(Untitled)",
+            contentType: item.contentType || "Unknown",
+            url: item.url || "",
+            relatedUrl: item.relatedUrl || "",
+            evidence: item.evidence || ""
+        });
+
+        for (const columnNumber of [4, 5]) {
+            const cell = row.getCell(columnNumber);
+            const value = cell.value;
+
+            if (
+                typeof value === "string" &&
+                /^https?:\/\//i.test(value)
+            ) {
+                cell.value = {
+                    text: value,
+                    hyperlink: value
+                };
+                cell.font = {
+                    color: { argb: "FF0563C1" },
+                    underline: true
+                };
+            }
+        }
+
+        row.getCell(6).alignment = {
+            wrapText: true,
+            vertical: "top"
+        };
+
+        row.getCell(2).alignment = {
+            wrapText: true,
+            vertical: "top"
+        };
+    });
+
+    structuralSheet.autoFilter = {
+        from: "A4",
+        to: `F${Math.max(4, structuralSheet.rowCount)}`
+    };
+
+    structuralSheet.views = [{
+        state: "frozen",
+        ySplit: 4
+    }];
+
+    structuralSheet.pageSetup = {
+        orientation: "landscape",
+        fitToPage: true,
+        fitToWidth: 1
+    };
+
+    structuralSheet.properties.defaultRowHeight = 30;
+
+
     // ======================================================
     // Unmatched Links — S3-06
     // ======================================================

@@ -94,6 +94,12 @@ function buildNavigation(){
         },
 
         {
+            id: "structuralAnomalies",
+            icon: "🏗️",
+            title: "Structural Anomaly Evidence"
+        },
+
+        {
             id: "freshness",
             icon: "🕒",
             title: "Content Freshness"
@@ -232,6 +238,12 @@ function renderView(section){
         case "contentSimilarity":
 
             renderContentSimilarity();
+
+            break;
+
+        case "structuralAnomalies":
+
+            renderStructuralAnomalies();
 
             break;
         
@@ -1904,6 +1916,176 @@ function renderDuplicateResources() {
 
     panel.innerHTML = html;
 
+}
+
+
+function renderStructuralAnomalies() {
+
+    const panel = document.getElementById("contentPanel");
+    const anomalies = Array.isArray(structuralAnomalies)
+        ? structuralAnomalies
+        : [];
+
+    const escapeHtml = value =>
+        String(value ?? "").replace(/[&<>"']/g, character => ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+        })[character]);
+
+    const renderUrl = value => {
+        const url = String(value || "");
+        const safeUrl = escapeHtml(url);
+
+        if (!/^https?:\/\//i.test(url)) {
+            return safeUrl || "—";
+        }
+
+        return `
+            <a href="${safeUrl}"
+               target="_blank"
+               rel="noopener noreferrer">
+                ${safeUrl}
+            </a>
+        `;
+    };
+
+    const sortedAnomalies = [...anomalies].sort((a, b) =>
+        String(a.type || "").localeCompare(String(b.type || "")) ||
+        String(a.title || "").localeCompare(String(b.title || ""))
+    );
+
+    const countsByType = {};
+
+    sortedAnomalies.forEach(item => {
+        const type = item.type || "Unknown";
+        countsByType[type] = (countsByType[type] || 0) + 1;
+    });
+
+    let summaryHtml = "";
+
+    if (sortedAnomalies.length > 0) {
+        summaryHtml = `
+            <div class="card">
+                <h3>Findings by anomaly type</h3>
+                <ul>
+                    ${Object.entries(countsByType)
+                        .sort((a, b) => b[1] - a[1])
+                        .map(([type, count]) => `
+                            <li>
+                                <strong>${escapeHtml(type)}:</strong>
+                                ${count}
+                            </li>
+                        `).join("")}
+                </ul>
+            </div>
+        `;
+    }
+
+    let tableHtml;
+
+    if (sortedAnomalies.length === 0) {
+        tableHtml = `
+            <div class="card">
+                <p>
+                    No structural anomalies were identified in the
+                    available crawl records.
+                </p>
+                <p>
+                    This does not prove that the site structure is
+                    correct. Results depend on the hierarchy data,
+                    crawl coverage and relationships recorded by
+                    the crawler.
+                </p>
+            </div>
+        `;
+    } else {
+        tableHtml = `
+            <div class="compositionTableWrapper">
+                <table class="reportTable compositionTable">
+                    <thead>
+                        <tr>
+                            <th>Anomaly Type</th>
+                            <th>Resource</th>
+                            <th>Content Type</th>
+                            <th>Related Resource</th>
+                            <th>Supporting Evidence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${sortedAnomalies.map(item => `
+                            <tr>
+                                <td>
+                                    ${escapeHtml(item.type || "Unknown")}
+                                </td>
+                                <td>
+                                    <strong>
+                                        ${escapeHtml(item.title || "(Untitled)")}
+                                    </strong>
+                                    <br>
+                                    ${renderUrl(item.url)}
+                                </td>
+                                <td>
+                                    ${escapeHtml(item.contentType || "Unknown")}
+                                </td>
+                                <td>
+                                    ${item.relatedUrl
+                                        ? renderUrl(item.relatedUrl)
+                                        : "—"}
+                                </td>
+                                <td>
+                                    ${escapeHtml(item.evidence || "No evidence recorded")}
+                                </td>
+                            </tr>
+                        `).join("")}
+                    </tbody>
+                </table>
+            </div>
+        `;
+    }
+
+    panel.innerHTML = `
+        <div class="compositionHeader">
+            <h2>🏗️ Structural Anomaly Evidence</h2>
+            <p>
+                Highlights potential issues with incoming links,
+                hierarchy parent relationships and connectivity to
+                the home-page hierarchy. Use these findings to guide
+                review; they are not automatic confirmation that a
+                resource or relationship is incorrect.
+            </p>
+        </div>
+
+        <div class="card">
+            <p>
+                <strong>Total anomaly records:</strong>
+                ${sortedAnomalies.length}
+            </p>
+            <p>
+                A resource can have more than one anomaly record.
+                Incomplete or inconsistent crawl data may affect
+                the findings.
+            </p>
+        </div>
+
+        ${summaryHtml}
+
+        <div class="reportSection compositionSection">
+            <div class="compositionSectionHeader">
+                <div>
+                    <h3>Structural Findings</h3>
+                    <p>
+                        ${sortedAnomalies.length}
+                        records, ordered by anomaly type and resource title.
+                    </p>
+                </div>
+            </div>
+
+            ${tableHtml}
+        </div>
+    `;
 }
 
 

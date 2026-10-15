@@ -976,15 +976,91 @@ function detectStructuralAnomalies(pages) {
 
     const normalise = url => normaliseUrl(url);
 
+        // Aggregate incoming links across all crawl records
+        // using their normalised destination URLs.
+        const incomingSourcesByUrl = new Map();
+
+        for (const source of pages) {
+            if (!Array.isArray(source.internalLinks)) continue;
+
+            const sourceUrl = normalise(source.url);
+
+            for (const link of source.internalLinks) {
+                const targetUrl = normalise(link);
+
+                if (!targetUrl || targetUrl === sourceUrl) continue;
+
+                if (!incomingSourcesByUrl.has(targetUrl)) {
+                    incomingSourcesByUrl.set(targetUrl, new Set());
+                }
+
+                incomingSourcesByUrl.get(targetUrl).add(sourceUrl);
+            }
+        }
+
+
+    
     const pageByUrl = new Map();
 
     for (const page of pages) {
         const url = normalise(page.url);
 
-        if (url && !pageByUrl.has(url)) {
-            pageByUrl.set(url, page);
+        if (!url) continue;
+
+        const existing = pageByUrl.get(url);
+
+        if (!existing) {
+            pageByUrl.set(url, {
+                ...page,
+                children: [...new Set(
+                    Array.isArray(page.children) ? page.children : []
+                )],
+                incomingLinkCount:
+                    incomingSourcesByUrl.get(url)?.size || 0
+            });
+            continue;
         }
+
+        const existingChildren = Array.isArray(existing.children)
+            ? existing.children
+            : [];
+
+        const incomingChildren = Array.isArray(page.children)
+            ? page.children
+            : [];
+
+        // Preserve the original resource ID, but retain the most
+        // informative page properties and merge hierarchy evidence.
+        const preferred =
+            incomingChildren.length > existingChildren.length
+                ? page
+                : existing;
+
+        pageByUrl.set(url, {
+            ...existing,
+            ...preferred,
+            id: existing.id,
+            contentType:
+                existing.contentType === "Home" ||
+                preferred.contentType === "Home"
+                    ? "Home"
+                    : preferred.contentType || existing.contentType,
+            parent: existing.parent || preferred.parent || null,
+            parentStatus:
+                existing.parentStatus === "root"
+                    ? "root"
+                    : preferred.parentStatus || existing.parentStatus,
+            children: [...new Set([
+                ...existingChildren,
+                ...incomingChildren
+            ])],
+            incomingLinkCount:
+                incomingSourcesByUrl.get(url)?.size || 0
+        });
     }
+
+    const uniquePages = [...pageByUrl.values()];
+
 
     const addAnomaly = ({
         type,
@@ -1002,7 +1078,7 @@ function detectStructuralAnomalies(pages) {
         });
     };
 
-    for (const page of pages) {
+    for (const page of uniquePages) {
         const url = normalise(page.url);
 
         if (!url) continue;
@@ -1071,57 +1147,89 @@ function detectStructuralAnomalies(pages) {
         }
 
         
-        // 4. A resource has a parent but is not connected
-        // to the home-page hierarchy.
+                // 4. Check whether the resource is connected to the home hierarchy.
+        // Use canonical URLs rather than page IDs because duplicate
+        // crawl records can have different IDs for the same resource.
         if (page.parentStatus === "has-parent") {
-            const homePage = pages.find(
+            const homePage = uniquePages.find(
                 candidate => candidate.contentType === "Home"
             );
 
             if (homePage) {
-                const reachableIds = new Set();
-                const pageById = new Map(
+                const reachableUrls = new Set();
+                const pending = [normalise(homePage.url)];
+
+                const childrenByParentUrl = new Map();
+
+                for (const candidate of uniquePages) {
+                    const parentUrl = normalise(candidate.parent);
+
+                    if (!parentUrl) continue;
+
+                    if (!childrenByParentUrl.has(parentUrl)) {
+                        childrenByParentUrl.set(parentUrl, new Set());
+                    }
+
+                    childrenByParentUrl.get(parentUrl).add(
+                        normalise(candidate.url)
+                    );
+                }
+
+                // Include recorded child references from all original
+                // occurrences, including failed duplicate records.
+                const originalPageById = new Map(
                     pages.map(candidate => [candidate.id, candidate])
                 );
 
-                const pending = [homePage];
-
-                while (pending.length > 0) {
-                    const current = pending.pop();
-
-                    if (
-                        !current ||
-                        reachableIds.has(current.id)
-                    ) {
-                        continue;
-                    }
-
-                    reachableIds.add(current.id);
-
-                    const children = Array.isArray(current.children)
-                        ? current.children
+                for (const candidate of pages) {
+                    const parentUrl = normalise(candidate.url);
+                    const children = Array.isArray(candidate.children)
+                        ? candidate.children
                         : [];
 
                     for (const childId of children) {
-                        const child = pageById.get(childId);
+                        const originalChild = originalPageById.get(childId);
 
-                        if (
-                            child &&
-                            !reachableIds.has(child.id)
-                        ) {
-                            pending.push(child);
+                        if (!originalChild) continue;
+
+                        if (!childrenByParentUrl.has(parentUrl)) {
+                            childrenByParentUrl.set(parentUrl, new Set());
+                        }
+
+                        childrenByParentUrl.get(parentUrl).add(
+                            normalise(originalChild.url)
+                        );
+                    }
+                }
+
+                while (pending.length > 0) {
+                    const currentUrl = pending.pop();
+
+                    if (!currentUrl || reachableUrls.has(currentUrl)) {
+                        continue;
+                    }
+
+                    reachableUrls.add(currentUrl);
+
+                    const childUrls =
+                        childrenByParentUrl.get(currentUrl) || new Set();
+
+                    for (const childUrl of childUrls) {
+                        if (childUrl && !reachableUrls.has(childUrl)) {
+                            pending.push(childUrl);
                         }
                     }
                 }
 
-                if (!reachableIds.has(page.id)) {
+
+                if (!reachableUrls.has(normalise(page.url))) {
                     addAnomaly({
                         type: "Not connected to home hierarchy",
                         page,
                         evidence:
                             "A primary parent is recorded, but this " +
                             "resource is not reachable from the home " +
-                            "page by following the recorded hierarchy."
+                            "page through the recorded hierarchy."
                     });
                 }
             } else if (!Number.isFinite(page.depth)) {
@@ -1137,11 +1245,6 @@ function detectStructuralAnomalies(pages) {
         }
     }
 
-    console.log("Structural anomaly test:", {
-        pagesReceived: pages.length,
-        anomaliesFound: anomalies.length,
-        anomalyTypes: [...new Set(anomalies.map(a => a.type))]
-    });
 
     return anomalies;
 

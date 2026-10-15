@@ -15,6 +15,7 @@ module.exports = {
     maxDepth: 20,
     concurrentPages: 4,
     delayBetweenRequests: 250,
+    debug: false,
 
     // Output
     outputFolder: "./output",
